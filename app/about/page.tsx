@@ -20,7 +20,7 @@ export default function About() {
                     woman owned, SBA certified small business (WOSB/EDWOSB) that provides organizational change
                     management solutions for federal, state and commercial clients during organizational and IT system
                     transformations. With field-tested methodologies and leading practices in behavioral change
-                    management, we ensure that organizations maximize their project's ROI through:
+                    management, we ensure that organizations maximize their project&apos;s ROI through:
                     <ul className="list-disc list-inside ml-6">
                       <li>Stakeholder engagement</li>
                       <li>Rapid change adoption</li>

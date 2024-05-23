@@ -24,7 +24,7 @@ export default function Home() {
         challenges that lay ahead and with meaningful insights to guide you through them. Someone with knowledge to 
         assist you with the transformation, whether it is organizational redesign or new IT system implementation. 
         Someone who can deliver a comprehensive change program that provides organizationally and culturally aligned 
-        solutions to ensure your project's success. Someone with a passion and dedication to bring your organization to 
+        solutions to ensure your project&apos;s success. Someone with a passion and dedication to bring your organization to 
         the next level. With organizational change management expertise in commercial and public sector, Trigona Consulting 
         is here to help you in your journey. We make change happen.</p>
       </div>
