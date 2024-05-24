@@ -5,6 +5,7 @@ import Link from "next/link";
 import img from "@/public/images/75454621small.jpeg"
 
 export default function Contact() {
+  
   return (
     <div className="flex flex-col items-center gap-4 w-full">
       <div className="relative h-96 w-full">
@@ -22,7 +23,7 @@ export default function Contact() {
         <div>
           <p className="">If you need assistance, have a question or feedback, please contact us.</p>
           <p> We look forward to talking with you!</p>
-          <form name="contact" method="POST" data-netlify="true">
+          <form name="contact" method="POST" data-netlify="true" action="/thanks.html">
             <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="subject" value="Inquiry from trigona.netlify.app" />
             <label className="form-control w-full max-w-xs">
