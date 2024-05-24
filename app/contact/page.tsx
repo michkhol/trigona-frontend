@@ -23,24 +23,25 @@ export default function Contact() {
           <p className="">If you need assistance, have a question or feedback, please contact us.</p>
           <p> We look forward to talking with you!</p>
           <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
             <input type="hidden" name="subject" value="Inquiry from trigona.netlify.app" />
             <label className="form-control w-full max-w-xs">
             <div className="label">
               <span className="label-text">Name:</span>
             </div>
-            <input type="text" placeholder="Required" className="input input-bordered w-full max-w-xs" />
+            <input type="text" placeholder="Required" className="input input-bordered w-full max-w-xs" name="name"/>
             </label>
             <label className="form-control w-full max-w-xs">
               <div className="label">
                 <span className="label-text">Your email:</span>
               </div>
-              <input type="text" placeholder="Required" className="input input-bordered w-full max-w-xs" />
+              <input type="text" placeholder="Required" className="input input-bordered w-full max-w-xs" name="email" />
             </label>
           <label className="form-control">
             <div className="label">
               <span className="label-text">Message:</span>
             </div>
-            <textarea className="textarea textarea-bordered h-24" placeholder="Required"></textarea>
+            <textarea className="textarea textarea-bordered h-24" placeholder="Required" name="message" ></textarea>
           </label>
           <p className="text-center">
             <button className="btn btn-primary mt-6" type="submit">Send</button>
