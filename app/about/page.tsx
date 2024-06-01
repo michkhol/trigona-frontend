@@ -32,7 +32,7 @@ export default function About() {
                       management strategy without a price tag of a big consulting firm.</span>
       </div>
       <div>
-        <Link className="btn btn-primary" href="/about" >Learn More</Link>
+        <Link className="btn btn-primary" href="/contact" >Learn More</Link>
       </div>
     </div>
  

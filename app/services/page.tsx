@@ -14,6 +14,7 @@ export default function Services() {
         <Image className="object-cover z-0 object-center" src={officeBackgroud} alt="Background" fill={true} />
         <h1 className="relative z-10 font-serif font-semibold text-center text-white text-5xl pt-40">Let Us Help You</h1>
       </div>
+      {/*
       <div className="text-center">
         <h1 className="font-serif font-semibold text-3xl mt-10">Let&apos;s Talk About Changes As A Whole...</h1>
       </div>
@@ -47,46 +48,35 @@ export default function Services() {
                     To ensure that your organization transitions through the change with minimum disruptions, 
                     Trigona Consulting LLC provides a robust suit of services, based field tested best practices and methodologies.</span>
       </div>
-      <div className="w-[80%]">
+      */}
+      <div className="w-[60%]">
         <h1 className="text-center font-serif font-semibold text-3xl mt-10">Our Services</h1>
         <hr className="my-6"/>
-        <div className="grid grid-rows-1 lg:grid-cols-4 w-full lg:gap-4">
+        <div className="grid grid-rows-1 lg:grid-cols-3 w-full lg:gap-4">
           <div className="relative inset-0">
             <Image className="m-auto" src={serv1} alt="Services1"/>
-            <h2 className="text-center font-serif text-xl">Stakeholder Engagement &amp; Alignment</h2>
+            <h2 className="text-center font-serif text-xl">Transformation Delivery Consulting</h2>
             <ul className="list-disc list-outside pl-6">
-              <li>Alignment activities to identify executive sponsors at key stakeholder groups</li>
-              <li>Organizational design and change impact analysis</li>
-              <li>Role mapping for transition to production in post-go-live environment</li>
-              <li>Business process re-engineering</li>
-              <li>Customer retention</li>
+              <li>Organizational Change Management</li>
+              <li>Organizational Design</li>
+              <li>Program/Project Management</li>
+              <li>Business Process Re-engineering</li>
             </ul>
           </div>
           <div className="relative inset-0">
             <Image className="m-auto" src={serv2} alt="Services2"/>
-            <h2 className="text-center font-serif text-xl">Communications</h2>
+            <h2 className="text-center font-serif text-xl">On-Demand Executive Expertise</h2>
             <ul className="list-disc list-outside pl-6">
-              <li>Communication strategy, planning and execution activities to ensure sponsor and
-                employee engagement, promote understanding, acceptance and commitment to change
-              </li>
+              <li>Interim Executive Leadership</li>
+              <li>Project Based Leadership</li>
+              <li>Customized Leadership Service</li>
             </ul>
           </div>
           <div className="relative inset-0">
             <Image className="m-auto" src={serv3} alt="Services3"/>
-            <h2 className="text-center font-serif text-xl">Training</h2>
+            <h2 className="text-center font-serif text-xl">Capability Building Tailored Training Solutions</h2>
             <ul className="list-disc list-outside pl-6">
-              <li>Multi-phase approach that aligns tiered objectives, desired levels of proficiency
-                and delivery methodology in a comprehensive training curriculum accommodating
-                various adult learning styles
-              </li>
-            </ul>
-          </div>
-          <div className="relative inset-0">
-            <Image className="m-auto" src={serv4} alt="Services4"/>
-            <h2 className="text-center font-serif text-xl">Change Readiness</h2>
-            <ul className="list-disc list-outside pl-6">
-              <li>Change readiness activities that monitor effectiveness of the change management initiatives and gauge stakeholder engagement
-              </li>
+              <li>Live Web-Based and In-Person Capability Building Training Offerings</li>
             </ul>
           </div>
         </div>

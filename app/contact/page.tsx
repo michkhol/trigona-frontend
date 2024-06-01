@@ -50,8 +50,6 @@ export default function Contact() {
         </form>
         </div>
         <div>
-          <p>TELEPHONE NUMBER</p>
-          <p>703-615-1347</p>
          <Image src={img} alt=""/>
         </div>
       </div>

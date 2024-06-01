@@ -28,38 +28,6 @@ export default function Home() {
         the next level. With organizational change management expertise in commercial and public sector, Trigona Consulting 
         is here to help you in your journey. We make change happen.</p>
       </div>
-      <div className="w-[60%]">
-        <h1 className="text-center font-serif font-semibold text-3xl mt-10">Our Services</h1>
-        <hr className="my-6"/>
-        <div className="grid grid-rows-1 lg:grid-cols-3 w-full lg:gap-4">
-          <div className="relative inset-0">
-            <Image className="m-auto" src={serv1} alt="Services1"/>
-            <h2 className="text-center font-serif text-xl">Transformation Delivery Consulting</h2>
-            <ul className="list-disc list-outside pl-6">
-              <li>Organizational Change Management</li>
-              <li>Organizational Design</li>
-              <li>Program/Project Management</li>
-              <li>Business Process Re-engineering</li>
-            </ul>
-          </div>
-          <div className="relative inset-0">
-            <Image className="m-auto" src={serv2} alt="Services2"/>
-            <h2 className="text-center font-serif text-xl">On-Demand Executive Expertise</h2>
-            <ul className="list-disc list-outside pl-6">
-              <li>Interim Executive Leadership</li>
-              <li>Project Based Leadership</li>
-              <li>Customized Leadership Service</li>
-            </ul>
-          </div>
-          <div className="relative inset-0">
-            <Image className="m-auto" src={serv3} alt="Services3"/>
-            <h2 className="text-center font-serif text-xl">Capability Building Tailored Training Solutions</h2>
-            <ul className="list-disc list-outside pl-6">
-              <li>Live Web-Based and In-Person Capability Building Training Offerings</li>
-            </ul>
-          </div>
-        </div>
-      </div>
 
       <div>
         <Link className="btn btn-primary" href="/services" >Learn More</Link>
