@@ -17,7 +17,7 @@ export default function About() {
         <hr className="my-6"/>
         <Image className="hidden lg:inline float-right" src={img} alt="About image"/>
         <span className="px-6">Trigona Consulting L.L.C. is a
-                    woman owned, SBA certified small business (WOSB/EDWOSB) that provides organizational change
+                    woman owned, SBA certified small business that provides organizational change
                     management solutions for federal, state and commercial clients during organizational and IT system
                     transformations. With field-tested methodologies and leading practices in behavioral change
                     management, we ensure that organizations maximize their project&apos;s ROI through:
@@ -32,7 +32,7 @@ export default function About() {
                       management strategy without a price tag of a big consulting firm.</span>
       </div>
       <div>
-        <Link className="btn btn-primary" href="/about" >Learn More</Link>
+        <Link className="btn btn-primary" href="/contact" >Learn More</Link>
       </div>
     </div>
  
