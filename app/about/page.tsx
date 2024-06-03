@@ -30,7 +30,7 @@ function bodyText(body: SimplePage["body"], index: number): string {
 function imageUrl(body: SimplePage["body"]) {
   if (body != undefined) {
     const image = body.find(e => e._type === "image")
-    if (image != undefined) {
+    if (image != undefined && "asset" in image) {
       const asset = image.asset as unknown as SanityImageAsset; // Force the type cast, we got it from groq
       return asset.url as string;
     }
@@ -68,7 +68,7 @@ export default async function About() {
 
   const js = await about.json();
   const page: SimplePage = js.result[0];
-  console.log(bulletList(page.body));
+  console.log(page.body);
 
   return (
     <div className="flex flex-col items-center gap-4 w-full">
