@@ -39,21 +39,26 @@ function imageUrl(body: SimplePage["body"]) {
   else throw new Error("Body is not found in response");
 }
 
-function bulletList(body: SimplePage["body"]) {
+interface BulletList {
+  key: string;
+  item: string;
+}
+
+function bulletList(body: SimplePage["body"]): Array<BulletList> {
   if (body != undefined) {
-    const textArray = body.map((e) => {
+    const items = body.map((e) => {
       if (e._type === "block" && e.listItem === "bullet") {
         if (e.children != undefined) {
-          const entry = e.children.map(e => e.text as string).join(" ") 
-          return entry;
+          const item = e.children[0].text as string 
+          return { key: e._key, item: item }
         }
         else {
-          return "";
+          return { key: e._key, item: "" };
         }
       }
-      else return "";  
+      else return { key: e._key, item: "" };  
     })
-    return textArray.filter(s => s.length != 0)
+    return items.filter(e => e.item.length != 0)
   }
   else throw new Error("Body is not found in response")
 }
@@ -84,7 +89,7 @@ export default async function About() {
                     transformations. With field-tested methodologies and leading practices in behavioral change
   management, we ensure that organizations maximize their project&apos;s ROI through:*/}
                     <ul className="list-disc list-inside ml-6">
-                      {bulletList(page.body).map(s => <li>{s}</li>)}
+                      {bulletList(page.body).map(i => <li key={i.key}>{i.item}</li>)}
                       {/*
                       <li>Stakeholder engagement</li>
                       <li>Rapid change adoption</li>
