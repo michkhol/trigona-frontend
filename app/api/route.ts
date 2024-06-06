@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-const stripe = require('stripe')(process.env.NEXT_STRIPE_SECRET_KEY)
+const stripe = require('stripe')(process.env.NEXT_STRIPE_SECRET_KEY);
 
-export const dynamic = 'force-dynamic' // defaults to auto
+export const dynamic = 'force-dynamic'; // defaults to auto
 
 
 export async function GET(request: Request) {
@@ -9,7 +9,7 @@ export async function GET(request: Request) {
   const {searchParams} = new URL(request.url);
   const name = searchParams.get("status");
   
-  return Response.json({name})
+  return Response.json({name});
 }
 
 export async function POST(req: NextRequest) {
