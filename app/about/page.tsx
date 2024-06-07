@@ -2,19 +2,9 @@ import officeBackgroud from "@/public/images/New-Office.jpg"
 import Image from "next/image";
 import Link from "next/link";
 import { SanityImageAsset, SimplePage } from "@/sanity/sanity.types";
-// import { createClient } from "next-sanity";
 import { sanityClient } from "@/sanity/client";
 
 //import img from "@/public/images/102883856small.jpeg"
-
-// const clientConfig = {
-//   projectId: "c5f8ymr4",
-//   dataset: "production",
-//   apiVersion: "2024-05-29",
-//   useCdn: false
-// };
-
-// const client = createClient(clientConfig);
 
 function bodyText(body: SimplePage["body"], index: number): string {
   const textArray = body!.map((e) => {
