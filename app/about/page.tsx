@@ -72,7 +72,7 @@ export default async function About() {
   
   const page: SimplePage = data[0];
   //console.log(page)
-  console.log(bulletList(page.body));
+  // console.log(bulletList(page.body));
 
   return (
     <div className="flex flex-col items-center gap-4 w-full">
