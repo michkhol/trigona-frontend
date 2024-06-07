@@ -70,11 +70,6 @@ export default async function About() {
   );
   // console.log(data);
   
-  // const about = await fetch("https://c5f8ymr4.api.sanity.io/v2022-03-07/data/query/production?query=*%5Bslug.current+%3D%3D+%22about%22%5D%7B%0A++slug%2C%0A++title%2C%0A++body%5B%5D+%7B%0A++++...%2C%0A++++asset+-%3E+%7B%0A++++++...%0A++++%7D%0A++++%0A++%7D%0A%7D&perspective=published",
-  //   {next: { revalidate: 60}}
-  // )
-
-  // const js = await about.json();
   const page: SimplePage = data[0];
   //console.log(page)
   console.log(bulletList(page.body));
