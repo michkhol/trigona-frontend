@@ -1,6 +1,4 @@
 import blockContent from './blockContent'
-//import category from './category'
-import post from './richParagraph'
-//import author from './author'
+import simplePage from './simplePage'
 
-export const schemaTypes = [blockContent, post]
+export const schemaTypes = [blockContent, simplePage]

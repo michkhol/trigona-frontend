@@ -1,15 +1,20 @@
-import {defineConfig} from 'sanity'
+import { defineConfig } from 'sanity'
 import {structureTool} from 'sanity/structure'
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './sanity/schemaTypes';
+import { title } from './sanity/environment';
+import { apiVersion } from './sanity/environment';
+import { projectId } from './sanity/environment';
+import { dataset } from './sanity/environment';
 
-const config = defineConfig({
-  title: 'Trigona CMS',
 
-  projectId: 'c5f8ymr4',
-  dataset: 'production',
+const conf = {
+  title,
 
-  apiVersion: "2024-05-29",
+  projectId,
+  dataset,
+
+  apiVersion,
 
   basePath: '/admin',
 
@@ -18,7 +23,8 @@ const config = defineConfig({
   schema: {
     types: schemaTypes,
   },
+}
 
-});
+const config = defineConfig(conf);
 
 export default config;
