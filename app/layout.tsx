@@ -6,7 +6,6 @@ import { Raleway } from "next/font/google";
 import { NavBar } from "./_components/nav-bar";
 import logo from '@/public/images/logo_title.png'
 import { navLinks } from "./_components/nav-links";
-import { Html } from "next/document";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
