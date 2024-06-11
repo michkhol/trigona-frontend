@@ -1,14 +1,24 @@
+"use client";
 
-import officeBackgroud from "@/public/images/New-Office.jpg"
+import officeBackgroud from "@/public/images/New-Office.jpg";
 import Image from "next/image";
 import Link from "next/link";
-import serv1 from "@/public/images/108828452small.jpeg"
-import serv2 from "@/public/images/82137468small.jpeg"
-import serv3 from "@/public/images/62990460small.jpeg"
-import serv4 from "@/public/images/112202028small.jpeg"
+import serv1 from "@/public/images/108828452small.jpeg";
+import serv2 from "@/public/images/82137468small.jpeg";
+import serv3 from "@/public/images/62990460small.jpeg";
+// import serv4 from "@/public/images/112202028small.jpeg";
+import { useSearchParams } from "next/navigation";
+import Script from "next/script";
 
+function restoreUrl(): void {
+  const uri = window.location;
+  const origin = uri.origin;
+  uri.replace(origin)
+}
 
 export default function Home() {
+  const params = useSearchParams();
+  const success = params.get("showSuccess");
   return (
     <div className="flex flex-col items-center gap-4 w-full">
       <div className="relative h-96 w-full">
@@ -28,10 +38,65 @@ export default function Home() {
         the next level. With organizational change management expertise in commercial and public sector, Trigona Consulting 
         is here to help you in your journey. We make change happen.</p>
       </div>
-
-      <div>
-        <Link className="btn btn-primary" href="/services" >Learn More</Link>
+      <div className="w-[60%]">
+        <h1 className="text-center font-serif font-semibold text-3xl mt-10">Our Services</h1>
+        <hr className="my-6"/>
+        <div className="grid grid-rows-1 lg:grid-cols-3 w-full lg:gap-4">
+          <div className="relative inset-0">
+            <Image className="m-auto" src={serv1} alt="Services1"/>
+            <h2 className="text-center font-serif font-semibold text-xl pt-4">Transformation Delivery Consulting</h2>
+            <ul className="list-disc list-outside pl-6 pt-6">
+              <li>Organizational Change Management</li>
+              <li>Organizational Design</li>
+              <li>Program/Project Management</li>
+              <li>Business Process Re-engineering</li>
+            </ul>
+          </div>
+          <div className="relative inset-0">
+            <Image className="m-auto" src={serv2} alt="Services2"/>
+            <h2 className="text-center font-serif font-semibold text-xl pt-4">On-Demand Executive Expertise</h2>
+            <ul className="list-disc list-outside pl-6 pt-6">
+              <li>Interim Executive Leadership</li>
+              <li>Project Based Leadership</li>
+              <li>Customized Leadership Service</li>
+            </ul>
+          </div>
+          <div className="relative inset-0">
+            <Image className="m-auto" src={serv3} alt="Services3"/>
+            <h2 className="text-center font-serif text-xl font-semibold pt-4">Capability Building Tailored Training Solutions</h2>
+            <ul className="list-disc list-outside pl-6 pt-6">
+              <li>Live Web-Based and In-Person Capability Building Training Offerings</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
+      <div className="flex flex-row items-center justify-center gap-4 w-full">
+        <Link className="btn btn-primary" href="/contact">Learn More</Link>
+        {/*<Link className="btn btn-primary" href="#">Upcoming Trainings</Link>*/}
+      </div>
+
+
+      <Script id="modal1" onReady={() => { 
+        // console.log("Onready: " + success)
+        if (success != null ) {
+          (document.getElementById('my_modal_1') as HTMLDialogElement).showModal(); 
+        }
+      }}>
+        {`;`}
+      </Script>
+      <dialog id="my_modal_1" className="modal" onBlur={() => restoreUrl()}>
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">Thank you for registering for the webinar!</h3>
+          <p className="py-4">Press ESC key or click the button below to close</p>
+          <div className="modal-action">
+            <form method="dialog">
+              {/* if there is a button in form, it will close the modal */}
+              <button className="btn" onClick={() => restoreUrl()}>Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 }

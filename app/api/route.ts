@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-const stripe = require('stripe')(process.env.NEXT_STRIPE_SECRET_KEY);
+import { secretKey } from "./environment";
+
+const stripe = require('stripe')(secretKey);
 
 export const dynamic = 'force-dynamic'; // defaults to auto
 
@@ -24,10 +26,14 @@ export async function POST(req: NextRequest) {
         },
       ],
       mode: 'payment',
-      success_url: `${req.headers.get('Origin')}/api?status=success`,
-      cancel_url: `${req.headers.get('Origin')}/api?status=cancelled`,
+      //payment_method_types: ["card", "klarna", "amazon_pay"],
+      success_url: `${req.headers.get('Origin')}/?showSuccess=1`,
+      // cancel_url: `${req.headers.get('Origin')}/api?status=cancelled`,
+      cancel_url: `${req.headers.get('Origin')}/landing/index.html`,
     });
+    // console.log(session);
     return NextResponse.redirect(session.url, 303);
+    // return NextResponse.json(session, { status: 200 });
   } catch (err) {
     if (err instanceof Error) {
       return NextResponse.json({ error: err.message }, { status: 500 });
