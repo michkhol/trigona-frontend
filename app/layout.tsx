@@ -17,7 +17,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
   return (
     // Need to override font from theme
     <html lang="en" data-theme="wireframe">
-      <body className={raleway.className}> 
+      <body className={`text-black ${raleway.className}`}> 
         <header>
         <div className="flex justify-center" >
           <Image src={logo} alt="logo" width={650}/></div>
