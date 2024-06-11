@@ -1,5 +1,3 @@
-"use client";
-
 import officeBackgroud from "@/public/images/New-Office.jpg";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,8 +5,8 @@ import serv1 from "@/public/images/108828452small.jpeg";
 import serv2 from "@/public/images/82137468small.jpeg";
 import serv3 from "@/public/images/62990460small.jpeg";
 // import serv4 from "@/public/images/112202028small.jpeg";
-import { useSearchParams } from "next/navigation";
-import Script from "next/script";
+// import { useSearchParams } from "next/navigation";  // Add Suspense boundary https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+// import Script from "next/script";
 
 function restoreUrl(): void {
   const uri = window.location;
@@ -17,8 +15,8 @@ function restoreUrl(): void {
 }
 
 export default function Home() {
-  const params = useSearchParams();
-  const success = params.get("showSuccess");
+  // const params = useSearchParams();
+  // const success = params.get("showSuccess");
   return (
     <div className="flex flex-col items-center gap-4 w-full">
       <div className="relative h-96 w-full">
@@ -76,7 +74,7 @@ export default function Home() {
         {/*<Link className="btn btn-primary" href="#">Upcoming Trainings</Link>*/}
       </div>
 
-
+      {/*
       <Script id="modal1" onReady={() => { 
         // console.log("Onready: " + success)
         if (success != null ) {
@@ -91,12 +89,13 @@ export default function Home() {
           <p className="py-4">Press ESC key or click the button below to close</p>
           <div className="modal-action">
             <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
+              {/* if there is a button in form, it will close the modal *}
               <button className="btn" onClick={() => restoreUrl()}>Close</button>
             </form>
           </div>
         </div>
       </dialog>
+      */}
     </div>
   );
 }
