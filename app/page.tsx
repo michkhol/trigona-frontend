@@ -40,31 +40,49 @@ export default function Home() {
         <h1 className="text-center font-serif font-semibold text-3xl mt-10">Our Services</h1>
         <hr className="my-6"/>
         <div className="grid grid-rows-1 lg:grid-cols-3 w-full lg:gap-4">
-          <div className="relative inset-0">
-            <Image className="m-auto" src={serv1} alt="Services1"/>
-            <h2 className="text-center font-serif font-semibold text-xl pt-4">Transformation Delivery Consulting</h2>
-            <ul className="list-disc list-outside pl-6 pt-6">
-              <li>Organizational Change Management</li>
-              <li>Organizational Design</li>
-              <li>Program/Project Management</li>
-              <li>Business Process Re-engineering</li>
-            </ul>
+          <div className="flex flex-col gap-4">
+            <div>
+              <Image className="m-auto" src={serv1} alt="Services1"/>
+            </div>
+            <div className="basis-14">
+              <h2 className="text-center font-serif font-semibold text-xl">Transformation Delivery Consulting</h2>
+            </div>
+            <div>
+              <ul className="list-disc list-outside pl-6">
+                <li>Organizational Change Management</li>
+                <li>Organizational Design</li>
+                <li>Program/Project Management</li>
+                <li>Business Process Re-engineering</li>
+              </ul>
+            </div>
           </div>
-          <div className="relative inset-0">
-            <Image className="m-auto" src={serv2} alt="Services2"/>
-            <h2 className="text-center font-serif font-semibold text-xl pt-4">On-Demand Executive Expertise</h2>
-            <ul className="list-disc list-outside pl-6 pt-6">
+          <div className="flex flex-col gap-4">
+            <div>
+              <Image className="m-auto" src={serv2} alt="Services2"/>
+            </div>
+            <div className="basis-14">
+              <h2 className="text-center font-serif font-semibold text-xl">On-Demand Executive Expertise</h2>
+            </div>
+            <div>
+            <ul className="list-disc list-outside pl-6">
               <li>Interim Executive Leadership</li>
               <li>Project Based Leadership</li>
               <li>Customized Leadership Service</li>
             </ul>
+            </div>
           </div>
-          <div className="relative inset-0">
-            <Image className="m-auto" src={serv3} alt="Services3"/>
-            <h2 className="text-center font-serif text-xl font-semibold pt-4">Capability Building Tailored Training Solutions</h2>
-            <ul className="list-disc list-outside pl-6 pt-6">
+          <div className="flex flex-col gap-4">
+            <div>
+              <Image className="m-auto" src={serv3} alt="Services3"/>
+            </div>
+            <div className="basis-14">
+            <h2 className="text-center font-serif text-xl font-semibold">Capability Building Tailored Training Solutions</h2>
+            </div>
+            <div>
+            <ul className="list-disc list-outside pl-6">
               <li>Live Web-Based and In-Person Capability Building Training Offerings</li>
             </ul>
+            </div>
           </div>
         </div>
       </div>
