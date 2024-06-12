@@ -1,0 +1,1 @@
+export const secretKey = process.env.NEXT_STRIPE_SECRET_KEY;

@@ -78,7 +78,7 @@ export default async function About() {
     <div className="flex flex-col items-center gap-4 w-full">
       <div className="relative h-96 w-full">
         <Image className="object-cover z-0 object-center" src={officeBackgroud} alt="Background" fill={true} />
-        <h1 className="relative z-10 font-serif font-semibold text-center text-white text-5xl pt-40">ABOUT US</h1>
+        <h1 className="relative z-10 font-serif font-semibold text-center text-white text-5xl pt-40">About Us</h1>
       </div>
       <div className="text-center">
         <h1 className="font-serif font-semibold text-3xl mt-10">{page.title}</h1>

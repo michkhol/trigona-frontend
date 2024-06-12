@@ -28,7 +28,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
           <nav className="grid grid-flow-col gap-4">
             <Link href={navLinks.get("ABOUT")!} className="link link-hover">About us</Link>
             <Link href={navLinks.get("CONTACT")!} className="link link-hover">Contact</Link>
-            <Link href={navLinks.get("SERVICES")!}  className="link link-hover">Services</Link>
+            {/* <Link href={navLinks.get("SERVICES")!}  className="link link-hover">Services</Link> */}
           </nav> 
           <nav>
             <div className="grid grid-flow-col gap-4">

@@ -84,11 +84,11 @@ export default function Services() {
 
       <div>
         <Link className="btn btn-primary" href="/about">Learn More</Link><br />
-        {/*
+        
         <form method="POST" action="/api">
           <button className="btn" type="submit">Webinar</button>
         </form>
-        */}
+        
       </div>
     </div>
  
