@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Trigona Consulting LLC",
 };
 
-export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>) {
+export default function RootLayout({children,}: Readonly<{ children: React.ReactNode }>) {
   return (
     // Need to override font from theme
     <html lang="en" data-theme="wireframe">
@@ -23,12 +23,12 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
           <Image src={logo} alt="logo" width={650}/></div>
           <NavBar />
         </header>
-        {children}
+        <main>{children}</main>
         <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded mt-7">
           <nav className="grid grid-flow-col gap-4">
             <Link href={navLinks.get("ABOUT")!} className="link link-hover">About us</Link>
+            <Link href={navLinks.get("BLOG")!} className="link link-hover">Blog</Link>
             <Link href={navLinks.get("CONTACT")!} className="link link-hover">Contact</Link>
-            {/* <Link href={navLinks.get("SERVICES")!}  className="link link-hover">Services</Link> */}
           </nav> 
           <nav>
             <div className="grid grid-flow-col gap-4">

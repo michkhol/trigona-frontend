@@ -55,7 +55,7 @@ function bulletList(body: SimplePage["body"]): Array<BulletList> {
 export default async function About() {
 
   const data = await sanityClient.fetch(
-    `*[slug.current == "about"]{
+    `*[_type == "simplePage" || slug.current == "about"]{
         slug,
         title,
         body[] {
