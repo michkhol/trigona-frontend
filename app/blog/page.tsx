@@ -7,6 +7,7 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import { SanityImageSource } from "@sanity/asset-utils";
 import { SanityImageAsset } from "@/sanity/sanity.types";
 import { SanityImageObjectStub } from "@sanity/asset-utils";
+import { BlogPost } from "@/sanity/sanity.types";
 
 const GeneralImageComponent = ({value, isInline}: { value: SanityImageSource, isInline: boolean}) => {
   const asset = (value as SanityImageObjectStub).asset as SanityImageAsset
@@ -62,10 +63,10 @@ export default async function Blog() {
         <h1 className="relative z-10 font-serif font-semibold text-center text-white text-5xl pt-40">Our Blog</h1>
       </div>
       { 
-        data.map(b => {
+        data.map((b: BlogPost) => {
           return (
             <div key={b._id}>
-            <PortableText value={b.body} components={components}/>
+            <PortableText value={b.body!} components={components}/>
             <hr className="w-full"/>
             </div>
           );
