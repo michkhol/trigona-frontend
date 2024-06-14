@@ -18,7 +18,7 @@ const GeneralImageComponent = ({value, isInline}: { value: SanityImageSource, is
       src={asset.url!}
       width={width}
       height={height}  
-      alt={asset.originalFilename || ' '}
+      alt={asset.altText || ' '}
       loading="lazy"
       style={{
         // Display alongside text if image appears inside a block text span

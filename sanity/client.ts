@@ -10,4 +10,4 @@ const config: ClientConfig = {
     useCdn: false, // set to `false` to bypass the edge cache
 }
 
-export const sanityClient = createClient(config)
+export const sanityClient = createClient(config);
