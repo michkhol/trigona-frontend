@@ -18,22 +18,18 @@ export default function About() {
         <hr className="my-6"/>
         <Image className="hidden lg:inline float-right" src={img} alt="About image" width={400} height={240}/>
         <span className="">
-          Trigona Consulting L.L.C. is a
-                    woman owned, SBA certified small business that provides organizational change
-                    management solutions for federal, state and commercial clients during organizational and IT system
-                    transformations. With field-tested methodologies and leading practices in behavioral change
-  management, we ensure that organizations maximize their project&apos;s ROI through:
+        Trigona Consulting L.L.C. is a woman owned boutique consulting firm, that provides 
+        transformation delivery solutions for commercial and government clients during business, organizational and digital transformations. 
+        With field-tested methodologies and leading practices, we ensure that organizations maximize their project&apos;s ROI through:
                     <ul className="list-disc list-inside ml-6">
-                      
-                      <li>Stakeholder engagement</li>
-                      <li>Rapid change adoption</li>
-                      <li>Implementation of quick wins and foundation building processes</li>
-                      <li>Effective enablement for go-live and post-go-live</li>
+                      <li>Targeted change management solutions</li>
+                      <li>Effective organizational design and operating model optimization</li>
+                      <li>Results driven fractional leadership</li>
+                      <li>Capability building training offerings</li>
                     </ul>
                     
-                    With extensive experience gained at Big 5 consulting companies and applied at
-                      multiple organizations nationwide, we provide our customers with holistic and comprehensive change
-management strategy without a price tag of a big consulting firm.</span>
+                    With an extensive experience gained at Big-5 consulting firms and applied across multiple organizations nationwide, 
+                    we provide our clients with holistic and comprehensive transformation implementation support.</span>
       </div>
       <div>
         <Link className="btn btn-primary" href="/contact" >Learn More</Link>
