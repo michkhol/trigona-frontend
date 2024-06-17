@@ -17,18 +17,18 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
   return (
     // Need to override font from theme
     <html lang="en" data-theme="wireframe">
-      <body className={`text-black ${raleway.className}`}> 
-        <header>
-        <div className="flex justify-center" >
-          <Image src={logo} alt="logo" width={650}/></div>
+      <body className={`text-base-content ${raleway.className}`}> 
+        <header className="sticky top-0 z-50" >
+        <div className="flex justify-center bg-base-100" >
+          <Image className="hidden lg:block" src={logo} alt="logo" width={650}/></div>
           <NavBar />
         </header>
         <main>{children}</main>
         <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded mt-7">
           <nav className="grid grid-flow-col gap-4">
-            <Link href={navLinks.get("ABOUT")!} className="link link-hover">About us</Link>
-            <Link href={navLinks.get("BLOG")!} className="link link-hover">Blog</Link>
-            <Link href={navLinks.get("CONTACT")!} className="link link-hover">Contact</Link>
+            { Array.from(navLinks.keys()).map((key) => {
+              return (<Link key={key} className="link link-hover" href={navLinks.get(key)!}>{key}</Link>)
+            })}
           </nav> 
           <nav>
             <div className="grid grid-flow-col gap-4">

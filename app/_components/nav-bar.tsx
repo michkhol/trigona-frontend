@@ -4,6 +4,8 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import MenuItems from './menu-items'
 import Image from 'next/image'
+import logo from '@/public/images/logo_title.png'
+
  
 export function NavBar() {
   const pathname = usePathname()
@@ -17,7 +19,7 @@ export function NavBar() {
       </div>
       <MenuItems classes="menu menu-sm dropdown-content mt-3 z-[20] p-2 shadow bg-base-100 rounded-box w-52"/>
     </div>
-    <a className="btn btn-ghost text-xl lg:hidden">Trigona Consulting LLC</a>
+    <a className="btn btn-ghost text-xl lg:hidden"><Image src={logo} alt="Trigona Consulting LLC" height={50} /></a>
     <div className="invisible lg:visible w-full flex justify-end"><div className="bg-neutral h-px w-1/2 mx-4"></div></div>
   </div>
   <div className="navbar-center hidden lg:flex">

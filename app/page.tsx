@@ -91,29 +91,6 @@ export default function Home() {
         <Link className="btn btn-primary" href="/contact">Learn More</Link>
         {/*<Link className="btn btn-primary" href="#">Upcoming Trainings</Link>*/}
       </div>
-
-      {/*
-      <Script id="modal1" onReady={() => { 
-        // console.log("Onready: " + success)
-        if (success != null ) {
-          (document.getElementById('my_modal_1') as HTMLDialogElement).showModal(); 
-        }
-      }}>
-        {`;`}
-      </Script>
-      <dialog id="my_modal_1" className="modal" onBlur={() => restoreUrl()}>
-        <div className="modal-box">
-          <h3 className="font-bold text-lg">Thank you for registering for the webinar!</h3>
-          <p className="py-4">Press ESC key or click the button below to close</p>
-          <div className="modal-action">
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal *}
-              <button className="btn" onClick={() => restoreUrl()}>Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
-      */}
     </div>
   );
 }
