@@ -2,6 +2,7 @@ import Image from "next/image";
 import serv1 from "@/public/images/transformation-delivery-consulting2.jpg";
 import serv2 from "@/public/images/on-demand-executive-expertise2.jpg";
 import serv3 from "@/public/images/capability-building-tailored-training-solutions2.jpg";
+import Logos from "./logos";
 
 export default function Welcome() {
   return (
@@ -68,6 +69,10 @@ export default function Welcome() {
             </div>
           </div>
         </div>
+        <h1 className="text-center font-serif font-semibold text-3xl mt-10">Our Clients and Partners</h1>
+        <hr className="my-6"/>
+        <Logos />
+        <hr className="my-6"/>
       </div>
     </>
   );
