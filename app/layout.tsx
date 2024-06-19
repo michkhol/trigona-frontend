@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: Readonly<{ children: React.ReactNode }>) {
   return (
     // Need to override font from theme
-    <html lang="en" data-theme="wireframe">
+    <html className="scroll-pt-20 lg:scroll-pt-60" lang="en" data-theme="wireframe">
       <body className={`text-base-content ${raleway.className}`}> 
         <header className="sticky top-0 z-50" >
         <div className="flex justify-center bg-base-100" >

@@ -1,28 +1,12 @@
-import officeBackgroud from "@/public/images/New-Office.jpg";
 import Image from "next/image";
-import Link from "next/link";
 import serv1 from "@/public/images/transformation-delivery-consulting2.jpg";
 import serv2 from "@/public/images/on-demand-executive-expertise2.jpg";
 import serv3 from "@/public/images/capability-building-tailored-training-solutions2.jpg";
-import About from "./_components/about";
-import Welcome from "./_components/welcome";
-import Contact from "./_components/contact";
 
-function restoreUrl(): void {
-  const uri = window.location;
-  const origin = uri.origin;
-  uri.replace(origin)
-}
-
-export default function Home() {
+export default function Welcome() {
   return (
-    <div className="flex flex-col items-center gap-4 w-full">
-      <div className="relative h-96 w-full">
-        <Image className="object-cover z-0 object-center" src={officeBackgroud} alt="Background" fill={true} />
-        <h1 className="relative z-10 font-serif font-semibold text-center text-white text-5xl pt-40">Making Change Happen</h1>
-      </div>
-      {/*}
-      <div className="text-center">
+    <>
+      <div id="welcome" className="text-center">
         <h1 className="font-serif font-semibold text-3xl mt-10">Welcome</h1>
       </div>
       <div className="lg:w-[60%]">
@@ -85,11 +69,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      */}
-      <Welcome />
-      <About />
-      <Contact />
-    </div>  
+    </>
   );
 }
 
