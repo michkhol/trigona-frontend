@@ -41,7 +41,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
             </div>
           </nav> 
           <aside>
-            <p>Copyright © 2024 - All right reserved by Trigona Consulting LLC</p>
+            <p>Copyright © 2024 - All rights reserved by Trigona Consulting LLC</p>
           </aside>
         </footer>
       </body>
