@@ -59,23 +59,25 @@ export default async function About() {
         {/*}
         <div className="px-6"><PortableText value={data.body} components={components}/></div>
         */}
-        
-        <Image className="hidden lg:inline float-right" src={img} alt="Managing Director" width={400} height={240}/>
-        <span className="">
-        Trigona Consulting L.L.C. is a woman owned boutique consulting firm, that provides 
-        transformation delivery solutions for commercial and government clients during business, organizational and digital transformations. 
-        With field-tested methodologies and leading practices, we ensure that organizations maximize their project&apos;s ROI through:
-                    <ul className="list-disc list-inside ml-6">
-                      <li>Targeted change management solutions</li>
-                      <li>Effective organizational design and operating model optimization</li>
-                      <li>Results driven fractional leadership</li>
-                      <li>Capability building training offerings</li>
-                    </ul>
-                    
-                    With an extensive experience gained at Big-5 consulting firms and applied across multiple organizations nationwide, 
-                    we provide our clients with holistic and comprehensive transformation implementation support.
-        </span>
-                    
+        <div className="flex flex-col lg:flex-row gap-4">
+          <div className="">
+          Trigona Consulting L.L.C. is a woman owned boutique consulting firm, that provides 
+          transformation delivery solutions for commercial and government clients during business, organizational and digital transformations. 
+          With field-tested methodologies and leading practices, we ensure that organizations maximize their project&apos;s ROI through:
+                      <ul className="list-disc list-inside ml-6">
+                        <li>Targeted change management solutions</li>
+                        <li>Effective organizational design and operating model optimization</li>
+                        <li>Results driven fractional leadership</li>
+                        <li>Capability building training offerings</li>
+                      </ul>
+                      
+                      With an extensive experience gained at Big-5 consulting firms and applied across multiple organizations nationwide, 
+                      we provide our clients with holistic and comprehensive transformation implementation support.
+          </div>
+          <div className="flex-none w-60" >
+            <Image className="" src={img} alt="Managing Director" height={400} width={400}/>
+          </div>
+        </div>            
       </div>
     </>
  
