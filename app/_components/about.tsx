@@ -7,6 +7,7 @@ import { SanityImageAsset } from "@/sanity/sanity.types";
 import { SanityImageObjectStub } from "@sanity/asset-utils";
 import { SimplePage } from "@/sanity/sanity.types";
 import img from "@/public/images/director.jpg"
+import DecoratedTitle from "./decorated-title";
 
 const BlockImageComponent = ({value, isInline}: { value: SanityImageSource, isInline: boolean}) => {
   const asset = (value as SanityImageObjectStub).asset as SanityImageAsset
@@ -35,7 +36,7 @@ const components: PortableTextComponents = {
   },
 }
 
-export default async function About() {
+export default function About() {
   // const data = await sanityClient.fetch(
   //   `*[_type == "simplePage" && slug.current == "about"]{
   //     ...,
@@ -51,11 +52,8 @@ export default async function About() {
 
   return (
     <>
-      <div id="about" className="text-center">
-        <h1 className="font-serif font-semibold text-3xl mt-10">Our Story</h1>
-      </div>
-      <div className="lg:w-[60%]">
-        <hr className="my-6"/>
+      <div id="about" className="lg:w-[60%]">
+        <DecoratedTitle title="Our Story" />
         {/*}
         <div className="px-6"><PortableText value={data.body} components={components}/></div>
         */}

@@ -3,15 +3,15 @@ import serv1 from "@/public/images/transformation-delivery-consulting2.jpg";
 import serv2 from "@/public/images/on-demand-executive-expertise2.jpg";
 import serv3 from "@/public/images/capability-building-tailored-training-solutions2.jpg";
 import Logos from "./logos";
+import DecoratedTitle from "./decorated-title";
 
 export default function Welcome() {
   return (
     <>
-      <div id="welcome" className="text-center">
-        <h1 className="font-serif font-semibold text-3xl mt-10">Welcome</h1>
-      </div>
-      <div className="lg:w-[60%]">
-        <hr className="my-6"/>
+
+    <div className="lg:w-[60%]">
+      <DecoratedTitle title="Welcome" />
+      
         <p className="px-6">Any transformation is a journey, the one best taken with the partner. The partner, who understands the 
         challenges that lay ahead and with meaningful insights to guide you through them. Someone with knowledge to 
         assist you with the transformation, whether it is organizational redesign or new IT system implementation. 
@@ -21,12 +21,11 @@ export default function Welcome() {
         is here to help you in your journey. We make change happen.</p>
       </div>
       <div className="w-[60%]">
-        <h1 className="text-center font-serif font-semibold text-3xl mt-10">Our Services</h1>
-        <hr className="my-6"/>
+        <DecoratedTitle title="Our Services" />
         <div className="grid grid-rows-1 lg:grid-cols-3 w-full lg:gap-4">
           <div className="flex flex-col gap-4 mb-10">
             <div>
-              <Image className="m-auto" src={serv1} alt="transformation deliveryconsulting"/>
+              <Image className="m-auto" src={serv1} alt="transformation delivery consulting"/>
             </div>
             <div className="basis-14">
               <h2 className="text-center font-serif font-semibold text-xl">Transformation Delivery Consulting</h2>
@@ -69,10 +68,9 @@ export default function Welcome() {
             </div>
           </div>
         </div>
-        <h1 className="text-center font-serif font-semibold text-3xl mt-10">Our Clients and Partners</h1>
-        <hr className="my-6"/>
-        <Logos />
-        <hr className="my-6"/>
+        <DecoratedTitle title="Our Clients and Partners" />
+          <Logos />
+        {/*<hr className="my-6 border-orange-600"/>*/}
       </div>
     </>
   );

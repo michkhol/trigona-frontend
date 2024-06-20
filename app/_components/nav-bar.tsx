@@ -26,7 +26,8 @@ export function NavBar() {
     <MenuItems classes="menu menu-horizontal px-1"/>
   </div>
   <div className="navbar-end">
-  <div className="invisible lg:visible w-full"><div className="bg-neutral h-px w-1/2 mx-4"></div></div>
+    <div className="invisible lg:visible w-full"><div className="bg-neutral h-px w-1/2 mx-4"></div>
+  </div>
   </div>
 </div>
  )

@@ -6,6 +6,7 @@ import { Raleway } from "next/font/google";
 import { NavBar } from "./_components/nav-bar";
 import logo from '@/public/images/logo_title.png'
 import { navLinks } from "./_components/nav-links";
+import FacebookPixel from "./_components/FacebookPixel";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -18,12 +19,13 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
     // Need to override font from theme
     <html className="scroll-pt-20 lg:scroll-pt-60" lang="en" data-theme="wireframe">
       <body className={`text-base-content ${raleway.className}`}> 
+        {/* <img height="1" width="1" className="hidden" src="https://www.facebook.com/tr?id=714705464046278&ev=PageView&noscript=1" /> */}
         <header className="sticky top-0 z-50" >
         <div className="flex justify-center bg-base-100" >
           <Image className="hidden lg:block" src={logo} alt="logo" width={650}/></div>
           <NavBar />
         </header>
-        <main>{children}</main>
+        {children}
         <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded mt-7">
           <nav className="grid grid-flow-col gap-4">
             { Array.from(navLinks.keys()).map((key) => {
@@ -44,6 +46,7 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
             <p>Copyright © 2024 - All rights reserved by Trigona Consulting LLC</p>
           </aside>
         </footer>
+        <FacebookPixel />
       </body>
     </html>
   );
