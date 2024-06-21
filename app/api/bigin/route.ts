@@ -3,10 +3,21 @@ import * as zoho from "./environment";
 
 export const dynamic = 'force-dynamic'; // defaults to auto
 
+export async function GET(request: Request) {
+
+  const {searchParams} = new URL(request.url);
+  const name = searchParams.get("status");
+  
+  return Response.json({name});
+}
+
 export async function POST(req: NextRequest) {
+  console.log("api/bigin")
+  const fd = await req.formData;
+  console.log(fd)
   try {
     // console.log(session);
-    return NextResponse.redirect("session.url", 303);
+    return NextResponse.redirect("http://localhost:3000");
 
   
   } catch (err) {
