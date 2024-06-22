@@ -1,5 +1,5 @@
 export const navLinks = new Map<string, string>([
-    [ "HOME", "/#top"],
+    [ "HOME", "/"],
     [ "ABOUT", "/#about"],
     //[ "BLOG", "/blog"],
     [ "CONTACT", "/#contact"],
