@@ -16,19 +16,19 @@ export default function Contact() {
               <div className="label">
                 <span className="label-text">Name:</span>
               </div>
-              <input type="text" placeholder="Required" className="input input-bordered w-full max-w-xs border-orange-600" name="name"/>
+              <input type="text" placeholder="Required" required={true} className="input input-bordered w-full max-w-xs border-orange-600" name="name"/>
               </label>
               <label className="form-control w-full max-w-xs">
                 <div className="label">
                   <span className="label-text">Your email:</span>
                 </div>
-                <input type="email" placeholder="Required" className="input input-bordered w-full max-w-xs border-orange-600" name="email" />
+                <input type="email" placeholder="Required" required={true} className="input input-bordered w-full max-w-xs border-orange-600" name="email" />
               </label>
             <label className="form-control">
               <div className="label">
                 <span className="label-text">Message:</span>
               </div>
-              <textarea className="textarea textarea-bordered h-24 border-orange-600" placeholder="Required" name="message" ></textarea>
+              <textarea className="textarea textarea-bordered h-24 border-orange-600" placeholder="Required" required={true} name="message" ></textarea>
             </label>
             <p className="text-center">
               <button className="btn btn-primary mt-6" type="submit">Send</button>

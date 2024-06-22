@@ -1,6 +1,7 @@
 import officeBackgroud from "@/public/images/New-Office.jpg";
 import Image from "next/image";
 import DecoratedTitle from "../_components/decorated-title";
+import { client } from "../_lib/postmark"
 
 export type RegisterForm = {
   firstName: string,
@@ -16,6 +17,15 @@ const refreshToken = process.env.BIGIN_REFRESH_TOKEN;
 const zohoTokenUrl = process.env.NEXT_PUBLIC_ZOHO_TOKEN_URL
 const zohoContactsUrl = process.env.NEXT_PUBLIC_ZOHO_CONTACTS_URL
 
+const testEmail = {
+  "From": "sales@trigonaconsulting.com",
+  "To": "support@trigonaconsulting.com",
+  "Subject": "Hello from Postmark2",
+  "HtmlBody": "<strong>Hello</strong> dear Postmark user.",
+  "TextBody": "Hello from Postmark!",
+  "MessageStream": "outbound"
+};
+
 export default function Registration(props: { handler : OnRegister}) {
 
   async function register(formData: FormData) {
@@ -27,7 +37,6 @@ export default function Registration(props: { handler : OnRegister}) {
       email: formData.get('email') as string,
     }
 
-    console.log(rawFormData);
     // Get auth token
     const authData = new FormData();
     authData.append("refresh_token", refreshToken!)
@@ -39,9 +48,7 @@ export default function Registration(props: { handler : OnRegister}) {
       method: "POST",
       body: authData,
     }).then(response => response.json()).then(json => {
-      console.log(json)
       const data = `{ "data": [{"First_Name": "${rawFormData.firstName}", "Last_Name": "${rawFormData.lastName}", "Email": "${rawFormData.email}" }]}`
-      console.log(data)
       const headers = new Headers();
       headers.set('Authorization', 'Zoho-oauthtoken ' + json.access_token);
       headers.set('Content-Type', 'application/json');
@@ -52,11 +59,11 @@ export default function Registration(props: { handler : OnRegister}) {
         body: data
       })
     }).then(response => console.log(response))
+    .then(() => client.sendEmail(testEmail))
+    .then(x => console.log(x))
     .catch(error => console.log(error))
 
     props.handler(rawFormData);
-    // mutate data
-    // revalidate cache
   }
   
   return (
