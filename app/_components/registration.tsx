@@ -17,15 +17,6 @@ const refreshToken = process.env.BIGIN_REFRESH_TOKEN;
 const zohoTokenUrl = process.env.NEXT_PUBLIC_ZOHO_TOKEN_URL
 const zohoContactsUrl = process.env.NEXT_PUBLIC_ZOHO_CONTACTS_URL
 
-const testEmail = {
-  "From": "sales@trigonaconsulting.com",
-  "To": "support@trigonaconsulting.com",
-  "Subject": "Hello from Postmark2",
-  "HtmlBody": "<strong>Hello</strong> dear Postmark user.",
-  "TextBody": "Hello from Postmark!",
-  "MessageStream": "outbound"
-};
-
 export default function Registration(props: { handler : OnRegister}) {
 
   async function register(formData: FormData) {
@@ -59,8 +50,6 @@ export default function Registration(props: { handler : OnRegister}) {
         body: data
       })
     }).then(response => console.log(response))
-    // .then(() => client.sendEmail(testEmail))
-    // .then(x => console.log(x))
     .catch(error => console.log(error))
 
     props.handler(rawFormData);

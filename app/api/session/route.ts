@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
       ],
       mode: 'payment',
       payment_method_types: ["card", "amazon_pay", "klarna"],
-      return_url: `${req.headers.get("origin")}/return?session_id={CHECKOUT_SESSION_ID}`,
+      return_url: `${req.headers.get("origin")}/payment?session_id={CHECKOUT_SESSION_ID}`,
     });
     // console.log(session);
     // const pd = await stripe.paymentMethodDomains.list();
