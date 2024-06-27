@@ -2,7 +2,6 @@ import officeBackgroud from "@/public/images/New-Office.jpg";
 import Image from "next/image";
 import DecoratedTitle from "../_components/decorated-title";
 
-
 export default function Material() {
   
   return (

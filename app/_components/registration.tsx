@@ -1,7 +1,7 @@
 import officeBackgroud from "@/public/images/New-Office.jpg";
 import Image from "next/image";
 import DecoratedTitle from "../_components/decorated-title";
-import { client } from "../_lib/postmark"
+import { client } from "../../lib/postmark"
 
 export type RegisterForm = {
   firstName: string,
@@ -59,8 +59,8 @@ export default function Registration(props: { handler : OnRegister}) {
         body: data
       })
     }).then(response => console.log(response))
-    .then(() => client.sendEmail(testEmail))
-    .then(x => console.log(x))
+    // .then(() => client.sendEmail(testEmail))
+    // .then(x => console.log(x))
     .catch(error => console.log(error))
 
     props.handler(rawFormData);

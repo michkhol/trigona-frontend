@@ -12,8 +12,8 @@ export async function GET(request: Request) {
 }
 
 export async function POST(req: NextRequest) {
-  console.log("api/bigin")
-  const fd = await req.formData;
+  // console.log("api/bigin")
+  const fd = await req.formData();
   console.log(fd)
   try {
     // console.log(session);

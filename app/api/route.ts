@@ -1,10 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
-import { secretKey } from "./environment";
 
-const stripe = require('stripe')(secretKey);
+import { NextRequest, NextResponse } from "next/server";
+import { stripe } from "@/lib/stripe"
 
 export const dynamic = 'force-dynamic'; // defaults to auto
-
 
 export async function GET(request: Request) {
 
@@ -32,7 +30,7 @@ export async function POST(req: NextRequest) {
       cancel_url: `${req.headers.get('Origin')}/landing/index.html`,
     });
     // console.log(session);
-    return NextResponse.redirect(session.url, 303);
+    return NextResponse.redirect(session.url!, 303);
     // return NextResponse.json(session, { status: 200 });
   } catch (err) {
     if (err instanceof Error) {
