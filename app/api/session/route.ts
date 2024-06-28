@@ -5,21 +5,24 @@ import { NextRequest, NextResponse } from "next/server";
 export const dynamic = 'force-dynamic'; 
 
 export async function POST(req: NextRequest) {
+  
   try {
+    // const data = await req.formData();
+    // console.log("API: productId: " + data.get("productId"))
     // Create Checkout Sessions from body params.
-    const session = await stripe.checkout.sessions.create({
+    const session = await req.formData().then(data => stripe.checkout.sessions.create({
       ui_mode: "embedded",
       line_items: [
         {
           // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-          price: 'price_1PMwW1P5tKHKdMCqfBFLdtsg',
+          price: data.get("productId") as string,
           quantity: 1,
         },
       ],
       mode: 'payment',
       payment_method_types: ["card", "amazon_pay", "klarna"],
       return_url: `${req.headers.get("origin")}/payment?session_id={CHECKOUT_SESSION_ID}`,
-    });
+    }));
     // console.log(session);
     // const pd = await stripe.paymentMethodDomains.list();
     // console.log(JSON.stringify(pd, null, 2));
