@@ -8,6 +8,7 @@ import { SanityImageObjectStub } from "@sanity/asset-utils";
 import { SimplePage } from "@/sanity/sanity.types";
 import img from "@/public/images/director.jpg"
 import DecoratedTitle from "./decorated-title";
+import Link from "next/link";
 
 const BlockImageComponent = ({value, isInline}: { value: SanityImageSource, isInline: boolean}) => {
   const asset = (value as SanityImageObjectStub).asset as SanityImageAsset
@@ -72,10 +73,17 @@ export default function About() {
                       With an extensive experience gained at Big-5 consulting firms and applied across multiple organizations nationwide, 
                       we provide our clients with holistic and comprehensive transformation implementation support.
           </div>
-          <div className="flex-none w-60" >
-            <Image className="" src={img} alt="Managing Director" height={400} width={400}/>
+          <div className="flex-none w-60">
+            <div className="flex flex-col">
+            <div>
+              <Image className="" src={img} alt="Managing Director" height={400} width={400}/>
+            </div>
+            <div className="text-center text-sm italic">
+              <Link href="https://www.linkedin.com/in/olga-denisova-pmp-01ab847/" className="hover:underline">Olga Denisova<br />Managing Director</Link>
+            </div>
+            </div>
           </div>
-        </div>            
+       </div>            
       </div>
     </>
  
