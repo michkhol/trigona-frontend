@@ -1,4 +1,3 @@
-import type Stripe from "stripe";
 import { stripe } from "@/lib/stripe"
 import { NextRequest, NextResponse } from "next/server";
 
@@ -10,19 +9,18 @@ export async function POST(req: NextRequest) {
     // const data = await req.formData();
     // console.log("API: productId: " + data.get("productId"))
     // Create Checkout Sessions from body params.
-    const session = await req.formData().then(data => stripe.checkout.sessions.create({
-      ui_mode: "embedded",
-      line_items: [
-        {
-          // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-          price: data.get("productId") as string,
-          quantity: 1,
-        },
-      ],
-      mode: 'payment',
-      payment_method_types: ["card", "amazon_pay", "klarna"],
-      return_url: `${req.headers.get("origin")}/payment?session_id={CHECKOUT_SESSION_ID}`,
-    }));
+    const session = await req.formData().then(data => {
+      const items = data.getAll("productIds").map(e => { 
+        return { price: e as string, quantity: 1 } 
+      });
+      return stripe.checkout.sessions.create({
+        ui_mode: "embedded",
+        line_items: items,
+        mode: 'payment',
+        payment_method_types: ["card", "cashapp", "amazon_pay", "klarna", "affirm"],
+        return_url: `${req.headers.get("origin")}/payment?session_id={CHECKOUT_SESSION_ID}`,
+      })
+    });
     // console.log(session);
     // const pd = await stripe.paymentMethodDomains.list();
     // console.log(JSON.stringify(pd, null, 2));

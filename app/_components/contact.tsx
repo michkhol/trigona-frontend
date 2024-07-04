@@ -1,7 +1,6 @@
 import DecoratedTitle from "./decorated-title";
 
 export default function Contact() {
-  console.log("Rendering contact")
   return (
     <>
       <div id="contact" className="lg:w-[60%]">

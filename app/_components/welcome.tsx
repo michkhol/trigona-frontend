@@ -20,7 +20,7 @@ export default function Welcome() {
         the next level. With organizational change management expertise in commercial and public sector, Trigona Consulting 
         is here to help you in your journey. We make change happen.</p>
       </div>
-      <div className="w-[60%]">
+      <div className="lg:w-[60%]">
         <DecoratedTitle title="Our Services" />
         <div className="grid grid-rows-1 lg:grid-cols-3 w-full lg:gap-4">
           <div className="flex flex-col gap-4 mb-10">
@@ -69,7 +69,7 @@ export default function Welcome() {
           </div>
         </div>
         <DecoratedTitle title="Our Clients and Partners" />
-          <Logos />
+        <Logos />
         {/*<hr className="my-6 border-orange-600"/>*/}
       </div>
     </>
