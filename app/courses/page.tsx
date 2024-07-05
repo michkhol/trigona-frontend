@@ -19,7 +19,7 @@ export default function Courses() {
   }
 
   const user = cookies().get("trigonaEnrolled")
-  console.log("User: " + user?.value);
+  // console.log("User: " + user?.value);
 
   return (
     <div className="flex flex-col items-center gap-4 w-full">

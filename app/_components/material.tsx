@@ -1,9 +1,11 @@
-import officeBackgroud from "@/public/images/New-Office.jpg";
 import Image from "next/image";
 import DecoratedTitle from "../_components/decorated-title";
 import Store from "./store";
+import {stripe} from "@/lib/stripe"
 
-export default function Material() {
+export default async function Material() {
+
+  const prices = (await stripe.prices.list()).data
   
   return (
     <div className="flex flex-col">
@@ -102,7 +104,7 @@ export default function Material() {
         <li>Real-world applications validated across global organizations</li>
         <li>Tailored for professionals dealing with limited resources and tight project timelines</li>
       </ul>
-      <Store />
+      <Store prices={prices}/>
       
     </div>  
   );

@@ -5,21 +5,39 @@ import { useState, useRef, useEffect, ChangeEvent } from "react";
 import Image from "next/image";
 import { loadStripe, StripeEmbeddedCheckout } from '@stripe/stripe-js';
 import type { Stripe } from '@stripe/stripe-js';
+import type { Stripe as SrvStripe } from "stripe";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
+
+type Product = { id: string, price: number};
+
+const LiveCourseId = "price_1PXpDYP5tKHKdMCqcqcQtzd0";
+const FullCourseId = "price_1PXpEfP5tKHKdMCqmqcIP83P";
+const ModuleIds = [
+  "price_1PXpFRP5tKHKdMCqsmgg2e1B",
+  "price_1PXpFvP5tKHKdMCqnJ7mUe8f",
+  "price_1PXpGYP5tKHKdMCqth8Q5nwA",
+  "price_1PXpH1P5tKHKdMCqvgMrlVQ1",
+  "price_1PXpI8P5tKHKdMCqGzPq1D2U",
+  "price_1PXpIZP5tKHKdMCqnLTwtWTP"
+]
  
-export default function Store() {
+export default function Store({prices}: { prices: SrvStripe.Price[]}) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const stripeRef = useRef<Stripe | null>(null);
   const btnModulesRef = useRef<HTMLButtonElement>(null);
-  let moduleProdIds: string[] = [];
+
+  const liveCoursePrice = prices.find(p => p.id === LiveCourseId)?.unit_amount! / 100;
+  const fullCoursePrice = prices.find(p => p.id === FullCourseId)?.unit_amount! / 100;
+
+  let moduleProdIds: Product[] = [];
   let checkout: StripeEmbeddedCheckout;
 
   function fetchClientSecret(prods: string[]) { return () => {
     // Create a Checkout Session
     const formData = new FormData();
     prods.map(p => formData.append("productIds", p));
-    console.log("Products before fetch: " + prods)
+    // console.log("Products before fetch: " + prods)
 
     const resp = fetch("/api/session", {
       method: "POST",
@@ -41,29 +59,34 @@ export default function Store() {
 
   function destroyCheckout() {
     if(checkout)
-      checkout.destroy();
+      try { checkout.destroy(); } catch(e) { console.log(e) }  // Ignore if already destroyed
   }
 
   function manageProdIds(e: ChangeEvent<HTMLInputElement>) {
     if(e.target.checked) 
-      moduleProdIds.push(e.target.value)
+      moduleProdIds.push({ id: e.target.value, price: prices.find(p => p.id === e.target.value)?.unit_amount! / 100 })
     else {
-      const idx = moduleProdIds.indexOf(e.target.value)
+      const idx = moduleProdIds.findIndex(p => p.id === e.target.value)
       if (idx != -1)
         moduleProdIds.splice(idx, 1)
     }
     
     if (btnModulesRef.current) {
-      if(moduleProdIds.length > 0)
+      if(moduleProdIds.length > 0) {
+        const total = moduleProdIds.map(p => p.price).reduce((acc, p) => acc + p, 0);
+        btnModulesRef.current.innerText = `Pay $${total.toLocaleString()}`
         btnModulesRef.current.disabled = false;
-      else
+      }
+      else {
         btnModulesRef.current.disabled = true;
+        btnModulesRef.current.innerText = "Pay"
+      }
     }
   }
 
   function collectProdIds() {
     const formData = new FormData();
-    moduleProdIds.map(id => formData.append("productIds", id))
+    moduleProdIds.map(p => formData.append("productIds", p.id))
     openDialog(formData);
   }
 
@@ -86,9 +109,9 @@ export default function Store() {
                 <li>Group collaboration forums.</li>
               </ul>
             <form action={(data) => openDialog(data)}>
-              <input type="hidden" name="productIds" value="price_1PXpDYP5tKHKdMCqcqcQtzd0"/>
+              <input type="hidden" name="productIds" value={LiveCourseId}/>
               <p className="text-center">
-                <button className="btn btn-primary mt-6" type="submit">Pay $11,250</button>
+                <button className="btn btn-primary mt-6" type="submit">{`Pay $${liveCoursePrice.toLocaleString()}`}</button>
               </p>
             </form>
           </div>
@@ -101,9 +124,9 @@ export default function Store() {
                 <li>Group collaboration forums.</li>
               </ul>
             <form action={(data) => openDialog(data)}>
-              <input type="hidden" name="productIds" value="price_1PXpEfP5tKHKdMCqmqcIP83P"/>
+              <input type="hidden" name="productIds" value={FullCourseId}/>
               <p className="text-center">
-                <button className="btn btn-primary mt-6" type="submit">Pay $1,675</button>
+                <button className="btn btn-primary mt-6" type="submit">{`Pay $${fullCoursePrice.toLocaleString()}`}</button>
               </p>
             </form>
           </div>
@@ -116,30 +139,14 @@ export default function Store() {
                 <li>Group collaboration forums.</li>
               </ul>
             <form action={() => collectProdIds()}>
-              <label className="label cursor-pointer">
-                <span className="label-text">MODULE 1</span>
-                <input type="checkbox" className="checkbox" name="module1" value="price_1PXpFRP5tKHKdMCqsmgg2e1B" onChange={manageProdIds}/>
-              </label>
-              <label className="label cursor-pointer">
-                <span className="label-text">MODULE 2</span>
-                <input type="checkbox" className="checkbox" name="module1" value="price_1PXpFvP5tKHKdMCqnJ7mUe8f" onChange={manageProdIds}/>
-              </label>
-              <label className="label cursor-pointer">
-                <span className="label-text">MODULE 3</span>
-                <input type="checkbox" className="checkbox" name="module1" value="price_1PXpGYP5tKHKdMCqth8Q5nwA" onChange={manageProdIds}/>
-              </label>
-              <label className="label cursor-pointer">
-                <span className="label-text">MODULE 4</span>
-                <input type="checkbox" className="checkbox" name="module1" value="price_1PXpH1P5tKHKdMCqvgMrlVQ1" onChange={manageProdIds}/>
-              </label>
-              <label className="label cursor-pointer">
-                <span className="label-text">MODULE 5</span>
-                <input type="checkbox" className="checkbox" name="module1" value="price_1PXpI8P5tKHKdMCqGzPq1D2U" onChange={manageProdIds}/>
-              </label>
-              <label className="label cursor-pointer">
-                <span className="label-text">MODULE 6</span>
-                <input type="checkbox" className="checkbox" name="module1" value="price_1PXpIZP5tKHKdMCqnLTwtWTP" onChange={manageProdIds}/>
-              </label>
+              {
+                ModuleIds.map((p, idx) => {return (
+                  <label key={p} className="label cursor-pointer">
+                    <span className="label-text">{`MODULE ${idx + 1}`}</span>
+                    <input type="checkbox" className="checkbox" name="module1" value={p} onChange={manageProdIds}/>
+                  </label>
+                )})
+              }
 
               <p className="text-center">
                 <button ref={btnModulesRef} className="btn btn-primary mt-6" disabled={true} type="submit">Pay</button>
@@ -148,11 +155,11 @@ export default function Store() {
           </div>
         </div>
 
-        <dialog ref={dialogRef} className="modal">
+        <dialog ref={dialogRef} className="modal" onClose={destroyCheckout}>
         <div className="modal-box">
           <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
-            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={destroyCheckout}>✕</button>
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
           </form>
           <div id="checkout-modal">
           </div>

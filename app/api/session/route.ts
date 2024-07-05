@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
         line_items: items,
         mode: 'payment',
         payment_method_types: ["card", "cashapp", "amazon_pay", "klarna", "affirm"],
-        return_url: `${req.headers.get("origin")}/payment?session_id={CHECKOUT_SESSION_ID}`,
+        return_url: `${req.headers.get("origin")}/processed?session_id={CHECKOUT_SESSION_ID}`,
       })
     });
     // console.log(session);
