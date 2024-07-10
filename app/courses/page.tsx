@@ -1,12 +1,13 @@
 import { cookies } from "next/headers";
-import { Blurb, EnrollForm } from "../_components/registration";
+import { Blurb } from "../_components/registration";
+import { EnrollForm } from "../_components/enroll-form";
 import Material from "../_components/material";
-import type { RegisterForm } from "../_components/registration";
+import type { FormInput } from "@/lib/utils";
 import Image from "next/image";
 import officeBackgroud from "@/public/images/New-Office.jpg";
 
 export default function Courses() {
-  async function handleRegistration(form: RegisterForm) {
+  async function handleRegistration(form: FormInput) {
     "use server";
 
     cookies().set({

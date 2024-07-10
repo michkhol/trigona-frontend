@@ -21,6 +21,7 @@
     "postmark": "^4.0.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.52.1",
     "sanity": "^3.44.0",
     "stripe": "^15.8.0",
     "styled-components": "^6.1.11"
