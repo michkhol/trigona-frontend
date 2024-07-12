@@ -10,14 +10,14 @@ export default async function Material() {
   return (
     <div className="flex flex-col">
       <div className="">
-      <h2 className="font-serif font-semibold text-3xl mt-4">After completing the course, you will gain</h2>
+      <h2 className="font-bold text-3xl mt-4">After completing the course, you will</h2>
       <ul className="list-decimal list-inside pl-3 leading-loose mt-4">
-        <li>Deep understanding of change management activities and their optimal timing</li>
-        <li>Mastery of people-centered approaches to organizational transformation</li>
-        <li>Practical skills to align change initiatives with functional milestones</li>
-        <li>Expertise in leveraging AI to enhance change management efficiency</li>
+        <li>Deeply understand change management activities and their optimal timing</li>
+        <li>Master people-centered approaches to organizational transformation</li>
+        <li>Attain practical skills to align change initiatives with functional milestones</li>
+        <li>Gain expertise in leveraging AI to enhance change management efficiency</li>
       </ul>
-        <h2 className="font-serif font-semibold text-3xl mt-4">Course highlights</h2>
+        <h2 className="font-bold text-3xl mt-4">Course highlights</h2>
         <ol className="list-decimal list-inside pl-3 leading-loose mt-4">
           <li>Down-to-earth approach applicable to any organization or transformation type</li>
           <li>Comprehensive activity lists, templates, and frameworks</li>
@@ -26,7 +26,7 @@ export default async function Material() {
         </ol>
       </div>
       <div className="mb-6">
-        <h1 className="font-serif font-semibold text-3xl mt-4">Curriculum</h1>
+        <h1 className="font-bold text-3xl mt-4">Curriculum</h1>
       </div>
 
       <div className="collapse collapse-arrow bg-base-200">
@@ -97,7 +97,7 @@ export default async function Material() {
         </div>
       </div>
 
-      <h2 className="font-serif font-semibold text-3xl mt-4">Why choose this course</h2>
+      <h2 className="font-bold text-3xl mt-4">Why choose this course</h2>
       <ul className="list-decimal list-inside pl-3 leading-loose mt-4">
         <li>Immersive, interactive learning experience</li>
         <li>Content distilled from renowned methodologies (Prosci, Kotter) and top consulting firms</li>

@@ -26,7 +26,7 @@ export default function Courses() {
     <div className="flex flex-col items-center gap-4 w-full">
       <div className="relative h-96 w-full">
         <Image className="object-cover z-0 object-center" src={officeBackgroud} alt="Background" fill={true} priority={true} />
-        <h1 className="relative z-10 font-serif font-semibold text-center text-white text-5xl pt-40">Practical Change Management<br />Training Series</h1>
+        <h1 className="relative z-10 font-bold text-center text-white text-5xl pt-40">Practical Change Management<br />Training Series</h1>
       </div>
       <div className="lg:w-[60%]">
         <Blurb />
