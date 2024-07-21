@@ -13,7 +13,7 @@ export default function MenuItems({ classes }: { classes: string }) {
   return (
     <ul tabIndex={0} className={classes}>
       { Array.from(navLinks.keys()).map((key) => {
-        return (<li onClick={handleClick} key={navLinks.get(key)} ><Link className={`link ${pathname === navLinks.get(key) ? 'active' : ''}`} href={navLinks.get(key)!}>{key}</Link></li>)
+        return (<li onClick={handleClick} key={navLinks.get(key)} ><Link className="font-bold hover:link hover:bg-base-200" href={navLinks.get(key)!}>{key}</Link></li>)
       })}
     </ul>
   )

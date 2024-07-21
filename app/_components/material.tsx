@@ -9,101 +9,95 @@ export default async function Material() {
   
   return (
     <div className="flex flex-col">
-      <div className="">
-      <h2 className="font-bold text-3xl mt-4">After completing the course, you will</h2>
-      <ul className="list-decimal list-inside pl-3 leading-loose mt-4">
-        <li>Deeply understand change management activities and their optimal timing</li>
-        <li>Master people-centered approaches to organizational transformation</li>
-        <li>Attain practical skills to align change initiatives with functional milestones</li>
-        <li>Gain expertise in leveraging AI to enhance change management efficiency</li>
-      </ul>
-        <h2 className="font-bold text-3xl mt-4">Course highlights</h2>
-        <ol className="list-decimal list-inside pl-3 leading-loose mt-4">
-          <li>Down-to-earth approach applicable to any organization or transformation type</li>
-          <li>Comprehensive activity lists, templates, and frameworks</li>
-          <li>Strategies for navigating the human aspects of change</li>
-          <li>Techniques to maximize success in organizational transformations</li>
-        </ol>
+      <div className="ml-2">
+        <h2 className="font-bold text-3xl mt-6">After completing the course, you will</h2>
+        <ul className="list-decimal list-inside pl-3 leading-loose mt-4">
+          <li>Deeply understand change management activities and their optimal timing</li>
+          <li>Master people-centered approaches to organizational transformation</li>
+          <li>Attain practical skills to align change initiatives with functional milestones</li>
+          <li>Gain expertise in leveraging AI to enhance change management efficiency</li>
+        </ul>
       </div>
-      <div className="mb-6">
-        <h1 className="font-bold text-3xl mt-4">Curriculum</h1>
-      </div>
-
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="checkbox" />
-        <div className="collapse-title text-xl font-medium">MODULE 1: CHANGE MANAGEMENT APPROACH</div>
-        <div className="collapse-content">
-          <ul className="list-inside list-['-_'] leading-loose">
-            <li>Learn actionable change management framework and  activities: what needs to be done and when.</li>
-            <li>Understand how theses activities  align with functional roadmap. </li>
-            <li>Acquire knowledge of best practices and common pitfalls. </li>
-            <li>Learn to create an actionable change management plan.</li>
-          </ul>
+      <div className="my-6 lg:ml-[30%] lg:w-[40%]">
+        <h1 className="font-bold text-3xl mb-4">Curriculum</h1>
+      
+        <div className="collapse collapse-arrow bg-base-200">
+          <input type="checkbox" />
+          <div className="collapse-title text-xl font-medium">MODULE 1: CHANGE MANAGEMENT APPROACH</div>
+          <div className="collapse-content">
+            <ul className="list-inside list-['-_'] leading-loose">
+              <li>Learn actionable change management framework and  activities: what needs to be done and when.</li>
+              <li>Understand how theses activities  align with functional roadmap. </li>
+              <li>Acquire knowledge of best practices and common pitfalls. </li>
+              <li>Learn to create an actionable change management plan.</li>
+            </ul>
+          </div>
+        </div>
+        <div className="collapse collapse-arrow bg-base-200">
+          <input type="checkbox" />
+          <div className="collapse-title text-xl font-medium">MODULE 2: PERSONA DEVELOPMENT & STAKEHOLDER ANALYSIS</div>
+          <div className="collapse-content">
+            <ul className="list-inside list-['-_'] leading-loose">
+              <li>Understand how persona development simplifies future change management work.</li>
+              <li>Learn how to conduct persona-based stakeholder analysis and what to do with the results.</li>
+              <li>Supplement with AI tools for actionable stakeholder analysis.</li>
+            </ul>
+          </div>
+        </div>
+        <div className="collapse collapse-arrow bg-base-200">
+          <input type="checkbox" />
+          <div className="collapse-title text-xl font-medium">MODULE 3: CHANGE CHAMPION NETWORK</div>
+          <div className="collapse-content">
+            <ul className="list-inside list-['-_'] leading-loose">
+              <li>Understand key requirements for impactful change champions.</li>
+              <li>Learn how to establish and  how to  manage effective change champion network for project success.</li>
+            </ul>
+          </div>
+        </div>
+        <div className="collapse collapse-arrow bg-base-200">
+          <input type="checkbox" />
+          <div className="collapse-title text-xl font-medium">MODULE 4: COMS PLAN & STAKEHOLDER JOURNEY PART 1</div>
+          <div className="collapse-content">
+            <ul className="list-inside list-['-_'] leading-loose">
+              <li>Learn to develop effective communication plan and key components of stakeholder journey.</li>
+              <li>Understand how to create audience and purpose-based communication, channels & tactics.</li>
+              <li>Grasp components of impactful transformation stories.</li>
+              <li>Ethical use of AI tools to customize messaging.</li>
+            </ul>
+          </div>
+        </div>
+        <div className="collapse collapse-arrow bg-base-200">
+          <input type="checkbox" />
+          <div className="collapse-title text-xl font-medium">MODULE 5: CHANGE IMPACT ASSESSMENT & STAKEHOLDER JOURNEY PART 2</div>
+          <div className="collapse-content">
+            <ul className="list-inside list-['-_'] leading-loose">
+              <li>Grasp the components of meaningful change impact assessment and actionable training needs analysis.</li>
+              <li>Learn  to translate it all into effective training and continued stakeholder journey.</li>
+            </ul>
+          </div>
+        </div>
+        <div className="collapse collapse-arrow bg-base-200">
+          <input type="checkbox" />
+          <div className="collapse-title text-xl font-medium">MODULE 6: CHANGE READINESS & ADOPTION ASSESSMENTS</div>
+          <div className="collapse-content">
+            <ul className="list-inside list-['-_'] leading-loose">
+              <li>Understand change readiness and adoption measurement process.</li>
+              <li>Grasp what metrics to use and when.</li>
+              <li>Learn effective assessment tools.</li>
+              <li>Use of AI tools for data analysis.</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="checkbox" />
-        <div className="collapse-title text-xl font-medium">MODULE 2: PERSONA DEVELOPMENT & STAKEHOLDER ANALYSIS</div>
-        <div className="collapse-content">
-          <ul className="list-inside list-['-_'] leading-loose">
-            <li>Understand how persona development simplifies future change management work.</li>
-            <li>Learn how to conduct persona-based stakeholder analysis and what to do with the results.</li>
-            <li>Supplement with AI tools for actionable stakeholder analysis.</li>
-          </ul>
-        </div>
+      <div className="ml-2">
+        <h2 className="font-bold text-3xl mt-4">Why choose this course</h2>
+        <ul className="list-decimal list-inside pl-3 leading-loose mt-4">
+          <li>Immersive, interactive learning experience</li>
+          <li>Content distilled from renowned methodologies (Prosci, Kotter) and top consulting firms</li>
+          <li>Real-world applications validated across global organizations</li>
+          <li>Tailored for professionals dealing with limited resources and tight project timelines</li>
+        </ul>
       </div>
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="checkbox" />
-        <div className="collapse-title text-xl font-medium">MODULE 3: CHANGE CHAMPION NETWORK</div>
-        <div className="collapse-content">
-          <ul className="list-inside list-['-_'] leading-loose">
-            <li>Understand key requirements for impactful change champions.</li>
-            <li>Learn how to establish and  how to  manage effective change champion network for project success.</li>
-          </ul>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="checkbox" />
-        <div className="collapse-title text-xl font-medium">MODULE 4: COMS PLAN & STAKEHOLDER JOURNEY PART 1</div>
-        <div className="collapse-content">
-          <ul className="list-inside list-['-_'] leading-loose">
-            <li>Learn to develop effective communication plan and key components of stakeholder journey.</li>
-            <li>Understand how to create audience and purpose-based communication, channels & tactics.</li>
-            <li>Grasp components of impactful transformation stories.</li>
-            <li>Ethical use of AI tools to customize messaging.</li>
-          </ul>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="checkbox" />
-        <div className="collapse-title text-xl font-medium">MODULE 5: CHANGE IMPACT ASSESSMENT & STAKEHOLDER JOURNEY PART 2</div>
-        <div className="collapse-content">
-          <ul className="list-inside list-['-_'] leading-loose">
-            <li>Grasp the components of meaningful change impact assessment and actionable training needs analysis.</li>
-            <li>Learn  to translate it all into effective training and continued stakeholder journey.</li>
-          </ul>
-        </div>
-      </div>
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="checkbox" />
-        <div className="collapse-title text-xl font-medium">MODULE 6: CHANGE READINESS & ADOPTION ASSESSMENTS</div>
-        <div className="collapse-content">
-          <ul className="list-inside list-['-_'] leading-loose">
-            <li>Understand change readiness and adoption measurement process.</li>
-            <li>Grasp what metrics to use and when.</li>
-            <li>Learn effective assessment tools.</li>
-            <li>Use of AI tools for data analysis.</li>
-          </ul>
-        </div>
-      </div>
-
-      <h2 className="font-bold text-3xl mt-4">Why choose this course</h2>
-      <ul className="list-decimal list-inside pl-3 leading-loose mt-4">
-        <li>Immersive, interactive learning experience</li>
-        <li>Content distilled from renowned methodologies (Prosci, Kotter) and top consulting firms</li>
-        <li>Real-world applications validated across global organizations</li>
-        <li>Tailored for professionals dealing with limited resources and tight project timelines</li>
-      </ul>
       <Store prices={prices}/>
       
     </div>  

@@ -8,19 +8,29 @@ import btg from "@/public/images/logo-btg-hs-horizontal-teal.png"
 import natHeritage from "@/public/images/National Heritage Academies.png"
 import wendys from "@/public/images/wendys.png"
 import warnerBros from "@/public/images/Warner Bros. Discovery web.png"
+import kpmg from "@/public/images/kpmg-logo-png-transparent.png"
 
 
-const images = [deptOfNavy, deptOfVA, deloitte, kyndryl, mariott, warnerBros, wendys, btg, natHeritage];
+const images = [deptOfNavy, deptOfVA, deloitte, kyndryl, mariott, warnerBros, wendys, btg, natHeritage, kpmg];
 
 
 export default function Logos() {
   return (
-    <div className="grid grid-rows-1 grid-cols-9 gap-4 items-center" >
-    {
-      images.map((logo) => {
-        return <Image key={logo.src} src={logo} alt={logo.src} />
-      })
-    }
+    <div className="w-full inline-flex flex-nowrap overflow-hidden" >
+      <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+        {
+          images.map((logo) => {
+            return (<li key={logo.src}><Image src={logo} alt={logo.src} height={60} /></li>)
+          })
+        }
+    </ul>
+    <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
+        {
+          images.map((logo) => {
+            return (<li key={logo.src}><Image src={logo} alt={logo.src} height={60} /></li>)
+          })
+        }
+    </ul>
     </div>
   );
 }

@@ -53,12 +53,12 @@ export default function About() {
 
   return (
     <>
-      <div id="about" className="lg:w-[60%]">
-        <DecoratedTitle title="Our Story" />
+      <div className="bg-base-200 mt-6">
+        <h2 className="text-center text-5xl font-semibold mt-6">Our Story</h2>
         {/*}
         <div className="px-6"><PortableText value={data.body} components={components}/></div>
         */}
-        <div className="flex flex-col lg:flex-row gap-4">
+        <div className="mt-6 px-4 flex flex-col lg:flex-row gap-4">
           <div className="">
           Trigona Consulting L.L.C. is a woman owned boutique consulting firm, that provides 
           transformation delivery solutions for commercial and government clients during business, organizational and digital transformations. 

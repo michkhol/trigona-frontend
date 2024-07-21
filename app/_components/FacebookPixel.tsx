@@ -11,7 +11,7 @@ const FacebookPixel = () => {
 
   useEffect(() => {
     if (!loaded) return;
-    console.log("Loading pixel")
+    // console.log("Loading pixel")
     pixel.pageview();
   }, [pathname, loaded]);
 

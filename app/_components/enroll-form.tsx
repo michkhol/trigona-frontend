@@ -17,8 +17,8 @@ export function EnrollForm( {handler}: { handler : OnRegister}) {
   
   return (<>
     <div>    
-      <div className="text-center mb-6">
-            <h1 className="font-serif font-semibold text-3xl">Request More Information</h1>
+      <div className="text-center mb-6 mt-6">
+            <h1 className="font-bold text-3xl">Request More Information</h1>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control max-w-xl mx-auto my-4">

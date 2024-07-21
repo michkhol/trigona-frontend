@@ -18,17 +18,30 @@ export default async function ReturnFromPayment({
     const items = await stripe.checkout.sessions.listLineItems(searchParams.session_id as string);
     console.log(session);
     const status = session.status;
-    const customerEmail = session.customer_email || session.customer_details?.email
+    const orderDate = new Date(session.created).toLocaleDateString();
+    const customerEmail = session.customer_details?.email
+
+    const formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: session.currency || "USD",
+    });
+    
+    const itemList = items.data.map(d => { return({description: d.description, amount: d.amount_total})})
     const jSession = JSON.stringify(session, null, 2);
     const message: TemplatedMessage = {
       TemplateAlias: "receipt",
       TemplateModel: {
-        name: session.customer_details?.name || "Customer"
+        receipt_id: session.client_reference_id,
+        name: session.customer_details?.name || "Customer",
+        date: orderDate,
+        receipt_details: itemList,
+        total: formatter.format((session.amount_total! / 100) || "Infinity"), 
       },
       From: "sales@trigonaconsulting.com",
       To: customerEmail!
     }
-
+    
+    // TODO: Make sure sesstion.payment_statis is "paid", otherwise ask to contact support.
     //await client.sendEmailWithTemplate(message);
 
     return (
@@ -57,7 +70,47 @@ export default async function ReturnFromPayment({
   }
 }
 
-const forTesting = {
+const itemsTest = {
+  "object": "list",
+  "data": [
+    {
+      "id": "li_1PbnVQP5tKHKdMCqSVRaonNu",
+      "object": "item",
+      "amount_discount": 0,
+      "amount_subtotal": 31000,
+      "amount_tax": 0,
+      "amount_total": 31000,
+      "currency": "usd",
+      "description": "MODULE 1: CHANGE MANAGEMENT APPROACH",
+      "price": {
+        "id": "price_1PXpFRP5tKHKdMCqsmgg2e1B",
+        "object": "price",
+        "active": true,
+        "billing_scheme": "per_unit",
+        "created": 1719859605,
+        "currency": "usd",
+        "custom_unit_amount": null,
+        "livemode": false,
+        "lookup_key": null,
+        "metadata": {},
+        "nickname": null,
+        "product": "prod_QOcUln6cYckk9J",
+        "recurring": null,
+        "tax_behavior": "unspecified",
+        "tiers_mode": null,
+        "transform_quantity": null,
+        "type": "one_time",
+        "unit_amount": 31000,
+        "unit_amount_decimal": "31000"
+      },
+      "quantity": 1
+    }
+  ],
+  "has_more": false,
+  "url": "/v1/checkout/sessions/cs_test_a1QRSfkK8A5BQeXz6h8Nkfio6EJ7bITBfyHDgcRMXLtJwlQWxXszdewFAW/line_items"
+};
+
+const sessionTest = {
   "id": "cs_test_a1u0gJmk0kxP5ZU8daxUogdLxJX8loWoZKlzeFadaSaNsGTIjZthUSueVF",
   "object": "checkout.session",
   "after_expiration": null,

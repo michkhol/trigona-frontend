@@ -1,19 +1,22 @@
 import { stripe } from "@/lib/stripe"
 import { NextRequest, NextResponse } from "next/server";
+import * as uuid from "uuid";
 
 export const dynamic = 'force-dynamic'; 
+
 
 export async function POST(req: NextRequest) {
   
   try {
-    // const data = await req.formData();
-    // console.log("API: productId: " + data.get("productId"))
-    // Create Checkout Sessions from body params.
     const session = await req.formData().then(data => {
+      // Generate next order id, using random numbers for now.
+      const orderId = "AR-" + uuid.v4().slice(-6).toUpperCase();
+
       const items = data.getAll("productIds").map(e => { 
         return { price: e as string, quantity: 1 } 
       });
       return stripe.checkout.sessions.create({
+        client_reference_id: orderId,
         ui_mode: "embedded",
         line_items: items,
         mode: 'payment',
