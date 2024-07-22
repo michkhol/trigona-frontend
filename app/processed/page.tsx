@@ -35,7 +35,7 @@ export default async function ReturnFromPayment({
         name: session.customer_details?.name || "Customer",
         date: orderDate,
         receipt_details: itemList,
-        total: formatter.format((session.amount_total! / 100) || "Infinity"), 
+        total: formatter.format((session.amount_total! / 100)) || "Invalid", 
       },
       From: "sales@trigonaconsulting.com",
       To: customerEmail!
