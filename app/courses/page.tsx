@@ -1,5 +1,4 @@
 import { cookies } from "next/headers";
-import { Blurb } from "../_components/registration";
 import { EnrollForm } from "../_components/enroll-form";
 import Material from "../_components/material";
 import type { FormInput } from "@/lib/utils";
@@ -24,30 +23,29 @@ export default function Courses() {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="relative h-[500px] w-full bg-base-200">
+      <div className="relative h-[400px] w-full bg-base-200">
         <Image className="object-cover z-0 object-center opacity-40 [mask-image:_linear-gradient(to_left,_black_10%,_transparent_80%)]" src={training} alt="Background" fill={true} priority={true} />
         <div className="relative z-10">
           <h1 className="font-semibold pl-[5%] text-4xl lg:text-7xl pt-10">Practical Change Management</h1>
         </div>
         <div className="relative z-10">
-          <h1 className="font-semibold text-center text-4xl lg:text-7xl pt-6">Training Series</h1>
+          <h1 className="font-semibold text-center text-4xl lg:text-7xl pt-6">Training Course</h1>
         </div>
-        <div className="relative z-10 pl-2 mt-24">
-          {/* <p className="leading-loose">Are you tired of change initiatives that fall flat? Imagine leading transformations so smooth, they feel effortless. 
-              Our <span className="font-semibold">Practical Change Management</span> course reveals the insider strategies used by top global firms, now supercharged with AI. 
-              In just 3 weeks, master the art of people-centered change that sticks. Don&apos;t let another transformation fail - 
-              discover how to turn resistance into enthusiasm and chaos into opportunity. Ready to become the change guru your organization needs?
-            </p> */}
-            <ul className="list-disc list-inside pl-3 leading-loose mt-4 font-semibold">
-              <li>Down-to-earth approach applicable to any organization or transformation type</li>
-              <li>Comprehensive activity lists, templates, and frameworks</li>
-              <li>Strategies for navigating the human aspects of change</li>
-              <li>Techniques to maximize success in organizational transformations</li>
+        <div className="absolute bottom-0 z-10 pl-2 mt-24">
+             <ul className="pl-3 leading-loose mt-4 font-semibold">
+              <li>EQUIP PROFESSIONALS WITH TOOLS, PROCESSES AND FRAMEWORKS TO EFFECTIVELY LEAD CHANGE</li>
+              <li>online | 3 weeks | 6 modules | September 2024  </li>
             </ul>
         </div>
       </div>
+      <div className="mx-2">
+        <h2 className="font-bold text-3xl text-center mt-6">Overview</h2>
+        <p>
+          The &quot;Practical Change Management&quot; is an immersive, live online course that provides  practical, innovative ways to apply change management principals combined with Gen AI to the transformation delivery in order to enhance the stakeholder journeys, achieve data-driven decision making, and ultimately impact the success of your change initiatives.
+          Leveraging insider strategies and AI-enhanced tools used by top global consulting firms, this interactive program offers a deep dive into change management activities, optimal timing, and alignment with functional milestones, all while considering resource constraints and project timelines. Participants will gain a practical, down-to-earth approach to change management, complete with actionable activity lists, templates, and frameworks applicable to any organization or transformation type. By mastering people-centered approaches and strategic AI integration, participants will be equipped to plan, manage, and deploy change initiatives that drive sustainable results and lasting impact.
+        </p>
+      </div>
       <div className="">
-        {/* <Blurb /> */}
         {cookies().get("trigonaEnrolled") ? <Material /> : <EnrollForm handler={handleRegistration} />}
       </div>
     </div>

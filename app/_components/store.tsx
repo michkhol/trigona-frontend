@@ -109,7 +109,7 @@ export default function Store({prices}: { prices: SrvStripe.Price[]}) {
 
   return (
       <div className="bg-base-200 mt-6 pb-8">
-        <h2 className="text-center text-4xl font-semibold my-6">Our Packages</h2>
+        <h2 className="text-center text-4xl font-semibold my-6">Packages and pricing</h2>
         <div className="flex flex-col lg:flex-row gap-4 justify-center">
           <div className="border border-orange-600 p-3 rounded-lg mx-2 flex-none w-[500px]" >
             <div className="grid grid-rows-4 grid-cols-1 h-full">
@@ -117,10 +117,10 @@ export default function Store({prices}: { prices: SrvStripe.Price[]}) {
                 <h2 className="font-semibold text-3xl mt-4 text-center">One-on-one guidance package</h2>
                   <ul className="list-disc list-inside pl-3 leading-loose mt-4">
                     <li>10 1-hour long private coaching sessions.</li>
-                    <li>6-module group live web-based training series.</li>
-                    <li>Individual video-recorded modules.</li>
+                    <li>6 1-hour module group live web-based training series.</li>
                     <li>Weekly group office hours.</li>
                     <li>Group collaboration forums.</li>
+                    <li>Individual video-recorded modules.</li>
                   </ul>
               </div>
               <div>
@@ -138,7 +138,7 @@ export default function Store({prices}: { prices: SrvStripe.Price[]}) {
               <div className="row-span-3">
                 <h2 className="font-semibold text-3xl mt-4 text-center">Group training series</h2>
                   <ul className="list-disc list-inside pl-3 leading-loose mt-4">
-                    <li>6-module group live web- based training series.</li>
+                    <li>6 1-hour module group live web-based training series.</li>
                     <li>Individual video-recorded modules.</li>
                     <li>Weekly group office hours.</li>
                     <li>Group collaboration forums.</li>

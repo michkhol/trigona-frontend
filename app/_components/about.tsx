@@ -54,7 +54,7 @@ export default function About() {
   return (
     <>
       <div className="bg-base-200 mt-6">
-        <h2 className="text-center text-5xl font-semibold mt-6">Our Story</h2>
+        <h2 id="about" className="text-center text-5xl font-semibold mt-6">Our Story</h2>
         {/*}
         <div className="px-6"><PortableText value={data.body} components={components}/></div>
         */}

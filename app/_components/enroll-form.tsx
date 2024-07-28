@@ -46,7 +46,7 @@ export function EnrollForm( {handler}: { handler : OnRegister}) {
     </div>
     <div className="text-center text-sm mt-2">
       <p>You must have cookies enabled to avoid multiple registrations. By submitting the form you agree
-         to our <a className="link">Terms and Conditions</a> and <a href="https://www.zoho.com/privacy.html" className="link">Privacy Policy</a>.</p>
+         to our <a href="/terms" className="link">Terms and Conditions</a> and <a href="https://www.zoho.com/privacy.html" className="link">Privacy Policy</a>.</p>
     </div>
   </>
   );
