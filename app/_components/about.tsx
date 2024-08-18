@@ -6,7 +6,7 @@ import { SanityImageSource } from "@sanity/asset-utils";
 import { SanityImageAsset } from "@/sanity/sanity.types";
 import { SanityImageObjectStub } from "@sanity/asset-utils";
 import { SimplePage } from "@/sanity/sanity.types";
-import img from "@/public/images/director.jpg"
+import principal from "@/public/images/principal.png"
 import DecoratedTitle from "./decorated-title";
 import Link from "next/link";
 
@@ -53,35 +53,27 @@ export default function About() {
 
   return (
     <>
-      <div className="bg-base-200 mt-6">
-        <h2 id="about" className="text-center text-5xl font-semibold mt-6">Our Story</h2>
+      <div className="bg-red-800 text-white">
         {/*}
         <div className="px-6"><PortableText value={data.body} components={components}/></div>
         */}
-        <div className="mt-6 px-4 flex flex-col lg:flex-row gap-4">
-          <div className="">
-          Trigona Consulting L.L.C. is a woman owned boutique consulting firm, that provides 
-          transformation delivery solutions for commercial and government clients during business, organizational and digital transformations. 
-          With field-tested methodologies and leading practices, we ensure that organizations maximize their project&apos;s ROI through:
-                      <ul className="list-disc list-inside ml-6">
-                        <li>Targeted change management solutions</li>
-                        <li>Effective organizational design and operating model optimization</li>
-                        <li>Results driven fractional leadership</li>
-                        <li>Capability building training offerings</li>
-                      </ul>
-                      
-                      With an extensive experience gained at Big-5 consulting firms and applied across multiple organizations nationwide, 
-                      we provide our clients with holistic and comprehensive transformation implementation support.
-          </div>
-          <div className="flex-none w-60">
+        <div className="my-16 px-4 flex flex-col lg:flex-row gap-4">
+          <div className="flex-none w-96">
             <div className="flex flex-col">
             <div>
-              <Image className="" src={img} alt="Managing Director" height={400} width={400}/>
+              <Image className="" src={principal} alt="Managing Director" height={800}/>
             </div>
-            <div className="text-center text-sm italic">
-              <Link href="https://www.linkedin.com/in/olga-denisova-pmp-01ab847/" className="hover:underline">Olga Denisova<br />Managing Director</Link>
+            <div className="-ml-16 text-center text mt-4">
+              <Link href="https://www.linkedin.com/in/olga-denisova-pmp-01ab847/" className="hover:underline">Olga Denisova<br />
+              <span className="italic">Founder and Managing Principal</span></Link>
             </div>
             </div>
+          </div>
+          <div className="text-xl">
+          <h2 id="about" className="text-center text-6xl font-semibold mt-6 mb-10">About Us</h2>
+          Trigona Consulting L.L.C. is a woman owned boutique consulting firm, that provides transformation delivery solutions for commercial and government clients during business, organizational and digital transformations. With field-tested methodologies and leading practices, we ensure that organizations maximize their project&apos;s potential.
+With an extensive experience gained at Big-5 consulting firms and applied across multiple global organizations, we provide our clients with holistic and comprehensive transformation implementation support. 
+We make change happen.
           </div>
        </div>            
       </div>

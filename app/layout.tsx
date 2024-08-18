@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: Readonly<{ children: React.ReactNode }>) {
   return (
     // Need to override font from theme
-    <html className="scroll-pt-20 lg:scroll-pt-60" lang="en" data-theme="wireframe">
+    <html className="scroll-pt-20 lg:scroll-pt-60 overflow-x-hidden" lang="en" data-theme="wireframe">
       <body className={`text-base-content ${raleway.className} p-0`}> 
         {/* <img height="1" width="1" className="hidden" src="https://www.facebook.com/tr?id=714705464046278&ev=PageView&noscript=1" /> */}
-        <header className="sticky top-0 z-50 h-26 bg-base-200" >
+        <header className="sticky top-0 z-50 h-26 bg-base-100 opacity-90" >
           <NavBar />
         </header>
         {children}
