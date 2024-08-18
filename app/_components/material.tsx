@@ -3,7 +3,7 @@ import DecoratedTitle from "../_components/decorated-title";
 import Store from "./store";
 import {stripe} from "@/lib/stripe"
 import Link from "next/link";
-import img from "@/public/images/director.jpg"
+import img from "@/public/images/principal.png"
 import { Computer } from "./svg-icons";
 import { Time } from "./svg-icons";
 import { Tools } from "./svg-icons";
