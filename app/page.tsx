@@ -5,9 +5,9 @@ import Contact from "./_components/contact";
 import Logos from "./_components/logos";
 import Link from "next/link";
 import colors from "tailwindcss/colors";
-import monster from "@/public/images/monster2.png"
+import monster from "@/public/images/monster2-small.webp"
 
-import { ArrowRight, TrendingUp, Users, Zap } from 'lucide-react';
+import { PersonStanding, TrendingUp, Users, Zap } from 'lucide-react';
 
 
 export default function Home() {
@@ -24,16 +24,19 @@ export default function Home() {
         </div>
         <div className="relative z-10 mt-14 ml-8">
           <div className="grid grid-cols-1 text-2xl">
-            <div className="flex items-center mix-blend-difference">
-              <TrendingUp className="mr-2 flex-shrink-0" color={colors.red[800]}/><span className="text-shadow">Maximize ROI with targeted change management and human capital solutions</span>
+            <div className="flex items-center">
+              <TrendingUp className="mr-2 flex-shrink-0" color={colors.red[800]}/><span className="text-shadow">Targeted change management</span>
+            </div>
+            <div className="flex items-center mt-3">
+              <PersonStanding className="mr-2 flex-shrink-0" color={colors.red[800]}/><span className="text-shadow">Human capital solutions</span>
             </div>
             <div className="flex items-center mt-3">
               <Users className="mr-2 flex-shrink-0" color={colors.red[800]}/>
-              <span className="text-shadow">Achieve seamless transformation with expert fractional leadership</span>
+              <span className="text-shadow">Expert fractional leadership</span>
             </div> 
             <div className="flex items-center mt-3">
               <Zap className="mr-2 flex-shrink-0" color={colors.red[800]}/>
-              <span className="text-shadow">Empower your organizations with tailored change management capability building offering</span>
+              <span className="text-shadow">Tailored capability building</span>
             </div>
           </div>
           <Link href="/#contact" className="bg-red-800 text-white text-2xl mt-8 px-8 py-3 rounded-full font-bold flex items-center hover:bg-orange-600 transition-colors w-64">

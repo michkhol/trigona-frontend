@@ -2,7 +2,7 @@ import Image from "next/image";
 import serv1 from "@/public/images/transformation-delivery-consulting2.jpg";
 import serv2 from "@/public/images/on-demand-executive-expertise2.jpg";
 import serv3 from "@/public/images/capability-building-tailored-training-solutions2.jpg";
-import building from "@/public/images/building.jpg"
+import building from "@/public/images/building-small.jpg"
 import Link from "next/link";
 
 export default function Services() {
@@ -10,7 +10,7 @@ export default function Services() {
       <div className="relative w-full z-1">
         <Image className="object-cover z-1" src={building} alt="Background" fill={true} priority={true}/>
         <div className="z-10 relative mt-10 ml-6">
-          <h1 className="font-semibold text-8xl">Our <span className="text-red-800">Work</span></h1>
+          <h1 className="text-8xl">Our <span className="text-red-800 font-semibold italic">Work</span></h1>
         </div>
         <div className="relative z-10 grid grid-cols-3 gap-x-10 justify-center my-20 px-10">
           <div className="bg-base-100 opacity-85">
