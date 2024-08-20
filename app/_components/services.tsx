@@ -11,7 +11,7 @@ export default function Services() {
         </div>
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-10 justify-center my-20 px-10">
           <div className="bg-base-100 opacity-85 px-2">
-            <div className="">
+            <div className="h-14">
               <h2 className="font-bold text-3xl text-center text-red-800 mt-6">Transformation Delivery Consulting</h2>
             </div>
             <div className="">
@@ -24,7 +24,7 @@ export default function Services() {
             </div>
           </div>
           <div className="bg-base-100 opacity-85 px-2">
-            <div className="">
+            <div className="h-14">
               <h2 className="font-bold text-center text-3xl text-red-800 mt-6">Tailored Capability Building Solutions</h2>
             </div>
             <div className="">
@@ -36,7 +36,7 @@ export default function Services() {
             </div>
           </div>
           <div className="bg-base-100 opacity-85 px-2">
-            <div className="">
+            <div className="h-14">
               <h2 className="text-3xl text-center font-bold text-red-800 mt-6">On-Demand Executive Expertise</h2>
             </div>
             <div className="">

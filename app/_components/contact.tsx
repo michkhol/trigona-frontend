@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <div className="flex flex-col justify-center w-full mx-2 mb-6">
       <div><h2 className="my-10 text-center text-8xl">We are Here to <span className="text-red-800 italic font-bold">Help</span></h2></div>
-      <div className="m-auto" >
+      <div className="m-auto px-2" >
         <p className="text-xl">If you need assistance, have a question or feedback, please contact us. We look forward to talking with you!</p>
         <form name="contact" method="POST" data-netlify="true" action="/thanks.html">
           <input type="hidden" name="form-name" value="contact" />
