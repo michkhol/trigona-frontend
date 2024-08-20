@@ -69,7 +69,7 @@ export default function About() {
             </div>
           </div>
           <div className="text-xl">
-          <h2 id="about" className="text-center text-8xl mt-6 mb-10">About <span className="font-semibold italic">Us</span></h2>
+          <h2 id="about" className="text-center text-8xl mt-6 mb-10">About <span className="font-bold italic">Us</span></h2>
           Trigona Consulting L.L.C. is a woman owned boutique consulting firm, that provides transformation delivery solutions for commercial and government clients during business, organizational and digital transformations. With field-tested methodologies and leading practices, we ensure that organizations maximize their project&apos;s potential.
 With an extensive experience gained at Big-5 consulting firms and applied across multiple global organizations, we provide our clients with holistic and comprehensive transformation implementation support. 
 We make change happen.
