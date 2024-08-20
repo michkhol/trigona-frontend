@@ -13,7 +13,7 @@ import { PersonStanding, TrendingUp, Users, Zap } from 'lucide-react';
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
-      <div className="relative h-[720px] lg:h-[650px] z-1 w-full bg-base-100">
+      <div className="relative z-1 w-full bg-base-100">
         {/* <Image className="object-cover z-1 object-right opacity-40 [mask-image:_linear-gradient(to_left,_black_10%,_transparent_80%)]" src={monster} alt="Background" fill={true} priority={true}/> */}
         <Image className="absolute right-0 z-2 hidden lg:block" src={monster} alt="Background" height={600} priority={true}/>
         <div className="relative z-10">
@@ -39,11 +39,13 @@ export default function Home() {
               <span className="text-shadow">Tailored capability building</span>
             </div>
           </div>
-          <Link href="/#contact" className="bg-red-800 text-white text-2xl mt-8 px-8 py-3 rounded-full font-bold flex items-center hover:bg-orange-600 transition-colors w-64">
-            Let Us Help You
-          </Link>
-        </div>
-        <div className="absolute bottom-0">
+         </div>
+         <div className="relative z-10 mt-10 ml-8">
+           <Link href="/#contact" className="bg-red-800 text-white text-2xl mt-8 px-8 py-3 rounded-full font-bold flex items-center hover:bg-orange-600 transition-colors w-64">
+              Let Us Help You
+            </Link>
+         </div>
+        <div className="relative mt-8">
           <Logos />
         </div>
       </div>
