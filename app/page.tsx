@@ -40,12 +40,12 @@ export default function Home() {
             </div>
           </div>
          </div>
-         <div className="relative z-10 mt-10 ml-8">
+         <div className="relative z-10 mt-10 ml-8 mb-20">
            <Link href="/#contact" className="bg-red-800 text-white text-2xl mt-8 px-8 py-3 rounded-full font-bold flex items-center hover:bg-orange-600 transition-colors w-64">
               Let Us Help You
             </Link>
          </div>
-        <div className="relative mt-8">
+        <div className="absolute bottom-0">
           <Logos />
         </div>
       </div>
