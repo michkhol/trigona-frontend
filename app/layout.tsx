@@ -8,7 +8,7 @@ import logo from '@/public/images/logo_title.png'
 import { navLinks } from "./_components/nav-links";
 import FacebookPixel from "./_components/FacebookPixel";
 
-const raleway = Raleway({ subsets: ["latin"] });
+const raleway = Raleway({ subsets: ["latin"], style:[ "normal", "italic"] });
 
 export const metadata: Metadata = {
   title: "Trigona Consulting LLC",

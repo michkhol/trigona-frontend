@@ -18,30 +18,32 @@ export function EnrollForm( {handler}: { handler : OnRegister}) {
   return (<>
     <div>    
       <div className="text-center mb-6 mt-6">
-            <h1 className="font-bold text-3xl">Request More Information</h1>
+        <h1 className="text-5xl">Request More Information</h1>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control max-w-xl mx-auto my-4">
-          <input type="text" placeholder="First name" {...register("firstName")} required={true} className="input input-bordered max-w-xl border-orange-600"/>
+          <input type="text" placeholder="First name" {...register("firstName")} required={true} className="input input-bordered max-w-xl border-red-800"/>
         </div>
         <div className="form-control max-w-xl mx-auto my-4">
-          <input type="text" placeholder="Last name" {...register("lastName")} required={true} className="input input-bordered max-w-xl border-orange-600" />
+          <input type="text" placeholder="Last name" {...register("lastName")} required={true} className="input input-bordered max-w-xl border-red-800" />
         </div>
         <div className="form-control max-w-xl mx-auto my-4">
-            <input type="email" placeholder="Email" {...register("email")} required={true} className="input input-bordered max-w-xl border-orange-600" />
+            <input type="email" placeholder="Email" {...register("email")} required={true} className="input input-bordered max-w-xl border-red-800" />
         </div>
         <div className="form-control max-w-xl mx-auto my-4">
             <input type="tel" placeholder="Phone: 555-123-4567" {...register("phone", { required: true, validate: v => v.match(/\d/g)?.length === 10 })} 
-            className="input input-bordered max-w-xl border-orange-600" />
+            className="input input-bordered max-w-xl border-red-800" />
             {errors.phone && <span className="text-red-500 text-sm mt-1">Enter a valid phone number</span>}
         </div>
         <div className="form-control max-w-xl mx-auto my-4">
-          <label className="label cursor-pointer">
-            <input type="checkbox" {...register("sms")} className="checkbox border-orange-600"/>
-            <span className="label-text">Agree to receive texts or SMS</span>
+          <label className="label justify-start">
+            <input type="checkbox" {...register("sms")} className="checkbox border-red-800"/>
+            <span className="label-text ml-2">Agree to receive texts or SMS</span>
           </label>
         </div>
-        <div className="flex justify-center"><button className="btn btn-primary mt-6" type="submit">Submit</button></div>
+        <div className="flex justify-center">
+        <button className="mt-6 bg-red-800 text-xl text-white px-10 py-3 font-bold rounded-full hover:bg-orange-600 transition-colors" type="submit">Submit</button>
+        </div>
       </form>
     </div>
     <div className="text-center text-sm mt-2">

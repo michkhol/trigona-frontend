@@ -15,7 +15,7 @@ export default function Home() {
     <div className="flex flex-col w-full">
       <div className="relative z-1 w-full bg-base-100">
         {/* <Image className="object-cover z-1 object-right opacity-40 [mask-image:_linear-gradient(to_left,_black_10%,_transparent_80%)]" src={monster} alt="Background" fill={true} priority={true}/> */}
-        <Image className="absolute right-0 z-2 hidden lg:block" src={monster} alt="Background" height={600} priority={true}/>
+        <Image className="absolute right-0 z-2 hidden md:block" src={monster} alt="Background" height={600} priority={true}/>
         <div className="relative z-10">
           <h1 className="pl-[5%] text-8xl pt-10">Making Change</h1>
         </div>

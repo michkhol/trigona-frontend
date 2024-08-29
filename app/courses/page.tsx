@@ -3,7 +3,8 @@ import { EnrollForm } from "../_components/enroll-form";
 import Material from "../_components/material";
 import type { FormInput } from "@/lib/utils";
 import Image from "next/image";
-import training from "@/public/images/training.jpg";
+import robot from "@/public/images/robot.webp";
+import computer from "@/public/images/computer.webp"
 
 export default function Courses() {
   async function handleRegistration(form: FormInput) {
@@ -23,27 +24,35 @@ export default function Courses() {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="relative h-[400px] w-full bg-base-200">
-        <Image className="object-cover z-0 object-center opacity-40 [mask-image:_linear-gradient(to_left,_black_10%,_transparent_80%)]" src={training} alt="Background" fill={true} priority={true} />
-        <div className="relative z-10">
-          <h1 className="font-semibold pl-[5%] text-4xl lg:text-7xl pt-10">Practical Change Management</h1>
+      <div className="relative z-0 selection:w-full bg-base-100 ">
+        <Image className="absolute z-10 right-0 hidden md:block" src={robot} alt="Background" height={700} priority={true} />
+        <div className="pl-6 mt-10">
+          <h1 className="text-4xl">Live Virtual Course</h1>
         </div>
-        <div className="relative z-10">
-          <h1 className="font-semibold text-center text-4xl lg:text-7xl pt-6">Training Course</h1>
+        <div className="pl-6 mt-10">
+          <h1 className="italic text-8xl text-red-800">AI Enhanced</h1>
         </div>
-        <div className="absolute bottom-0 z-10 pl-2 mt-24">
-             <ul className="pl-3 leading-loose mt-4 font-semibold">
-              <li>EQUIP PROFESSIONALS WITH TOOLS, PROCESSES AND FRAMEWORKS TO EFFECTIVELY LEAD CHANGE</li>
-              <li>online | 3 weeks | 6 modules | September 2024  </li>
-            </ul>
+        <div className="pl-6 w-[90%]">
+          <h1 className="font-bold text-8xl">Practical Change Manangement</h1>
         </div>
+        <div className="pl-6 mt-20 w-[80%]">
+          <p className="text-4xl">EQUIP PROFESSIONALS WITH TOOLS, PROCESSES AND FRAMEWORKS TO EFFECTIVELY LEAD CHANGE</p>
+        </div>
+        <div className="pl-6 relative z-10 my-10">
+          <p className="text-4xl text-red-800">&gt;&gt;&gt; | 3 Weeks | From $1850 | October 2024  </p>
+        </div>
+        <div className="absolute w-full z-1 bottom-0 h-3 bg-gradient-to-t from-gray-50"></div>
       </div>
-      <div className="mx-2">
-        <h2 className="font-bold text-3xl text-center mt-6">Overview</h2>
-        <p>
-          The &quot;Practical Change Management&quot; is an immersive, live online course that provides  practical, innovative ways to apply change management principals combined with Gen AI to the transformation delivery in order to enhance the stakeholder journeys, achieve data-driven decision making, and ultimately impact the success of your change initiatives.
-          Leveraging insider strategies and AI-enhanced tools used by top global consulting firms, this interactive program offers a deep dive into change management activities, optimal timing, and alignment with functional milestones, all while considering resource constraints and project timelines. Participants will gain a practical, down-to-earth approach to change management, complete with actionable activity lists, templates, and frameworks applicable to any organization or transformation type. By mastering people-centered approaches and strategic AI integration, participants will be equipped to plan, manage, and deploy change initiatives that drive sustainable results and lasting impact.
-        </p>
+      <div className="flex flex-row mx-2">
+        <Image className="ml-4 hidden lg:block" src={computer} alt="Computer" height={600} priority={true} />
+        <div className="ml-4">
+          <h2 className="text-5xl text-center mt-6"><span className="italic">Course</span> <span className="font-bold text-red-800">Overview</span>
+          </h2>
+          <p className="text-2xl mt-6 px-4">
+          The &quot;AI Enhanced Practical Change Management&quot; is an immersive, live online course that provides practical, innovative ways to apply change management principals combined with Gen AI to the transformation delivery in order to enhance the stakeholder journeys, achieve data-driven decision making, and ultimately impact the success of your change initiatives.<br />
+          Leveraging insider strategies and AI-enhanced tools used by top global consulting firms, this interactive program offers a deep dive into change management activities, optimal timing, and alignment with functional milestones, all while considering resource constraints and project timelines. Participants will gain a practical, down-to-earth approach to change management, complete with actionable activity lists, templates, and frameworks applicable to any organization or transformation type.
+          </p>
+        </div>
       </div>
       <div className="">
         {cookies().get("trigonaEnrolled") ? <Material /> : <EnrollForm handler={handleRegistration} />}
