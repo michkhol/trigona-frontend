@@ -1,4 +1,4 @@
-import officeBackgroud from "@/public/images/New-Office.jpg";
+import tlogo from "@/public/images/trigona-logo.png";
 import Image from "next/image";
 import { stripe } from "@/lib/stripe"
 import { reportError } from "@/lib/utils";
@@ -13,10 +13,26 @@ export default async function ReturnFromPayment({
   searchParams: { [key: string]: string | string[] | undefined }
 }) 
 {
-  const sid = searchParams.session_id as string;
+  return(
+    <div className="flex flex-col md:flex-row bg-red-800 text-white">
+      <div>
+        <Content sid={searchParams.session_id as string} />
+      </div>
+      <div className="flex-none my-10 mr-10 text-center">
+        <Image className="m-auto" src={tlogo} alt="logo" height={300}  />
+        <p className="text-2xl">Trigona Consulting LLC</p>
+        <p>Making change happen</p>
+      </div>
+    </div>
+  )
+}
+
+async function Content( { sid }: {sid: string} ) {
   if ( !sid ) {
     return success("test@email.net")
   }
+  else if (sid === "problem")
+    return problem("problem@email.net")
   else {
     try {
       const session = await stripe.checkout.sessions.retrieve(sid);
@@ -91,20 +107,15 @@ export default async function ReturnFromPayment({
       throw e;
     }
   }
+  
 }
 
 function success(email: string) {
   return (
-    <div className="flex flex-col items-center gap-4 w-full">
-      <div className="relative h-96 w-full">
-        <Image className="object-cover z-0 object-center" src={officeBackgroud} alt="Background" fill={true} priority={true} />
-        <h1 className="relative z-10 font-serif font-semibold text-center text-white text-5xl pt-40">Payment status</h1>
-      </div>
-      <div>
-        <h1 className="text-xl">Thank you for your payment!</h1>
-      </div>
-      <div>
-        We appreciate your business! A confirmation email will be sent to {email}.
+    <div className="mt-20 mx-4">
+      <h1 className="text-center text-4xl">Thank you for your payment!</h1>
+      <div className="mt-10 text-xl">
+        We appreciate your business! A confirmation email will be sent to <span className="font-bold">{email}</span>.
         If you have any questions, please email <a href="mailto:support@trigonaconsulting.com">support@trigonaconsulting.com</a>.
       </div>
       {/* <div>
@@ -117,13 +128,10 @@ function success(email: string) {
 
 function problem(email: string) {
   return (
-    <div className="flex flex-col items-center gap-4 w-full">
-      <div className="relative h-96 w-full">
-        <Image className="object-cover z-0 object-center" src={officeBackgroud} alt="Background" fill={true} priority={true} />
-        <h1 className="relative z-10 font-serif font-semibold text-center text-white text-5xl pt-40">Payment status</h1>
-      </div>
-      <div>
-        <p className="text-xl">We had a problem with your payment, please email <a href="mailto:support@trigonaconsulting.com">support@trigonaconsulting.com</a> for support.</p>
+    <div className="mt-20 mx-4">
+      <h1 className="text-center text-4xl">We had a problem with your payment.</h1>
+      <div className="mt-10 text-xl">
+      Please email <a href="mailto:support@trigonaconsulting.com">support@trigonaconsulting.com</a> for support.
       </div>
       {/* <div>
         <p>Session: {jSession}</p>
