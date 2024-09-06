@@ -3,6 +3,8 @@
 import { client } from "./postmark";
 import { addContact } from "./zoho";
 
+export async function stripePk() { return process.env.NEXT_STRIPE_PUBLISHABLE_KEY! };
+
 export async function reportError(module: string, e: Error) {
   const email = {
     "From": "sales@trigonaconsulting.com",

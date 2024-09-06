@@ -7,10 +7,10 @@ import type { Stripe } from '@stripe/stripe-js';
 import type { Stripe as SrvStripe } from "stripe";
 import Link from "next/link";
 import { Roboto } from "next/font/google";
+import { stripePk } from "@/lib/utils";
+
 
 const priceFont = Roboto({ subsets: ["latin"], weight: ["700"] });
-
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -97,7 +97,7 @@ export default function Store({prices}: { prices: SrvStripe.Price[]}) {
   useEffect(() => {
     // console.log("UUID: " + uuid.v4().toUpperCase().slice(-6))
     // console.log("Total: " + formatter.format(167500 / 100))
-    stripePromise.then((s) => stripeRef.current = s)
+    stripePk().then(pk => loadStripe(pk)).then(s => stripeRef.current = s)
   },[]);
 
 
