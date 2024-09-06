@@ -13,61 +13,124 @@ export default async function ReturnFromPayment({
   searchParams: { [key: string]: string | string[] | undefined }
 }) 
 {
-  try {
-    const session = await stripe.checkout.sessions.retrieve(searchParams.session_id as string);
-    const items = await stripe.checkout.sessions.listLineItems(searchParams.session_id as string);
-    console.log(session);
-    const status = session.status;
-    const orderDate = new Date(session.created).toLocaleDateString();
-    const customerEmail = session.customer_details?.email
-
-    const formatter = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: session.currency || "USD",
-    });
-    
-    const itemList = items.data.map(d => { return({description: d.description, amount: d.amount_total})})
-    const jSession = JSON.stringify(session, null, 2);
-    const message: TemplatedMessage = {
-      TemplateAlias: "receipt",
-      TemplateModel: {
-        receipt_id: session.client_reference_id,
-        name: session.customer_details?.name || "Customer",
-        date: orderDate,
-        receipt_details: itemList,
-        total: formatter.format((session.amount_total! / 100)) || "Invalid", 
-      },
-      From: "sales@trigonaconsulting.com",
-      To: customerEmail!
-    }
-    
-    // TODO: Make sure sesstion.payment_statis is "paid", otherwise ask to contact support.
-    //await client.sendEmailWithTemplate(message);
-
-    return (
-      <div className="flex flex-col items-center gap-4 w-full">
-        <div className="relative h-96 w-full">
-          <Image className="object-cover z-0 object-center" src={officeBackgroud} alt="Background" fill={true} priority={true} />
-          <h1 className="relative z-10 font-serif font-semibold text-center text-white text-5xl pt-40">Payment status</h1>
-        </div>
-        <div>
-          <h1 className="text-xl">Thank you for your payment!</h1>
-        </div>
-        <div>
-          We appreciate your business! A confirmation email will be sent to {customerEmail}.
-          If you have any questions, please email <a href="mailto:support@trigonaconsulting.com">support@trigonaconsulting.com</a>.
-        </div>
-        <div>
-          <p>Session: {jSession}</p>
-          <p>Line items: {JSON.stringify(items, null ,2)}</p>
-        </div>
-      </div>  
-    );
-  } catch(e) {
-    // console.log("In catch: " + (e as Error).stack);
-    // reportError("payment-return", (e as Error))
-    throw e;
+  const sid = searchParams.session_id as string;
+  if ( !sid ) {
+    return success("test@email.net")
   }
+  else {
+    try {
+      const session = await stripe.checkout.sessions.retrieve(sid);
+      const items = await stripe.checkout.sessions.listLineItems(sid);
+      console.log(session);
+      const status = session.status;
+      const orderDate = new Date(session.created).toLocaleDateString();
+      const customerEmail = session.customer_details?.email
+      const paymentStatus = session.payment_status
+
+      const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: session.currency || "USD",
+      });
+
+      switch(paymentStatus) {
+        case "no_payment_required":
+          // Do we even have this case?
+          return problem(customerEmail!);
+        case "paid":
+          
+          const itemList = items.data.map(d => { return({description: d.description, amount: d.amount_total})})
+          const jSession = JSON.stringify(session, null, 2);
+          const message: TemplatedMessage = {
+            TemplateAlias: "receipt",
+            TemplateModel: {
+              receipt_id: session.client_reference_id,
+              name: session.customer_details?.name || "Customer",
+              date: orderDate,
+              receipt_details: itemList,
+              total: formatter.format((session.amount_total! / 100)) || "Invalid", 
+            },
+            From: "sales@trigonaconsulting.com",
+            To: customerEmail!
+          }
+          
+          // Send via Postmark
+          await client.sendEmailWithTemplate(message);
+    
+          return success(customerEmail!);
+        case "unpaid":
+          
+          // TODO: Contact customer with the problem by email?.
+
+          // const itemList = items.data.map(d => { return({description: d.description, amount: d.amount_total})})
+          // const jSession = JSON.stringify(session, null, 2);
+          // const message: TemplatedMessage = {
+          //   TemplateAlias: "receipt",
+          //   TemplateModel: {
+          //     receipt_id: session.client_reference_id,
+          //     name: session.customer_details?.name || "Customer",
+          //     date: orderDate,
+          //     receipt_details: itemList,
+          //     total: formatter.format((session.amount_total! / 100)) || "Invalid", 
+          //   },
+          //   From: "sales@trigonaconsulting.com",
+          //   To: customerEmail!
+          // }
+          
+          
+    
+          // Send via Postmark
+          //await client.sendEmailWithTemplate(message);
+    
+          return problem(customerEmail!);
+      }
+
+
+    } catch(e) {
+      // console.log("In catch: " + (e as Error).stack);
+      // reportError("payment-return", (e as Error))
+      throw e;
+    }
+  }
+}
+
+function success(email: string) {
+  return (
+    <div className="flex flex-col items-center gap-4 w-full">
+      <div className="relative h-96 w-full">
+        <Image className="object-cover z-0 object-center" src={officeBackgroud} alt="Background" fill={true} priority={true} />
+        <h1 className="relative z-10 font-serif font-semibold text-center text-white text-5xl pt-40">Payment status</h1>
+      </div>
+      <div>
+        <h1 className="text-xl">Thank you for your payment!</h1>
+      </div>
+      <div>
+        We appreciate your business! A confirmation email will be sent to {email}.
+        If you have any questions, please email <a href="mailto:support@trigonaconsulting.com">support@trigonaconsulting.com</a>.
+      </div>
+      {/* <div>
+        <p>Session: {jSession}</p>
+        <p>Line items: {JSON.stringify(items, null ,2)}</p>
+      </div> */}
+    </div>  
+  );
+}
+
+function problem(email: string) {
+  return (
+    <div className="flex flex-col items-center gap-4 w-full">
+      <div className="relative h-96 w-full">
+        <Image className="object-cover z-0 object-center" src={officeBackgroud} alt="Background" fill={true} priority={true} />
+        <h1 className="relative z-10 font-serif font-semibold text-center text-white text-5xl pt-40">Payment status</h1>
+      </div>
+      <div>
+        <p className="text-xl">We had a problem with your payment, please email <a href="mailto:support@trigonaconsulting.com">support@trigonaconsulting.com</a> for support.</p>
+      </div>
+      {/* <div>
+        <p>Session: {jSession}</p>
+        <p>Line items: {JSON.stringify(items, null ,2)}</p>
+      </div> */}
+    </div>  
+  );
 }
 
 const itemsTest = {

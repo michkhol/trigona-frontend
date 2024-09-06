@@ -107,14 +107,18 @@ export default function Store({prices}: { prices: SrvStripe.Price[]}) {
         ">Pricing</span></h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 ml-2">
           <div className="bg-red-800 text-white ml-4">
-            <div className="mt-40 mx-[15%]">
-              <h1 className="text-2xl text-center italic font-semibold">GROUP DISCOUNTS</h1>
-              <p className="italic text-xl text-center mt-6">
+            <div className="mt-10 mx-[15%]">
+              <h1 className="text-2xl text-center italic font-semibold">CUSTOM SOLUTIONS</h1>
+              <p className="italic text-xl mt-6">
+              Do you want a personalized training for your team? We offer custom design and delivery training based on your needs.
+              </p>
+              <h1 className="mt-6 text-2xl text-center italic font-semibold">GROUP DISCOUNTS</h1>
+              <p className="italic text-xl mt-6">
               Do you have multiple team members you want to enroll? We provide group discounts for 2+ participants.
               </p>
             </div>
             <div className="my-10 text-center">
-              <Link href="/#contact">
+              <Link href="https://outlook.office365.com/book/AIEnhancedPracticalChangeManagementConsultationRequest@trigonaconsulting.com">
                 <span className="bg-white text-red-800 hover:text-orange-600 text-2xl px-8 py-3 rounded-full font-bold w-64">
                 Schedule&nbsp;a&nbsp;Call
                 </span>
