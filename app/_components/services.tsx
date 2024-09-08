@@ -7,7 +7,7 @@ export default function Services() {
       <div className="relative w-full z-1">
         <Image className="object-cover z-1" src={building} alt="Background" fill={true} priority={true}/>
         <div className="z-10 relative mt-10 ml-6">
-          <h1 className="text-8xl">Our <span className="text-red-800 font-bold italic">Work</span></h1>
+          <h1 className="text-8xl">Our <span className="text-red-800 font-bold italic">Services</span></h1>
         </div>
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-10 justify-center my-20 px-10">
           <div className="bg-base-100 opacity-85 px-2">
@@ -31,7 +31,7 @@ export default function Services() {
               <ul className="list-disc list-outside ml-10 my-6 text-xl">
                 <li>Organizational Change Management Capabilities Within Client Organizations</li>
                 <li className="mt-4">Leadership Development, Culture, Emotional Intelligence, and DEI</li>
-                <li className="mt-4">Organizational Change Management Live Web-Based Training Courses</li>
+                <li className="mt-4">Organizational Change Management Training Courses</li>
               </ul>
             </div>
           </div>

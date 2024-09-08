@@ -25,19 +25,16 @@ export default function Home() {
         <div className="relative z-10 mt-14 ml-8">
           <div className="grid grid-cols-1 text-2xl">
             <div className="flex items-center">
-              <TrendingUp className="mr-2 flex-shrink-0" color={colors.red[800]}/><span className="text-shadow">Targeted change management</span>
+              <TrendingUp className="mr-2 flex-shrink-0" color={colors.red[800]}/><span className="text-shadow">Transformation delivery consulting</span>
             </div>
             <div className="flex items-center mt-3">
-              <PersonStanding className="mr-2 flex-shrink-0" color={colors.red[800]}/><span className="text-shadow">Human capital solutions</span>
+              <Zap className="mr-2 flex-shrink-0" color={colors.red[800]}/>
+              <span className="text-shadow">Tailored capability building solutions</span>
             </div>
             <div className="flex items-center mt-3">
               <Users className="mr-2 flex-shrink-0" color={colors.red[800]}/>
-              <span className="text-shadow">Expert fractional leadership</span>
+              <span className="text-shadow">On-demand executive expertise</span>
             </div> 
-            <div className="flex items-center mt-3">
-              <Zap className="mr-2 flex-shrink-0" color={colors.red[800]}/>
-              <span className="text-shadow">Tailored capability building</span>
-            </div>
           </div>
          </div>
          <div className="relative z-10 mt-10 ml-8 mb-20">

@@ -54,7 +54,7 @@ async function Content( { sid }: {sid: string} ) {
           return problem(customerEmail!);
         case "paid":
           
-          const itemList = items.data.map(d => { return({description: d.description, amount: d.amount_total})})
+          const itemList = items.data.map(d => { return({description: d.description, amount: formatter.format(d.amount_total / 100) })})
           const jSession = JSON.stringify(session, null, 2);
           const message: TemplatedMessage = {
             TemplateAlias: "receipt",
@@ -116,7 +116,7 @@ function success(email: string) {
       <h1 className="text-center text-4xl">Thank you for your payment!</h1>
       <div className="mt-10 text-xl">
         We appreciate your business! A confirmation email will be sent to <span className="font-bold">{email}</span>.
-        If you have any questions, please email <a href="mailto:support@trigonaconsulting.com">support@trigonaconsulting.com</a>.
+        <br />If you have any questions, please email <a href="mailto:support@trigonaconsulting.com">support@trigonaconsulting.com</a>.
       </div>
       {/* <div>
         <p>Session: {jSession}</p>
