@@ -23,8 +23,8 @@ const formatter = new Intl.NumberFormat('en-US', {
 
 type Product = { id: string, price: number};
 
-const LiveCourseId = "price_1PstPIP5tKHKdMCqvBTdHwnY";
-const FullCourseId = "price_1PstFGP5tKHKdMCq23rK0SXB";
+const LiveCourseId = process.env.NEXT_PUBLIC_STRIPE_LIVE_COURSE;
+const FullCourseId = process.env.NEXT_PUBLIC_STRIPE_FULL_COURSE;
  
 export default function Store({prices}: { prices: SrvStripe.Price[]}) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -95,9 +95,8 @@ export default function Store({prices}: { prices: SrvStripe.Price[]}) {
   }
 
   useEffect(() => {
-    // console.log("UUID: " + uuid.v4().toUpperCase().slice(-6))
-    // console.log("Total: " + formatter.format(167500 / 100))
-    stripePk().then(pk => loadStripe(pk)).then(s => stripeRef.current = s)
+    // Immediately Invoked Function Expression
+    (async () => {await stripePk().then(pk => loadStripe(pk)).then(s => stripeRef.current = s)})()
   },[]);
 
 
