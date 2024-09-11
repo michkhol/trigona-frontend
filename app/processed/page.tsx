@@ -9,7 +9,7 @@ export default async function ReturnFromPayment({
   params,
   searchParams,
 }: {
-  params: { slug: string }
+  params: { slug: string },
   searchParams: { [key: string]: string | string[] | undefined }
 }) 
 {
@@ -32,15 +32,16 @@ async function Content( { sid }: {sid: string} ) {
     return success("test@email.net")
   }
   else if (sid === "problem")
-    return problem("problem@email.net")
+    return problem()
   else {
     try {
       const session = await stripe.checkout.sessions.retrieve(sid);
       const items = await stripe.checkout.sessions.listLineItems(sid);
-      console.log(session);
+      // console.log(session);
       const status = session.status;
       const orderDate = new Date(session.created).toLocaleDateString();
       const customerEmail = session.customer_details?.email
+      const participantEmail = session.metadata?.participantEmail
       const paymentStatus = session.payment_status
 
       const formatter = new Intl.NumberFormat('en-US', {
@@ -51,7 +52,7 @@ async function Content( { sid }: {sid: string} ) {
       switch(paymentStatus) {
         case "no_payment_required":
           // Do we even have this case?
-          return problem(customerEmail!);
+          return problem();
         case "paid":
           
           const itemList = items.data.map(d => { return({description: d.description, amount: formatter.format(d.amount_total / 100) })})
@@ -60,19 +61,20 @@ async function Content( { sid }: {sid: string} ) {
             TemplateAlias: "receipt",
             TemplateModel: {
               receipt_id: session.client_reference_id,
-              name: session.customer_details?.name || "Customer",
+              name: session.metadata?.participantName || "Customer",
               date: orderDate,
               receipt_details: itemList,
               total: formatter.format((session.amount_total! / 100)) || "Invalid", 
+              company_name: "Trigona Consulting LLC"
             },
             From: "sales@trigonaconsulting.com",
-            To: customerEmail!
+            To: participantEmail!
           }
           
           // Send via Postmark
           await client.sendEmailWithTemplate(message);
     
-          return success(customerEmail!);
+          return success(customerEmail!, jSession);
         case "unpaid":
           
           // TODO: Contact customer with the problem by email?.
@@ -97,7 +99,7 @@ async function Content( { sid }: {sid: string} ) {
           // Send via Postmark
           //await client.sendEmailWithTemplate(message);
     
-          return problem(customerEmail!);
+          return problem();
       }
 
 
@@ -110,13 +112,14 @@ async function Content( { sid }: {sid: string} ) {
   
 }
 
-function success(email: string) {
+function success(customerEmail: string, jSession?: string) {
   return (
     <div className="mt-20 mx-4">
       <h1 className="text-center text-4xl">Thank you for your payment!</h1>
       <div className="mt-10 text-xl">
-        We appreciate your business! A confirmation email will be sent to <span className="font-bold">{email}</span>.
-        <br />If you have any questions, please email <a href="mailto:support@trigonaconsulting.com">support@trigonaconsulting.com</a>.
+        We appreciate your business! A confirmation email will be sent to <span className="font-bold">{customerEmail}</span>.
+        In addition a welcome email will be sent to the participant&apos;s email address.
+        <div className="mt-4">If you have any questions, please email to <a href="mailto:support@trigonaconsulting.com">support@trigonaconsulting.com</a>.</div>
       </div>
       {/* <div>
         <p>Session: {jSession}</p>
@@ -126,7 +129,7 @@ function success(email: string) {
   );
 }
 
-function problem(email: string) {
+function problem() {
   return (
     <div className="mt-20 mx-4">
       <h1 className="text-center text-4xl">We had a problem with your payment.</h1>

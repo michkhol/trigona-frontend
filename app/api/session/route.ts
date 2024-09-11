@@ -11,8 +11,11 @@ export async function POST(req: NextRequest) {
     const session = await req.formData().then(data => {
       // Generate next order id, using random numbers for now.
       const orderId = "AR-" + uuid.v4().slice(-6).toUpperCase();
+      const participantEmail = data.get("participantEmail") as string 
+      // console.log("Participant email: " + participantEmail)
+      const participantName = data.get("participantName") as string 
 
-      const items = data.getAll("productIds").map(e => { 
+      const items = data.getAll("productId").map(e => { 
         return { price: e as string, quantity: 1 } 
       });
       return stripe.checkout.sessions.create({
@@ -22,6 +25,7 @@ export async function POST(req: NextRequest) {
         mode: 'payment',
         payment_method_types: ["card", "cashapp", "amazon_pay", "klarna", "affirm"],
         return_url: `${req.headers.get("origin")}/processed?session_id={CHECKOUT_SESSION_ID}`,
+        metadata: { participantEmail: participantEmail, participantName: participantName }
       })
     });
     // console.log(session);

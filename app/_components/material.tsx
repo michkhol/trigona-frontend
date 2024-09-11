@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Store from "./store";
+import PriceList2Register from "./pricelist2register";
 import {stripe} from "@/lib/stripe"
 import Link from "next/link";
 import img from "@/public/images/principal.png"
@@ -113,7 +114,7 @@ export default async function Material() {
               <Image src={time} alt="time" height={45} />
               <h2 className="text-2xl text-red-800">TIME COMMITMENT</h2>
             </div>
-            <p>3 Weeks | 3-4 Hours/Week | 2 Live Classes & 1 Office Hour Weekly | Optional One-on-One Coaching</p>
+            <p>6 Weeks | 2-3 Hours/Week | 1 Live Class & 1 Office Hour Weekly | Optional One-on-One Coaching</p>
           </div>
           <div className="">
             <div className="my-4 flex items-center justify-center gap-4 h-14">
@@ -172,7 +173,7 @@ export default async function Material() {
          </div> */}
       </div>
       <div className="bg-base-200 py-6">
-        <Store prices={prices}/>
+        <PriceList2Register prices={prices}/>
         {/* <div className="my-10 flex justify-center">
            <Link href="/pricing" className="bg-red-800 text-white text-2xl px-8 py-3 rounded-full font-bold text-center hover:bg-orange-600 transition-colors w-52">
               Enroll Now

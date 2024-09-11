@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import { EnrollForm } from "../_components/enroll-form";
+import { MagnetForm } from "../_components/magnet-form";
 import Material from "../_components/material";
 import type { FormInput } from "@/lib/utils";
 import Image from "next/image";
@@ -7,11 +7,11 @@ import robot from "@/public/images/robot.webp";
 import computer from "@/public/images/computer.webp"
 
 export default function Courses() {
-  async function handleRegistration(form: FormInput) {
+  async function handleMagnet(form: FormInput) {
     "use server";
 
     cookies().set({
-      name: "trigonaEnrolled",
+      name: "trigonaMagnet",
       value: "true",
       httpOnly: true,
       path: "/courses",
@@ -19,7 +19,7 @@ export default function Courses() {
     });
   }
 
-  const user = cookies().get("trigonaEnrolled")
+  const user = cookies().get("trigonaMagnet")
   // console.log("User: " + user?.value);
 
   return (
@@ -29,33 +29,37 @@ export default function Courses() {
         <div className="pl-6 mt-10">
           <h1 className="text-4xl">Live Virtual Course</h1>
         </div>
-        <div className="pl-6 mt-10">
-          <h1 className="italic text-8xl text-red-800">AI Enhanced</h1>
-        </div>
-        <div className="pl-6 w-[90%]">
+        <div className="pl-6 mt-10 w-[90%]">
           <h1 className="font-bold text-8xl">Practical Change Manangement</h1>
         </div>
-        <div className="pl-6 mt-20 w-[80%]">
+        <div className="pl-6 mt-10">
+          <h1 className="italic text-8xl text-red-800">Enhanced with AI</h1>
+        </div>
+         <div className="pl-6 mt-20 w-[80%]">
           <p className="text-4xl">EQUIP PROFESSIONALS WITH TOOLS, PROCESSES AND FRAMEWORKS TO EFFECTIVELY LEAD CHANGE</p>
         </div>
         <div className="pl-6 relative z-10 my-10">
-          <p className="text-4xl text-red-800">&gt;&gt;&gt; | 3 Weeks | From $1850 | October 2024  </p>
+          <p className="text-4xl text-red-800">&gt;&gt;&gt; | 6 Weeks | From $1850 | October 2024  </p>
         </div>
         <div className="absolute w-full z-1 bottom-0 h-3 bg-gradient-to-t from-gray-50"></div>
       </div>
       <div className="flex flex-row mx-2">
         <Image className="ml-4 hidden lg:block" src={computer} alt="Computer" height={600} priority={true} />
-        <div className="ml-4">
+        <div className="ml-4 text-2xl px-4">
           <h2 className="text-5xl text-center mt-6"><span className="italic">Course</span> <span className="font-bold text-red-800">Overview</span>
           </h2>
-          <p className="text-2xl mt-6 px-4">
-          The &quot;AI Enhanced Practical Change Management&quot; is an immersive, live online course that provides practical, innovative ways to apply change management principals combined with Gen AI to the transformation delivery in order to enhance the stakeholder journeys, achieve data-driven decision making, and ultimately impact the success of your change initiatives.<br />
-          Leveraging insider strategies and AI-enhanced tools used by top global consulting firms, this interactive program offers a deep dive into change management activities, optimal timing, and alignment with functional milestones, all while considering resource constraints and project timelines. Participants will gain a practical, down-to-earth approach to change management, complete with actionable activity lists, templates, and frameworks applicable to any organization or transformation type.
+          <p className="mt-6">
+          The &quot;Practical Change Management, Enhanced with AI&quot; is an immersive, live online course that provides a comprehensive approach to applying proven change management principles, complemented by cutting-edge AI tools. This course equips professionals with practical, innovative ways to lead transformations effectively, enhance stakeholder journeys, and achieve data-driven decision-making, ultimately resulting sustainable transformation success.</p>
+          <p className="mt-6">
+          Leveraging strategies used by top global consulting firms and grounded in major change management methodologies, this course is adjusted for real world challenges and constraints. It offers a deep dive into core change management activities, optimal timing, and alignment with functional milestones.
+          </p>
+          <p className="mt-6">
+          Participants will gain a practical, down-to-earth approach to change management, complete with actionable activity lists, templates, and options for GenAI integration that is applicable to any organization or transformation type.
           </p>
         </div>
       </div>
       <div className="">
-        {cookies().get("trigonaEnrolled") ? <Material /> : <EnrollForm handler={handleRegistration} />}
+        {cookies().get("trigonaMagnet") ? <Material /> : <MagnetForm handler={handleMagnet} />}
       </div>
     </div>
   );

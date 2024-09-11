@@ -6,13 +6,13 @@ import { useForm, SubmitHandler } from "react-hook-form";
 
 type OnRegister = (form: FormInput) => Promise<void>;
 
-export function EnrollForm( {handler}: { handler : OnRegister}) {
+export function MagnetForm( {handler}: { handler : OnRegister}) {
   const { register, handleSubmit, watch, formState: { errors }  } = useForm<FormInput>();
-  const onSubmit: SubmitHandler<FormInput> = submit
+  // const onSubmit: SubmitHandler<FormInput> = submit
 
   async function submit(fi: FormInput) {
     console.log("submitted: " + JSON.stringify(fi, null ,2))
-    newContact(fi).then(() => handler(fi))
+    return newContact(fi).then(() => handler(fi))
   }
   
   return (<>
@@ -20,7 +20,7 @@ export function EnrollForm( {handler}: { handler : OnRegister}) {
       <div className="text-center mb-6 mt-6">
         <h1 className="text-5xl">Request More Information</h1>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(submit)}>
         <div className="form-control max-w-xl mx-auto my-4">
           <input type="text" placeholder="First name" {...register("firstName")} required={true} className="input input-bordered max-w-xl border-red-800"/>
         </div>

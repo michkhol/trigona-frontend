@@ -42,7 +42,15 @@ export async function newContact(fi: FormInput): Promise<void> {
     ]
   }`
   
-  await addContact(data).then(response => { console.log(response); return response.json()}).then(j => console.log("Body: " + JSON.stringify(j, null,2)))
+   await addContact(data).then(response => { console.log(response); return response.json()}).then(j => console.log("Body: " + JSON.stringify(j, null,2)))
   .catch(error => console.log(error));
   
+}
+
+export interface Participant {
+  name: string,
+  email: string,
+  company?: string,
+  phone: string,
+  yearsInIndustry: number,
 }
