@@ -42,6 +42,8 @@ async function Content( { sid }: {sid: string} ) {
       const orderDate = new Date(session.created).toLocaleDateString();
       const customerEmail = session.customer_details?.email
       const participantEmail = session.metadata?.participantEmail
+      const participantName = session.metadata?.participantName
+      const participantPhone = session.metadata?.participantPhone
       const paymentStatus = session.payment_status
 
       const formatter = new Intl.NumberFormat('en-US', {
@@ -61,7 +63,7 @@ async function Content( { sid }: {sid: string} ) {
             TemplateAlias: "receipt",
             TemplateModel: {
               receipt_id: session.client_reference_id,
-              name: session.metadata?.participantName || "Customer",
+              name: participantName || "Customer",
               date: orderDate,
               receipt_details: itemList,
               total: formatter.format((session.amount_total! / 100)) || "Invalid", 
@@ -73,6 +75,29 @@ async function Content( { sid }: {sid: string} ) {
           
           // Send via Postmark
           await client.sendEmailWithTemplate(message);
+
+          // Send notification
+          const notification: TemplatedMessage = {
+            TemplateAlias: "notification",
+            TemplateModel: {
+              receipt_id: session.client_reference_id,
+              name: session.customer_details?.name || "No name",
+              email: session.customer_details?.email || "No email",
+              date: orderDate,
+              receipt_details: itemList,
+              total: formatter.format((session.amount_total! / 100)) || "Invalid", 
+              company_name: "Trigona Consulting LLC",
+              participant_name: participantName,
+              participant_email: participantEmail,
+              participant_phone: participantPhone
+            },
+            From: "sales@trigonaconsulting.com",
+            To: "sales@trigonaconsulting.com"
+          }
+
+          // Send via Postmark
+          await client.sendEmailWithTemplate(notification);
+
     
           return success(customerEmail!, jSession);
         case "unpaid":

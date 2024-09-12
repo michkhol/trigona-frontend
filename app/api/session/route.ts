@@ -14,6 +14,7 @@ export async function POST(req: NextRequest) {
       const participantEmail = data.get("participantEmail") as string 
       // console.log("Participant email: " + participantEmail)
       const participantName = data.get("participantName") as string 
+      const participantPhone = data.get("participantPhone") as string 
 
       const items = data.getAll("productId").map(e => { 
         return { price: e as string, quantity: 1 } 
@@ -25,7 +26,7 @@ export async function POST(req: NextRequest) {
         mode: 'payment',
         payment_method_types: ["card", "cashapp", "amazon_pay", "klarna", "affirm"],
         return_url: `${req.headers.get("origin")}/processed?session_id={CHECKOUT_SESSION_ID}`,
-        metadata: { participantEmail: participantEmail, participantName: participantName }
+        metadata: { participantEmail: participantEmail, participantName: participantName, participantPhone: participantPhone }
       })
     });
     // console.log(session);
