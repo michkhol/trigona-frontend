@@ -17,6 +17,8 @@ export function RegisterForm(
     fd.append("participantEmail", p.email)
     fd.append("participantName", p.name)
     fd.append("participantPhone", p.phone)
+    fd.append("participantCompany", p.company || "")
+    fd.append("participantYii", p.yearsInIndustry?.toString() || "")
     // console.log("Registering: " + JSON.stringify(p, null ,2))
     // console.log("Participant email: " + fd.get("participantEmail"))
     // newContact(fi).then(() => handler(fi))

@@ -44,6 +44,8 @@ async function Content( { sid }: {sid: string} ) {
       const participantEmail = session.metadata?.participantEmail
       const participantName = session.metadata?.participantName
       const participantPhone = session.metadata?.participantPhone
+      const participantCompany = session.metadata?.participantCompany
+      const participantYii = session.metadata?.participantYii
       const paymentStatus = session.payment_status
 
       const formatter = new Intl.NumberFormat('en-US', {
@@ -89,6 +91,8 @@ async function Content( { sid }: {sid: string} ) {
               company_name: "Trigona Consulting LLC",
               participant_name: participantName,
               participant_email: participantEmail,
+              participant_company: participantCompany,
+              participant_yii: participantYii,
               participant_phone: participantPhone
             },
             From: "sales@trigonaconsulting.com",

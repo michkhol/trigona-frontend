@@ -52,5 +52,5 @@ export interface Participant {
   email: string,
   company?: string,
   phone: string,
-  yearsInIndustry: number,
+  yearsInIndustry?: number,
 }
