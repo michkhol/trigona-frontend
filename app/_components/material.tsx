@@ -22,15 +22,11 @@ export default async function Material() {
   
   return (
     <div className="relative flex flex-col">
-      {/* TODO: Sticky menu here */}
-      <div className="hidden fixed z-50 top-96 right-6">
-        <h1 className="text-6xl">Enroll</h1>
-      </div>
-      <div className="mb-6 mx-6 pb-6 pr-6 bg-base-200">
+      <div className="mt-6 lg:mt-0 mb-6 mx-6 pb-6 pr-6 bg-base-200">
         <h1 className="mt-6 ml-6 text-5xl mb-4"><span className="italic">Training</span> <span className="font-bold text-red-800">Curriculum</span></h1>
-        <div className="grid grid-cols-1 grid-rows-6 lg:grid-cols-2 lg:grid-rows-3 items-end">
-          <div className="ml-6 mt-6">
-            <div className="text-xl h-14">
+        <div className="grid grid-cols-1 grid-rows-6 lg:grid-cols-2 lg:grid-rows-3 items-start">
+          <div className="ml-6 mt-6 flex flex-col">
+            <div className="text-xl">
               <span className="font-bold italic">MODULE 1: </span>
               <span className="text-red-800 font-bold">CHANGE MANAGEMENT APPROACH & PLAN</span>
             </div>
@@ -41,8 +37,8 @@ export default async function Material() {
               <li>Creation and management of impactful change management plans.</li>
             </ul>
           </div>
-          <div className="ml-6 mt-6">
-            <div className="text-xl h-14"><span className="font-bold italic">MODULE 2: </span>
+          <div className="ml-6 mt-6 flex flex-col">
+            <div className="text-xl"><span className="font-bold italic">MODULE 2: </span>
             <span className="font-bold text-red-800">PERSONA DEVELOPMENT & STAKEHOLDER ANALYSIS</span>
             </div>
             <ul className="pl-6 list-outside list-disc marker:text-red-800">
@@ -52,8 +48,8 @@ export default async function Material() {
               <li>Leveraging AI for deeper stakeholder analysis and predictive modeling.</li>
             </ul>
           </div>
-          <div className="ml-6 mt-6">
-            <div className="text-xl h-14"><span className="font-bold italic">MODULE 3: </span>
+          <div className="ml-6 mt-6 flex flex-col">
+            <div className="text-xl"><span className="font-bold italic">MODULE 3: </span>
             <span className="font-bold text-red-800">COMS PLAN & STAKEHOLDER JOURNEY</span></div>
             <ul className="pl-6 list-outside list-disc marker:text-red-800">
               <li>Developing multi-channel communication strategies and plans.</li>
@@ -62,8 +58,8 @@ export default async function Material() {
               <li>Employment of AI for ethical message customization.</li>
             </ul>
           </div>
-          <div className="ml-6 mt-6">
-            <div className="text-xl h-14"><span className="font-bold italic">MODULE 4: </span>
+          <div className="ml-6 mt-6 flex flex-col">
+            <div className="text-xl"><span className="font-bold italic">MODULE 4: </span>
             <span className="font-bold text-red-800">CHANGE CHAMPION NETWORK</span></div>
             <ul className="pl-6 list-outside list-disc marker:text-red-800">
               <li>Role and importance of change champion networks in transformations.</li>
@@ -71,8 +67,8 @@ export default async function Material() {
               <li>Building and management of high-impact change champion network for transformation success.</li>
             </ul>
           </div>
-          <div className="ml-6 mt-6">
-            <div className="text-xl h-14"><span className="font-bold italic">MODULE 5: </span>
+          <div className="ml-6 mt-6 flex flex-col">
+            <div className="text-xl"><span className="font-bold italic">MODULE 5: </span>
             <span className="font-bold text-red-800">CHANGE IMPACT ASSESSMENT & TRAINING NEEDS ANALYSIS</span>
             </div>
             <ul className="pl-6 list-outside list-disc marker:text-red-800">
@@ -81,8 +77,8 @@ export default async function Material() {
               <li>Training as a part of stakeholder journey maps.</li>
             </ul>
           </div>
-          <div className="ml-6 mt-6">
-            <div className="text-xl h-14"><span className="font-bold italic">MODULE 6: </span>
+          <div className="ml-6 mt-6 flex flex-col">
+            <div className="text-xl"><span className="font-bold italic">MODULE 6: </span>
             <span className="font-bold text-red-800">CHANGE READINESS & EFFECTIVENESS ASSESSMENTS</span>
             </div>
             <ul className="pl-6 list-outside list-disc marker:text-red-800">
