@@ -4,17 +4,19 @@ import { newContact } from "@/lib/utils"
 import type { Registrant } from "@/lib/utils";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { magnetNotify } from "@/lib/utils";
+import { useState } from "react";
 
 
 type OnRegister = (form: Registrant) => Promise<void>;
 
 export function MagnetForm( {handler}: { handler : OnRegister}) {
   const { register, handleSubmit, watch, formState: { errors }  } = useForm<Registrant>();
+  const [ loading, setLoading ] = useState(false);
   // const onSubmit: SubmitHandler<FormInput> = submit
 
   async function submit(fi: Registrant) {
     console.log("submitted: " + JSON.stringify(fi, null ,2))
-
+    setLoading(true);
     return newContact(fi).then(() => magnetNotify(fi)).then(() => handler(fi))
   }
   
@@ -44,8 +46,13 @@ export function MagnetForm( {handler}: { handler : OnRegister}) {
             <span className="label-text ml-2">Agree to receive texts or SMS</span>
           </label>
         </div>
-        <div className="flex justify-center">
-        <button className="mt-6 bg-red-800 text-xl text-white px-10 py-3 font-bold rounded-full hover:bg-orange-600 transition-colors" type="submit">Submit</button>
+        <div className="mt-6 flex justify-center">
+          { loading ?
+          <button className="bg-red-800 text-xl text-white px-10 py-3 font-bold rounded-full hover:bg-orange-600 transition-colors">
+            <span className="loading loading-spinner"></span></button>
+          : <button className="bg-red-800 text-xl text-white px-10 py-3 font-bold rounded-full hover:bg-orange-600 transition-colors" type="submit">
+            Submit</button>
+         }
         </div>
       </form>
     </div>
