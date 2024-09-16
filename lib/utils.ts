@@ -2,6 +2,7 @@
 
 import { client } from "./postmark";
 import { addContact } from "./zoho";
+import type { TemplatedMessage } from "postmark";
 
 export async function stripePk() { return process.env.NEXT_STRIPE_PUBLISHABLE_KEY! };
 
@@ -18,7 +19,7 @@ export async function reportError(module: string, e: Error) {
   await client.sendEmail(email).then(x => console.log(x))
 }
 
-export interface FormInput {
+export interface Registrant {
   firstName: string,
   lastName: string,
   email: string,
@@ -26,7 +27,7 @@ export interface FormInput {
   sms: boolean
 }
 
-export async function newContact(fi: FormInput): Promise<void> {
+export async function newContact(fi: Registrant): Promise<void> {
 
   const data = `
   { 
@@ -47,6 +48,23 @@ export async function newContact(fi: FormInput): Promise<void> {
   
 }
 
+export async function magnetNotify(r: Registrant) {
+  
+  const magnet: TemplatedMessage = {
+    TemplateAlias: "magnet",
+    TemplateModel: {
+      first_name: r.firstName,
+      last_name: r.lastName,
+      email: r.email,
+      phone: r.phone,
+      sms: r.sms.toString()
+    },
+    From: "support@trigonaconsulting.com",
+    To: "info@trigonaconsulting.com"
+  }
+  return client.sendEmailWithTemplate(magnet)
+}
+
 export interface Participant {
   name: string,
   email: string,
@@ -54,3 +72,5 @@ export interface Participant {
   phone: string,
   yearsInIndustry?: number,
 }
+
+

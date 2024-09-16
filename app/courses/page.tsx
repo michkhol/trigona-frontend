@@ -1,13 +1,13 @@
 import { cookies } from "next/headers";
 import { MagnetForm } from "../_components/magnet-form";
 import Material from "../_components/material";
-import type { FormInput } from "@/lib/utils";
+import type { Registrant } from "@/lib/utils";
 import Image from "next/image";
 import robot from "@/public/images/robot.webp";
 import computer from "@/public/images/computer.webp"
 
 export default function Courses() {
-  async function handleMagnet(form: FormInput) {
+  async function handleMagnet(form: Registrant) {
     "use server";
 
     cookies().set({
@@ -20,7 +20,6 @@ export default function Courses() {
   }
 
   const user = cookies().get("trigonaMagnet")
-  // console.log("User: " + user?.value);
 
   return (
     <div className="flex flex-col w-full">

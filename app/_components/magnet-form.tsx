@@ -1,18 +1,21 @@
 "use client";
 
 import { newContact } from "@/lib/utils"
-import type { FormInput } from "@/lib/utils";
+import type { Registrant } from "@/lib/utils";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { magnetNotify } from "@/lib/utils";
 
-type OnRegister = (form: FormInput) => Promise<void>;
+
+type OnRegister = (form: Registrant) => Promise<void>;
 
 export function MagnetForm( {handler}: { handler : OnRegister}) {
-  const { register, handleSubmit, watch, formState: { errors }  } = useForm<FormInput>();
+  const { register, handleSubmit, watch, formState: { errors }  } = useForm<Registrant>();
   // const onSubmit: SubmitHandler<FormInput> = submit
 
-  async function submit(fi: FormInput) {
+  async function submit(fi: Registrant) {
     console.log("submitted: " + JSON.stringify(fi, null ,2))
-    return newContact(fi).then(() => handler(fi))
+
+    return newContact(fi).then(() => magnetNotify(fi)).then(() => handler(fi))
   }
   
   return (<>
