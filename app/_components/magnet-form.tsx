@@ -19,7 +19,7 @@ export function MagnetForm( {handler}: { handler : OnRegister}) {
   }
   
   return (<>
-    <div>    
+    <div className="mx-4">    
       <div className="text-center mb-6 mt-6">
         <h1 className="text-5xl">Request More Information</h1>
       </div>
