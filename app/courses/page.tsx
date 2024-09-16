@@ -29,10 +29,10 @@ export default function Courses() {
           <h1 className="text-4xl">Live Virtual Course</h1>
         </div>
         <div className="pl-6 mt-10 w-[90%]">
-          <h1 className="font-bold text-8xl">Practical Change Manangement</h1>
+          <h1 className="font-bold text-6xl lg:text-8xl">Practical Change Manangement</h1>
         </div>
         <div className="pl-6 mt-10">
-          <h1 className="italic text-8xl text-red-800">Enhanced with AI</h1>
+          <h1 className="italic text-6xl lg:text-8xl text-red-800">Enhanced with AI</h1>
         </div>
          <div className="pl-6 mt-20 w-[80%]">
           <p className="text-4xl">EQUIP PROFESSIONALS WITH TOOLS, PROCESSES AND FRAMEWORKS TO EFFECTIVELY LEAD CHANGE</p>

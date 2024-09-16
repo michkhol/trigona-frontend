@@ -18,8 +18,8 @@ export default function PriceList2Register({prices }: { prices: SrvStripe.Price[
       <div className="">
         <h2 className="text-center mb-6 text-5xl"><span className="italic">Packages &amp;</span> <span className="font-bold text-red-800
         ">Pricing</span></h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 ml-2">
-          <div className="bg-red-800 text-white ml-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mx-4">
+          <div className="bg-red-800 text-white mx-4">
             <div className="mt-10 mx-[15%]">
               <h1 className="text-2xl text-center italic font-semibold">CUSTOM SOLUTIONS</h1>
               <p className="italic text-xl mt-6">
