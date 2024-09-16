@@ -12,6 +12,7 @@ const raleway = Raleway({ subsets: ["latin"], style:[ "normal", "italic"] });
 
 export const metadata: Metadata = {
   title: "Trigona Consulting LLC",
+  description: "Organizational change management, human capital consulting"
 };
 
 export default function RootLayout({children,}: Readonly<{ children: React.ReactNode }>) {
