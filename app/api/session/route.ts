@@ -6,7 +6,6 @@ export const dynamic = 'force-dynamic';
 
 
 export async function POST(req: NextRequest) {
-  
   try {
     const session = await req.formData().then(data => {
       // Generate next order id, using random numbers for now.
@@ -26,7 +25,7 @@ export async function POST(req: NextRequest) {
         ui_mode: "embedded",
         line_items: items,
         mode: 'payment',
-        payment_method_types: ["card", "cashapp", "amazon_pay", "klarna", "affirm"],
+        payment_method_types: ["card", "cashapp", "amazon_pay", "klarna"],
         return_url: `${req.headers.get("origin")}/processed?session_id={CHECKOUT_SESSION_ID}`,
         metadata: { 
           participantEmail: participantEmail, 
@@ -37,7 +36,6 @@ export async function POST(req: NextRequest) {
         }
       })
     });
-    // console.log(session);
     // const pd = await stripe.paymentMethodDomains.list();
     // console.log(JSON.stringify(pd, null, 2));
     return NextResponse.json({clientSecret: session.client_secret});
