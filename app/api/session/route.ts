@@ -6,7 +6,6 @@ export const dynamic = 'force-dynamic';
 
 
 export async function POST(req: NextRequest) {
-  console.log("In post")
   try {
     const session = await req.formData().then(data => {
       // Generate next order id, using random numbers for now.
