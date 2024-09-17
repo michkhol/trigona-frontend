@@ -1,120 +1,55 @@
-import officeBackgroud from "@/public/images/New-Office.jpg";
 import Image from "next/image";
+import About from "./_components/about";
+import Services from "./_components/services";
+import Contact from "./_components/contact";
+import Logos from "./_components/logos";
 import Link from "next/link";
-import serv1 from "@/public/images/108828452small.jpeg";
-import serv2 from "@/public/images/82137468small.jpeg";
-import serv3 from "@/public/images/62990460small.jpeg";
-// import serv4 from "@/public/images/112202028small.jpeg";
-// import { useSearchParams } from "next/navigation";  // Add Suspense boundary https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
-// import Script from "next/script";
+import colors from "tailwindcss/colors";
+import monster from "@/public/images/monster2-small.webp"
 
-function restoreUrl(): void {
-  const uri = window.location;
-  const origin = uri.origin;
-  uri.replace(origin)
-}
+import { PersonStanding, TrendingUp, Users, Zap } from 'lucide-react';
+
 
 export default function Home() {
-  // const params = useSearchParams();
-  // const success = params.get("showSuccess");
   return (
-    <div className="flex flex-col items-center gap-4 w-full">
-      <div className="relative h-96 w-full">
-        <Image className="object-cover z-0 object-center" src={officeBackgroud} alt="Background" fill={true} />
-        <h1 className="relative z-10 font-serif font-semibold text-center text-white text-5xl pt-40">Making Change Happen</h1>
-      </div>
-      <div className="text-center">
-        <h1 className="font-serif font-semibold text-3xl mt-10">Welcome</h1>
-      </div>
-      <div className="lg:w-[60%]">
-        <hr className="my-6"/>
-        <p className="px-6">Any transformation is a journey, the one best taken with the partner. The partner, who understands the 
-        challenges that lay ahead and with meaningful insights to guide you through them. Someone with knowledge to 
-        assist you with the transformation, whether it is organizational redesign or new IT system implementation. 
-        Someone who can deliver a comprehensive change program that provides organizationally and culturally aligned 
-        solutions to ensure your project&apos;s success. Someone with a passion and dedication to bring your organization to 
-        the next level. With organizational change management expertise in commercial and public sector, Trigona Consulting 
-        is here to help you in your journey. We make change happen.</p>
-      </div>
-      <div className="w-[60%]">
-        <h1 className="text-center font-serif font-semibold text-3xl mt-10">Our Services</h1>
-        <hr className="my-6"/>
-        <div className="grid grid-rows-1 lg:grid-cols-3 w-full lg:gap-4">
-          <div className="flex flex-col gap-4">
-            <div>
-              <Image className="m-auto" src={serv1} alt="Services1"/>
+    <div className="flex flex-col w-full">
+      <div className="relative z-1 w-full bg-base-100">
+        {/* <Image className="object-cover z-1 object-right opacity-40 [mask-image:_linear-gradient(to_left,_black_10%,_transparent_80%)]" src={monster} alt="Background" fill={true} priority={true}/> */}
+        <Image className="absolute right-0 z-2 hidden md:block" src={monster} alt="Background" height={600} priority={true}/>
+        <div className="relative z-10">
+          <h1 className="pl-[5%] text-8xl pt-10">Making Change</h1>
+        </div>
+        <div className="relative z-10">
+          <h1 className="z-10 font-bold pl-[5%] lg:pl-[33%] text-red-800 italic text-8xl pt-6">Happen</h1>
+        </div>
+        <div className="relative z-10 mt-14 ml-8">
+          <div className="grid grid-cols-1 text-2xl">
+            <div className="flex items-center">
+              <TrendingUp className="mr-2 flex-shrink-0" color={colors.red[800]}/><span className="text-shadow">Transformation delivery consulting</span>
             </div>
-            <div className="basis-14">
-              <h2 className="text-center font-serif font-semibold text-xl">Transformation Delivery Consulting</h2>
+            <div className="flex items-center mt-3">
+              <Zap className="mr-2 flex-shrink-0" color={colors.red[800]}/>
+              <span className="text-shadow">Tailored capability building solutions</span>
             </div>
-            <div>
-              <ul className="list-disc list-outside pl-6">
-                <li>Organizational Change Management</li>
-                <li>Organizational Design</li>
-                <li>Program/Project Management</li>
-                <li>Business Process Re-engineering</li>
-              </ul>
-            </div>
+            <div className="flex items-center mt-3">
+              <Users className="mr-2 flex-shrink-0" color={colors.red[800]}/>
+              <span className="text-shadow">On-demand executive expertise</span>
+            </div> 
           </div>
-          <div className="flex flex-col gap-4">
-            <div>
-              <Image className="m-auto" src={serv2} alt="Services2"/>
-            </div>
-            <div className="basis-14">
-              <h2 className="text-center font-serif font-semibold text-xl">On-Demand Executive Expertise</h2>
-            </div>
-            <div>
-            <ul className="list-disc list-outside pl-6">
-              <li>Interim Executive Leadership</li>
-              <li>Project Based Leadership</li>
-              <li>Customized Leadership Service</li>
-            </ul>
-            </div>
-          </div>
-          <div className="flex flex-col gap-4">
-            <div>
-              <Image className="m-auto" src={serv3} alt="Services3"/>
-            </div>
-            <div className="basis-14">
-            <h2 className="text-center font-serif text-xl font-semibold">Capability Building Tailored Training Solutions</h2>
-            </div>
-            <div>
-            <ul className="list-disc list-outside pl-6">
-              <li>Live Web-Based and In-Person Capability Building Training Offerings</li>
-            </ul>
-            </div>
-          </div>
+         </div>
+         <div className="relative z-10 mt-10 ml-8 mb-20">
+           <Link href="/#contact" className="bg-red-800 text-white text-2xl mt-8 px-8 py-3 rounded-full font-bold flex items-center hover:bg-orange-600 transition-colors w-64">
+              Let Us Help You
+            </Link>
+         </div>
+        <div className="absolute bottom-0">
+          <Logos />
         </div>
       </div>
-
-      <div className="flex flex-row items-center justify-center gap-4 w-full">
-        <Link className="btn btn-primary" href="/contact">Learn More</Link>
-        {/*<Link className="btn btn-primary" href="#">Upcoming Trainings</Link>*/}
-      </div>
-
-      {/*
-      <Script id="modal1" onReady={() => { 
-        // console.log("Onready: " + success)
-        if (success != null ) {
-          (document.getElementById('my_modal_1') as HTMLDialogElement).showModal(); 
-        }
-      }}>
-        {`;`}
-      </Script>
-      <dialog id="my_modal_1" className="modal" onBlur={() => restoreUrl()}>
-        <div className="modal-box">
-          <h3 className="font-bold text-lg">Thank you for registering for the webinar!</h3>
-          <p className="py-4">Press ESC key or click the button below to close</p>
-          <div className="modal-action">
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal *}
-              <button className="btn" onClick={() => restoreUrl()}>Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
-      */}
-    </div>
+      <Services />
+      <About />
+      <Contact />
+    </div>  
   );
 }
 

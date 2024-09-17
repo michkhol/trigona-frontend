@@ -6,29 +6,30 @@ import { Raleway } from "next/font/google";
 import { NavBar } from "./_components/nav-bar";
 import logo from '@/public/images/logo_title.png'
 import { navLinks } from "./_components/nav-links";
+import FacebookPixel from "./_components/FacebookPixel";
 
-const raleway = Raleway({ subsets: ["latin"] });
+const raleway = Raleway({ subsets: ["latin"], style:[ "normal", "italic"] });
 
 export const metadata: Metadata = {
   title: "Trigona Consulting LLC",
+  description: "Organizational change management, human capital consulting"
 };
 
-export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>) {
+export default function RootLayout({children,}: Readonly<{ children: React.ReactNode }>) {
   return (
     // Need to override font from theme
-    <html lang="en" data-theme="wireframe">
-      <body className={`text-black ${raleway.className}`}> 
-        <header>
-        <div className="flex justify-center" >
-          <Image src={logo} alt="logo" width={650}/></div>
+    <html className="scroll-pt-20 lg:scroll-pt-60 overflow-x-hidden" lang="en" data-theme="wireframe">
+      <body className={`text-base-content ${raleway.className} p-0`}> 
+        {/* <img height="1" width="1" className="hidden" src="https://www.facebook.com/tr?id=714705464046278&ev=PageView&noscript=1" /> */}
+        <header className="sticky top-0 z-50 h-26 bg-base-100 opacity-90" >
           <NavBar />
         </header>
         {children}
-        <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded mt-7">
+        <footer className="footer footer-center p-10 bg-base-200 text-base-content">
           <nav className="grid grid-flow-col gap-4">
-            <Link href={navLinks.get("ABOUT")!} className="link link-hover">About us</Link>
-            <Link href={navLinks.get("CONTACT")!} className="link link-hover">Contact</Link>
-            {/* <Link href={navLinks.get("SERVICES")!}  className="link link-hover">Services</Link> */}
+            { Array.from(navLinks.keys()).map((key) => {
+              return (<Link key={key} className="link link-hover" href={navLinks.get(key)!}>{key}</Link>)
+            })}
           </nav> 
           <nav>
             <div className="grid grid-flow-col gap-4">
@@ -41,9 +42,10 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
             </div>
           </nav> 
           <aside>
-            <p>Copyright © 2024 - All right reserved by Trigona Consulting LLC</p>
+            <p>Copyright © 2024 - All rights reserved by Trigona Consulting LLC</p>
           </aside>
         </footer>
+        <FacebookPixel />
       </body>
     </html>
   );
