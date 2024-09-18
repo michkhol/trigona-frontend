@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Store from "./store";
 import PriceList2Register from "./pricelist2register";
+import Logos from "./logos";
 import {stripe} from "@/lib/stripe"
 import Link from "next/link";
 import img from "@/public/images/principal.png"
+import tlogo from "@/public/images/trigona-logo.png";
 import whoShouldEnroll from "@/public/images/whoshouldenroll.webp"
 
 import time from "@/public/images/time.png";
@@ -241,6 +243,28 @@ export default async function Material() {
             </Link>
          </div>
         </div>
+      </div>
+      <div className="flex flex-col lg:flex-row mt-6 pb-6 bg-red-800">
+        <div className="mx-4 text-white">
+          <h2 className="text-5xl mt-6"><span className="italic">About</span> <span className="font-bold">Us</span></h2>
+          <p className="text-xl mt-6">
+          Established in 2016, Trigona Consulting L.L.C. is a woman owned boutique consulting firm, that provides transformation delivery solutions for commercial and government clients during business, organizational and digital transformations. With field-tested methodologies and leading practices, we ensure that organizations maximize their project&apos;s potential.
+          Our extensive experience gained at Big-4 consulting firms and applied across multiple global organizations, allows us to provide our clients with holistic and comprehensive transformation implementation support. 
+          We make change happen.
+          </p>
+        </div>
+        <div className="flex-none">
+          <div className="mx-10">
+            <Image className="mx-auto" src={tlogo} alt="logo" height={300}/>
+          </div>
+          <div className="text-center text-white">
+            <p className="text-3xl">Trigona Consulting LLC</p>
+            <p className="text-xl">Making change happen</p>
+          </div>
+        </div>
+      </div>
+      <div className="my-2">
+        <Logos />
       </div>
    </div>  
   );

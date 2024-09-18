@@ -53,20 +53,19 @@ export default async function Blog() {
 } | order(_createdAt desc)`, 
     {}, {next: { revalidate: 60}}
   );
-  // console.log(data[0].body);
+  console.log(JSON.stringify(data[0], null, 2));
 
   return (
     <div className="flex flex-col items-center gap-4 w-full">
-      <div className="relative h-96 w-full">
-        {/* <Image className="object-cover z-0 object-center" src={officeBackgroud} alt="Background" fill={true} /> */}
-        <h1 className="relative z-10 font-serif font-semibold text-center text-white text-5xl pt-40">Our Blog</h1>
-      </div>
       { 
         data.map((b: BlogPost) => {
           return (
             <div key={b._id}>
-            <PortableText value={b.body!} components={components}/>
-            <hr className="w-full"/>
+              <h1 className="text-3xl font-bold">{b.title}</h1>
+              <GeneralImageComponent value={b.mainImage as SanityImageSource} isInline={false}/>
+              <div className="mt-6">
+                <PortableText value={b.body!} components={components}/>
+              </div>
             </div>
           );
         })
