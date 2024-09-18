@@ -13,8 +13,8 @@ import { PersonStanding, TrendingUp, Users, Zap } from 'lucide-react';
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
-      <Link className="w-full py-4 bg-red-800 text-white text-2xl font-semibold text-center" href="/courses">
-        Starting in October 2024: Practical Change Management, AI Enhanced course. Enroll now!
+      <Link className="w-full py-4 bg-red-800 text-white text-2xl text-center" href="/courses">
+        Starting in October 2024: <span className="font-semibold">Practical Change Management, Enhanced with AI</span> course. Enroll now!
       </Link>
       <div className="relative z-1 w-full bg-base-100">
         {/* <Image className="object-cover z-1 object-right opacity-40 [mask-image:_linear-gradient(to_left,_black_10%,_transparent_80%)]" src={monster} alt="Background" fill={true} priority={true}/> */}
