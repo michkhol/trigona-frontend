@@ -20,14 +20,14 @@ export default function Logos() {
       <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-infinite-scroll">
         {
           images.map((logo) => {
-            return (<li key={logo.src}><Image src={logo} alt={logo.src} height={50} /></li>)
+            return (<li key={logo.src}><Image src={logo} alt={logo.src} height={50} priority={true} /></li>)
           })
         }
     </ul>
     <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
         {
           images.map((logo) => {
-            return (<li key={logo.src}><Image src={logo} alt={logo.src} height={50} /></li>)
+            return (<li key={logo.src}><Image src={logo} alt={logo.src} height={50} priority={true} /></li>)
           })
         }
     </ul>

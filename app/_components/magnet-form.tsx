@@ -23,7 +23,7 @@ export function MagnetForm( {handler}: { handler : OnRegister}) {
   return (<>
     <div className="mx-4">    
       <div className="text-center mb-6 mt-6">
-        <h1 className="text-5xl">Request More Information</h1>
+        <h1 className="text-5xl"><span className="italic">Request</span> <span className="font-bold text-red-800">More Information</span></h1>
       </div>
       <form onSubmit={handleSubmit(submit)}>
         <div className="form-control max-w-xl mx-auto my-4">
