@@ -24,7 +24,7 @@ export default function Courses() {
   return (
     <div className="flex flex-col w-full">
       <div className="flex flex-col lg:flex-row bg-base-100 ">
-        <div className="md:flex-none">
+        <div className="hidden lg:block lg:flex-none">
           <Image src={robot} alt="Background" height={800} priority={true} />
         </div>
         <div>
