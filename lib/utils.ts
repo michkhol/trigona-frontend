@@ -4,6 +4,7 @@ import { client } from "./postmark";
 import { addContact } from "./zoho";
 import type { TemplatedMessage } from "postmark";
 
+// Deprecated, use NEXT_PUBLIC var
 export async function stripePk() { return process.env.NEXT_STRIPE_PUBLISHABLE_KEY! };
 
 export async function reportError(module: string, e: Error) {

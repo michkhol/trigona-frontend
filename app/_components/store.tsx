@@ -14,6 +14,8 @@ const priceFont = Roboto({ subsets: ["latin"], weight: ["700"] });
 
 const LiveCourseId = process.env.NEXT_PUBLIC_STRIPE_LIVE_COURSE;
 const FullCourseId = process.env.NEXT_PUBLIC_STRIPE_FULL_COURSE;
+
+const pk = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
  
 export default function Store({prices}: { prices: SrvStripe.Price[]}) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -56,7 +58,7 @@ export default function Store({prices}: { prices: SrvStripe.Price[]}) {
 
   useEffect(() => {
     // Immediately Invoked Function Expression
-    (async () => {await stripePk().then(pk => loadStripe(pk)).then(s => stripeRef.current = s)})()
+    (async () => {await loadStripe(pk!).then(s => stripeRef.current = s)})()
   },[]);
 
 
