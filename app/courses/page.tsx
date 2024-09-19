@@ -5,6 +5,8 @@ import type { Registrant } from "@/lib/utils";
 import Image from "next/image";
 import robot from "@/public/images/robot.webp";
 import computer from "@/public/images/computer.webp"
+import Logos from "../_components/logos";
+
 
 export default function Courses() {
   async function handleMagnet(form: Registrant) {
@@ -46,6 +48,9 @@ export default function Courses() {
         </div>
       </div>
       <div className="h-3 bg-gradient-to-t from-gray-50"></div>
+      <div className="my-2">
+        <Logos />
+      </div>
       <div className="flex flex-row mx-2">
         <div className="ml-4 text-2xl px-4">
           <h2 className="text-5xl text-center mt-6"><span className="italic">Course</span> <span className="font-bold text-red-800">Overview</span>

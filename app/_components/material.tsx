@@ -97,68 +97,68 @@ export default async function Material() {
             </Link>
          </div>
       </div>
-      <div className="ml-2 mt-6">
+      <div className="ml-2 my-6">
         <h2 className="text-center text-5xl mt-4"><span className="italic">How It</span><span className="font-bold text-red-800"> Works</span></h2>
         <div className="grid grid-cols-1 grid-rows-8 lg:grid-cols-3 lg:grid-rows-3 gap-4 text-center text-xl mr-4">
           <div className="">
-            <div className="my-4 flex items-center justify-center gap-4 h-14">
+            <div className="my-4 flex  flex-col items-center justify-start gap-4">
               <Format className="fill-red-800" viewBox="0 0 128 128" height={50} />
               <h2 className="text-red-800 text-2xl">FORMAT</h2>
             </div>
             <p>Live Online Training + On-demand Recordings</p>
           </div>
           <div className="">
-            <div className="my-4 flex items-center justify-center gap-4 h-14">
+            <div className="my-4 flex flex-col items-center justify-start gap-4">
               <Image src={time} alt="time" height={45} />
               <h2 className="text-2xl text-red-800">TIME COMMITMENT</h2>
             </div>
             <p>6 Weeks | 2-3 Hours/Week | 1 Live Class & 1 Office Hour Weekly | Optional One-on-One Coaching</p>
           </div>
           <div className="">
-            <div className="my-4 flex items-center justify-center gap-4 h-14">
+            <div className="my-4 flex flex-col items-center justify-start gap-4">
               <Methodology className="fill-red-800" viewBox="0 0 126 126" width={45} />
               <h2 className="text-2xl text-red-800">METHODOLOGY</h2>
             </div>
             <p>Learn Top-Tier Consulting Change Management Techniques</p>
           </div>
           <div className="">
-            <div className="my-4 flex items-center justify-center gap-4 h-14">
+            <div className="my-4 flex flex-col items-center justify-start gap-4">
               <Image src={tools} alt="tools" width={45} />
               <h2 className="text-2xl text-red-800">PRACTICAL TOOLS</h2>
             </div>
             <p>Receive Ready-to-Use Templates and Step-by-Step Guides</p>
           </div>
           <div className="">
-            <div className="my-4 flex items-center justify-center gap-4 h-14">
+            <div className="my-4 flex flex-col items-center justify-start gap-4">
               <Personalized className="fill-red-800" viewBox="0 0 126 111" height={45} />
               <h2 className="text-2xl text-red-800">PERSONALIZED SUPPORT</h2>
             </div>
             <p>Get Tailored Feedback for Your Organizational Challenges</p>
           </div>
           <div className="">
-            <div  className="my-4 flex items-center justify-center gap-4 h-14">
+            <div  className="my-4 flex flex-col items-center justify-start gap-4">
               <Expert className="fill-red-800" viewBox="0 0 128 100" width={64} />
               <h2 className="text-2xl text-red-800">EXPERT INSTRUCTORS</h2>
             </div>           
             <p>Learn from Former Big 5 Consulting Leaders</p>
           </div>
           <div className="">
-            <div className="my-4 flex items-center justify-center gap-4 h-14">
+            <div className="my-4 flex flex-col items-center justify-start gap-4">
               <Image src={career} alt="career" width={50} />
               <h2 className="text-2xl text-red-800">CAREER ADVANCEMENT</h2>
             </div>
             <p>Master AI-Driven Change Management Skills</p>
           </div>
           <div className="">
-            <div className="my-4 flex items-center justify-center gap-4 h-14">
+            <div className="my-4 flex flex-col items-center justify-start gap-4">
               <Image src={impact} alt="impact" width={50} />
               <h2 className="text-2xl text-red-800">IMMEDIATE IMPACT</h2>
             </div>
             <p>Apply Learnings Through Guided Real-World Projects</p>
           </div>
           <div className="">
-            <div className="my-4 flex items-center justify-center gap-4 h-14">
-              <Image src={smallClass} alt="impact" width={50} />
+            <div className="my-4 flex flex-col items-center justify-start gap-4">
+              <Image className="" src={smallClass} alt="impact" width={50} />
               <h2 className="text-2xl text-red-800">SMALL CLASS EXPERIENCE</h2>
             </div>
             <p>Participate in Facilitated Discussions With Industry Peers</p>
@@ -194,7 +194,7 @@ export default async function Material() {
             <li>Develop practical skills to sustain long-term organizational change.</li>
             <li>Address real-world challenges with immediately applicable tactical solutions.</li>
           </ul>
-        <div className="mt-4 flex justify-center">
+        <div className="my-4 flex justify-center">
            <Link href="/pricing" className="bg-red-800 text-white text-2xl mt-8 px-8 py-3 rounded-full font-bold text-center hover:bg-orange-600 transition-colors w-52">
               Enroll Now
             </Link>
@@ -262,9 +262,6 @@ export default async function Material() {
             <p className="text-xl">Making change happen</p>
           </div>
         </div>
-      </div>
-      <div className="my-2">
-        <Logos />
       </div>
    </div>  
   );
