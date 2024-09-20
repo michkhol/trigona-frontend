@@ -25,8 +25,7 @@ export default function Courses() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* LinkedIn tracking pixel */}
-      <img height="1" width="1" className="hidden" alt="" src="https://px.ads.linkedin.com/collect/?pid=7616985&conversionId=18614746&fmt=gif" />
+      <img height="1" width="1" className="hidden" alt="" src="https://px.ads.linkedin.com/collect/?pid=7616985&conversionId=18614754&fmt=gif" /> 
       <div className="flex flex-col lg:flex-row bg-base-100 ">
         <div className="hidden lg:block lg:flex-none">
           <Image src={robot} alt="Background" height={800} priority={true} />
