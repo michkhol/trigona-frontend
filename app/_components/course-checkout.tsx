@@ -7,6 +7,8 @@ import { stripePk } from "@/lib/utils";
 
 export type ModalCheckout = (data: FormData) => Promise<void>;
 
+const pk = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+
 export default function CourseCheckout({setOpenDialog}: { setOpenDialog: (mc: ModalCheckout) => void}) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const stripeRef = useRef<Stripe | null>(null);
@@ -43,7 +45,7 @@ export default function CourseCheckout({setOpenDialog}: { setOpenDialog: (mc: Mo
 
   useEffect(() => {
     // Immediately Invoked Function Expression
-    (async () => {await stripePk().then(pk => loadStripe(pk)).then(s => stripeRef.current = s)})()
+    (async () => {await loadStripe(pk!).then(s => stripeRef.current = s)})()
     setOpenDialog(openDialog)
   },[setOpenDialog]);
 
