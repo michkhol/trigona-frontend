@@ -46,6 +46,8 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
           </aside>
         </footer>
         <FacebookPixel />
+        {/* LinkedIn tracking pixel */}
+         <img height="1" width="1" className="hidden" alt="" src="https://px.ads.linkedin.com/collect/?pid=7616985&conversionId=18614746&fmt=gif" />
       </body>
     </html>
   );
