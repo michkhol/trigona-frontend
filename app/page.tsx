@@ -39,13 +39,13 @@ export default function Home() {
               <span className="text-shadow">On-demand executive expertise</span>
             </div> 
           </div>
-         </div>
-         <div className="relative z-10 mt-10 ml-8 mb-20">
+        </div>
+        <div className="relative z-10 mt-10 ml-8">
            <Link href="/#contact" className="bg-red-800 text-white text-2xl mt-8 px-8 py-3 rounded-full font-bold flex items-center hover:bg-orange-600 transition-colors w-64">
               Let Us Help You
             </Link>
-         </div>
-        <div className="absolute bottom-0">
+        </div>
+        <div className="z-10 mt-8">
           <Logos />
         </div>
       </div>
