@@ -8,11 +8,13 @@ import computer from "@/public/images/computer.webp"
 import Logos from "../_components/logos";
 
 
-export default function Courses() {
+export default async function Courses() {
   async function handleMagnet(form: Registrant) {
     "use server";
 
-    cookies().set({
+    const cookieStore = await cookies();
+
+    cookieStore.set({
       name: "trigonaMagnet",
       value: "true",
       httpOnly: true,
@@ -21,7 +23,8 @@ export default function Courses() {
     });
   }
 
-  const user = cookies().get("trigonaMagnet")
+  const cookieStore = await cookies();
+  const user = cookieStore.get("trigonaMagnet")
 
   return (
     <div className="flex flex-col w-full">
@@ -68,7 +71,7 @@ export default function Courses() {
         <Image className="ml-4 hidden lg:block" src={computer} alt="Computer" height={600} priority={true} />
       </div>
       <div className="">
-        {cookies().get("trigonaMagnet") ? <Material /> : <MagnetForm handler={handleMagnet} />}
+        {cookieStore.get("trigonaMagnet") ? <Material /> : <MagnetForm handler={handleMagnet} />}
       </div>
     </div>
   );
