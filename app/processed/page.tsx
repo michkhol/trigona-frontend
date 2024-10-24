@@ -5,14 +5,15 @@ import { reportError } from "@/lib/utils";
 import { client } from "@/lib/postmark";
 import type { TemplatedMessage } from "postmark";
 
-export default async function ReturnFromPayment({
-  params,
-  searchParams,
-}: {
-  params: { slug: string },
-  searchParams: { [key: string]: string | string[] | undefined }
+type Params = Promise<{ slug: string }>
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+
+export default async function ReturnFromPayment(props : {
+  params: Params,
+  searchParams: SearchParams,
 }) 
 {
+  const searchParams = await props.searchParams
   return(
     <div className="flex flex-col md:flex-row bg-red-800 text-white">
       <div>

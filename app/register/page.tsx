@@ -1,13 +1,14 @@
 import RegisterAndCheckout from "../_components/register-and-checkout";
 import Link from "next/link";
 
-export default async function Register({
-  params,
-  searchParams,
-}: {
-  params: { slug: string },
-  searchParams: { [key: string]: string | string[] | undefined }
+type Params = Promise<{ slug: string }>
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+
+export default async function Register(props: {
+  params: Params,
+  searchParams: SearchParams,
 }) {
+  const searchParams = await props.searchParams
   return (
     <div>
       <RegisterAndCheckout priceId={searchParams.priceId as string} />
