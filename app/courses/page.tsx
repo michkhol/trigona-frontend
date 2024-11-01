@@ -47,7 +47,7 @@ export default async function Courses() {
             <p className="text-2xl lg:text-4xl">EQUIP PROFESSIONALS WITH TOOLS, PROCESSES AND FRAMEWORKS TO EFFECTIVELY LEAD CHANGE</p>
           </div>
           <div className="pl-6 my-10">
-            <p className="text-4xl text-red-800">&gt;&gt;&gt; | 6 Weeks | From $1850 | October 2024  </p>
+            <p className="text-4xl text-red-800">&gt;&gt;&gt; | 6 Weeks | November 2024  </p>
           </div>
         </div>
       </div>
