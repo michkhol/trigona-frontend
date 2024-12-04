@@ -30,7 +30,7 @@ export default function Services() {
             <div className="">
               <ul className="list-disc list-outside ml-10 my-6 text-xl">
                 <li>Organizational Change Management Capabilities Within Client Organizations</li>
-                <li className="mt-4">Leadership Development, Culture, Emotional Intelligence, and DEI</li>
+                <li className="mt-4">Leadership Development, Culture, and Emotional Intelligence</li>
                 <li className="mt-4">Organizational Change Management Training Courses</li>
               </ul>
             </div>
