@@ -17,7 +17,7 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 grid-rows-6 lg:grid-cols-3 lg:grid-rows-2 gap-4 text-center text-xl mx-4 mt-6">
           <div className="grid grid-cols-1 grid-rows-4">
             <Image className="m-auto" src={stars} alt="stars" width={100}/>
-            <p className="">"Olga's expertise in organizational change management was an invaluable asset to us during challenging times."</p>
+            <p className="">&quot;Olga's expertise in organizational change management was an invaluable asset to us during challenging times.&quot;</p>
             <Image className="m-auto" src={steve} alt="mariott" height={100} />
             <div>
               <p className="text-red-800 font-bold">Steve Heitzner</p>
@@ -27,7 +27,7 @@ export default function Testimonials() {
           </div>
           <div className="grid grid-cols-1 grid-rows-4">
             <Image className="m-auto" src={stars} alt="stars" width={100}/>
-            <p className="">"Highly recommend for programs of any size or complexity."</p>
+            <p className="">&quot;Highly recommend for programs of any size or complexity.&quot;</p>
             <Image className="m-auto" src={donna} alt="kyndryl" height={100} />
             <div>
               <p className="text-red-800 font-bold">Donna Zaruba Walker</p>
@@ -37,7 +37,7 @@ export default function Testimonials() {
           </div>
           <div className="grid grid-cols-1 grid-rows-4">
             <Image className="m-auto" src={stars} alt="stars" width={100}/>
-            <p className="">"Highly recommend for programs of any size or complexity."</p>
+            <p className="">&quot;Highly recommend for programs of any size or complexity.&quot;</p>
             <Image className="m-auto" src={tom} alt="navy" height={100} />
             <div>
               <p className="text-red-800 font-bold">Tom Harker</p>
@@ -47,7 +47,7 @@ export default function Testimonials() {
           </div>
           <div className="grid grid-cols-1 grid-rows-4">
             <Image className="m-auto" src={stars} alt="stars" width={100}/>
-            <p className="">"Organizational change management experts..."</p>
+            <p className="">&quot;Organizational change management experts...&quot;</p>
             <Image className="m-auto" src={john} alt="mit" height={100} />
             <div>
               <p className="text-red-800 font-bold">John Adams</p>
@@ -57,7 +57,7 @@ export default function Testimonials() {
           </div>
           <div className="grid grid-cols-1 grid-rows-4">
             <Image className="m-auto" src={stars} alt="stars" width={100}/>
-            <p className="">"Highly recommend! Worked with Olga and her team as part of a successful change management effort with the US Navy Financial Management team."</p>
+            <p className="">&quot;Highly recommend! Worked with Olga and her team as part of a successful change management effort with the US Navy Financial Management team.&quot;</p>
             <Image className="m-auto" src={robert} alt="ati" height={100} />
             <div>
               <p className="text-red-800 font-bold">Robert W Patrick Jr.</p>
@@ -67,7 +67,7 @@ export default function Testimonials() {
           </div>
           <div className="grid grid-cols-1 grid-rows-4">
             <Image className="m-auto" src={stars} alt="stars" width={100}/>
-            <p className="">"I highly recommend Olga and her team for any change management initiative - their strategic thinking, deep expertise, and unwavering commitment to success are unparalleled."</p>
+            <p className="">&quot;I highly recommend Olga and her team for any change management initiative - their strategic thinking, deep expertise, and unwavering commitment to success are unparalleled.&quot;</p>
             <Image className="m-auto" src={nikki} alt="wendys" height={100} />
             <div>
               <p className="text-red-800 font-bold">Nikki Omelian</p>
