@@ -17,7 +17,7 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 grid-rows-6 lg:grid-cols-3 lg:grid-rows-2 gap-4 text-center text-xl mx-4 mt-6">
           <div className="grid grid-cols-1 grid-rows-4">
             <Image className="m-auto" src={stars} alt="stars" width={100}/>
-            <p className="">&quot;Olga's expertise in organizational change management was an invaluable asset to us during challenging times.&quot;</p>
+            <p className="">&quot;Olga&apos;s expertise in organizational change management was an invaluable asset to us during challenging times.&quot;</p>
             <Image className="m-auto" src={steve} alt="mariott" height={100} />
             <div>
               <p className="text-red-800 font-bold">Steve Heitzner</p>
@@ -72,7 +72,7 @@ export default function Testimonials() {
             <div>
               <p className="text-red-800 font-bold">Nikki Omelian</p>
               <p className="text-sm">Change Management Lead</p>
-              <p className="text-sm font-bold">Wendy's</p>
+              <p className="text-sm font-bold">Wendy&apos;s</p>
             </div>
           </div>
         </div>
