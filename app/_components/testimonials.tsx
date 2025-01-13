@@ -41,8 +41,8 @@ export default function Testimonials() {
             <Image className="m-auto" src={tom} alt="navy" height={100} />
             <div>
               <p className="text-red-800 font-bold">Tom Harker</p>
-              <p className="text-sm">Former Acting Secretary Department</p>
-              <p className="text-sm font-bold">Navy</p>
+              <p className="text-sm">Former Acting Secretary</p>
+              <p className="text-sm font-bold">Department of the Navy</p>
             </div>
           </div>
           <div className="grid grid-cols-1 grid-rows-4">
@@ -71,8 +71,8 @@ export default function Testimonials() {
             <Image className="m-auto" src={nikki} alt="wendys" height={100} />
             <div>
               <p className="text-red-800 font-bold">Nikki Omelian</p>
-              <p className="text-sm">Change Management</p>
-              <p className="text-sm font-bold">Wendy's Company</p>
+              <p className="text-sm">Change Management Lead</p>
+              <p className="text-sm font-bold">Wendy's</p>
             </div>
           </div>
         </div>

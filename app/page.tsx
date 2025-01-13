@@ -2,7 +2,7 @@ import Image from "next/image";
 import About from "./_components/about";
 import Services from "./_components/services";
 import Testimonials from "./_components/testimonials";
-import CaseStudy from "./_components/case-study";
+import CaseStudiesMC from "./_components/case-studies-mc";
 import Contact from "./_components/contact";
 import Logos from "./_components/logos";
 import Link from "next/link";
@@ -53,7 +53,7 @@ export default function Home() {
       </div>
       <Services />
       <Testimonials />
-      <CaseStudy />
+      <CaseStudiesMC />
       <About />
       <Contact />
     </div>  
