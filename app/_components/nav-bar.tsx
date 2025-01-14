@@ -19,7 +19,7 @@ export function NavBar() {
       </div>
       <MenuItems classes="menu menu-sm dropdown-content mt-3 z-[20] p-2 shadow rounded-box w-52 bg-base-200"/>
     </div>
-    <Image src={logo} alt="Trigona Consulting LLC" height={100} />
+    <Image className="lg:w-full w-80"  src={logo} alt="Trigona Consulting LLC" height={100} />
     <div className="hidden lg:flex lg:w-full">
        <MenuItems classes="menu menu-horizontal px-1"/>
     </div>
