@@ -38,13 +38,13 @@ export default function CaseStudiesMC() {
     console.log("Agent: " + agent)
     if (/Mobi/i.test(agent)) {
       setDeviceType('mobile');
-      console.log("Device: mobile")
+      // console.log("Device: mobile")
     } else if (/Tablet/i.test(agent)) {
       setDeviceType('tablet');
-      console.log("Device: tablet")
+      // console.log("Device: tablet")
     } else {
       setDeviceType('desktop');
-      console.log("Device: desktop")
+      // console.log("Device: desktop")
     }
 
   }, [])
