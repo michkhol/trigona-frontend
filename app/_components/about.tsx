@@ -7,7 +7,6 @@ import { SanityImageAsset } from "@/sanity/sanity.types";
 import { SanityImageObjectStub } from "@sanity/asset-utils";
 import { SimplePage } from "@/sanity/sanity.types";
 import principal from "@/public/images/principal.png"
-import DecoratedTitle from "./decorated-title";
 import Link from "next/link";
 
 const BlockImageComponent = ({value, isInline}: { value: SanityImageSource, isInline: boolean}) => {

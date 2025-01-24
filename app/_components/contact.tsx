@@ -1,4 +1,3 @@
-import DecoratedTitle from "./decorated-title";
 
 export default function Contact() {
   return (

@@ -6,7 +6,7 @@ import { RegisterForm } from "./register-form";
 import type { ModalCheckout } from "./course-checkout";
 
 export default function RegisterAndCheckout({priceId, }: { priceId: string }) {
-  const dialogRef = useRef<ModalCheckout>();
+  const dialogRef = useRef<ModalCheckout>(undefined);
 
   function setModalDialog(mc: ModalCheckout) {
     dialogRef.current = mc
