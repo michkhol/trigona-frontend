@@ -1,4 +1,4 @@
-import RegisterAndCheckout from "../_components/register-and-checkout";
+import RegisterAndCheckout from "@/app/_components/register-and-checkout";
 import Link from "next/link";
 
 type Params = Promise<{ slug: string }>

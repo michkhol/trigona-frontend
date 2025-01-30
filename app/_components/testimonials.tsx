@@ -10,9 +10,6 @@ import nikki from "@/public/images/wendys-nikki-omelian.webp"
 export default function Testimonials() {
   return (
       <div className="">
-        <div className="mt-10">
-          <h1 className="ml-4 text-center text-6xl lg:text-8xl">Testimonials<span className="text-red-800 font-bold italic"></span></h1>
-        </div>
         <div className="grid grid-cols-1 grid-rows-6 lg:grid-cols-3 lg:grid-rows-2 gap-4 text-center text-xl mx-4 my-6">
           <div className="flex flex-col">
             <Image className="m-auto" src={steve} alt="mariott" height={100} />

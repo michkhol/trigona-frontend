@@ -1,5 +1,5 @@
 import {stripe} from "@/lib/stripe";
-import PriceList2Register from "../_components/pricelist2register";
+import PriceList2Register from "@/app/_components/pricelist2register";
 import Link from "next/link";
 
 export default async function Pricing() {

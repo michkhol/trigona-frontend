@@ -48,8 +48,20 @@ html {
     -0.05em 0 white,
     0 -0.05em white,
     -0.05em -0.05em white,
-    -0.05em 0.05em white,
+    -0.05em 0.05em white, 
     0.05em -0.05em white,
     0.05em 0.05em white;
+  }
+
+  .gradient-anim-btn {
+    background: linear-gradient(-45deg, theme('colors.red.800') 47%, white 52%, theme('colors.red.800') 100%);
+    background-size: 1000% auto;
+    animation: gradient-move 5s ease-in-out infinite;
+  }
+
+  @keyframes gradient-move {
+    0%{background-position: right; color: white}
+    50%{color: black}
+    100%{background-position: left; color: white}
   }
 

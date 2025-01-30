@@ -1,10 +1,10 @@
 import Image from "next/image";
-import About from "./_components/about";
-import Services from "./_components/services";
-import Testimonials from "./_components/testimonials";
-import CaseStudiesMC from "./_components/case-studies-mc";
-import Contact from "./_components/contact";
-import Logos from "./_components/logos";
+import About from "@/app/_components/about";
+import Services from "@/app/_components/services";
+import Testimonials from "@/app/_components/testimonials";
+import CaseStudiesMC from "@/app/_components/case-studies-mc";
+import Contact from "@/app/_components/contact";
+import Logos from "@/app/_components/logos";
 import Link from "next/link";
 import colors from "tailwindcss/colors";
 import monster from "@/public/images/monster2-small.webp"
@@ -52,6 +52,9 @@ export default function Home() {
         </div>
       </div>
       <Services />
+      <div className="mt-10">
+          <h1 className="ml-4 text-center text-6xl lg:text-8xl">Testimonials<span className="text-red-800 font-bold italic"></span></h1>
+      </div>
       <Testimonials />
       <CaseStudiesMC />
       <About />
