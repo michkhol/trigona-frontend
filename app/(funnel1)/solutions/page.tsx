@@ -1,22 +1,27 @@
 "use client"
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import { useRouter } from "next/navigation";
 import type { Registrant } from "@/lib/utils"
 import Solutions1 from "@/app/_components/solutions1"
-import Solutions2 from "@/app/_components/solutions2";
+
+
+function toBase64(obj: Registrant): string {
+  const str = JSON.stringify(obj);
+  return Buffer.from(str).toString("base64");
+} 
+
 
 export default function Solutions() {
-  const formRef = useRef<Registrant>(undefined);
-  const [ access, setAccess ] = useState(false)
+  const router = useRouter();
 
   async function grantAccess(form: Registrant): Promise<void> { 
-    formRef.current = form;
-    setAccess(true);
+    router.push("/access?id=" + toBase64(form))
     // console.log("formRef: " + JSON.stringify(formRef.current))
     return Promise.resolve() 
   }
   
   return (
-    access ?  <Solutions2 form={formRef.current!} /> : <Solutions1 handler={grantAccess}/>
+    <Solutions1 handler={grantAccess}/>
   )
 }

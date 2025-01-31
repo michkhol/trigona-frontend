@@ -74,4 +74,15 @@ export interface Participant {
   yearsInIndustry?: number,
 }
 
+export async function toBase64(obj: Registrant): Promise<string> {
+  const str = JSON.stringify(obj);
+  return Buffer.from(str).toString("base64");
+} 
+
+export async function fromBase64(b: string): Promise<Registrant> {
+  const str = Buffer.from(b, "base64").toString();
+  return JSON.parse(str) as Registrant
+}
+
+
 

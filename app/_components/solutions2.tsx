@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import { useRef } from "react"
 import { useRouter } from "next/navigation"
 import Testimonials from "@/app/_components/testimonials"
 import CaseStudiesMC from "@/app/_components/case-studies-mc"
@@ -16,27 +15,22 @@ import deloitte from "@/public/images/deloitte-big.webp"
 import kyndryl from "@/public/images/kyndryl-big.webp"
 import navy from "@/public/images/navy-big.webp"
 import principal3 from "@/public/images/principal3.webp"
-import { Registrant } from "@/lib/utils"
-import { InlineWidget, PopupWidget } from "react-calendly"
 
-export default function Solutions2({form}: {form: Registrant}) {
-  const dialogRef = useRef<HTMLDialogElement>(null);
+
+export default function Solutions2({id}: {id: string}) {
+  // const dialogRef = useRef<HTMLDialogElement>(null);
   const router = useRouter();
-  const userData = { 
-    name: form.firstName + " " + form.lastName, 
-    email: form.email
-  };
 
   function scheduleButton() {
     return (
       <button className="btn w-full h-[80px] gradient-anim-btn text-white text-3xl font-normal mt-4" 
       // onClick={()=>dialogRef.current!.showModal()}>
-      onClick={()=> router.push("/schedule")}>
+      onClick={() => router.push("/schedule?id=" + id)}>
       Claim your FREE Consultation Call
         </button>
     )
   }
-  console.log("Registrant: " + JSON.stringify(form))
+
   return (
     <div id="root">
       <div className="flex justify-center bg-base-200 pb-20">
