@@ -50,10 +50,7 @@ export default function CaseStudiesMC() {
   }, [])
 
   return (
-      <div className="bg-gray-100">
-        <div className="mt-10">
-          <h1 className="ml-10 text-6xl lg:text-8xl">Case <span className="text-red-800 font-bold italic">Studies</span></h1>
-        </div>
+      <div className="">
         <Carousel
           swipeable={true}
           draggable={true}
@@ -66,7 +63,7 @@ export default function CaseStudiesMC() {
           keyBoardControl={true}
           customTransition="all .5"
           transitionDuration={500}
-          containerClass="mb-6 pb-8"
+          containerClass="pb-8"
           removeArrowOnDeviceType={["tablet", "mobile"]}
           renderDotsOutside={false}
           deviceType={deviceType}
