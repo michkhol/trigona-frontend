@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useRef } from "react"
+import { useRouter } from "next/navigation"
 import Testimonials from "@/app/_components/testimonials"
 import CaseStudiesMC from "@/app/_components/case-studies-mc"
 import wb from "@/public/images/wb-big.webp"
@@ -16,10 +17,11 @@ import kyndryl from "@/public/images/kyndryl-big.webp"
 import navy from "@/public/images/navy-big.webp"
 import principal3 from "@/public/images/principal3.webp"
 import { Registrant } from "@/lib/utils"
-import { InlineWidget } from "react-calendly"
+import { InlineWidget, PopupWidget } from "react-calendly"
 
 export default function Solutions2({form}: {form: Registrant}) {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const router = useRouter();
   const userData = { 
     name: form.firstName + " " + form.lastName, 
     email: form.email
@@ -28,12 +30,15 @@ export default function Solutions2({form}: {form: Registrant}) {
   function scheduleButton() {
     return (
       <button className="btn w-full h-[80px] gradient-anim-btn text-white text-3xl font-normal mt-4" 
-      onClick={()=>dialogRef.current!.showModal()}>Claim your FREE Consultation Call</button>
+      // onClick={()=>dialogRef.current!.showModal()}>
+      onClick={()=> router.push("/schedule")}>
+      Claim your FREE Consultation Call
+        </button>
     )
   }
   console.log("Registrant: " + JSON.stringify(form))
   return (
-    <div>
+    <div id="root">
       <div className="flex justify-center bg-base-200 pb-20">
         <div className="lg:max-w-[1200px] mt-6 pl-2">
           <p className="text-3xl text-red-800">ARE YOU LEADING A TRANSFORMATION IN YOUR ORGANIZATION?</p>
@@ -96,19 +101,18 @@ export default function Solutions2({form}: {form: Registrant}) {
         {scheduleButton()}
         <div className="mt-12 bg-red-800 h-[2px] w-full"/>
       </div>
-      <dialog id="schedule" ref={dialogRef} className="modal modal-bottom sm:modal-middle">
+      {/* <dialog id="schedule" ref={dialogRef} className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
           <div className="modal-action justify-center">
             <form method="dialog">
               <div>
                 <InlineWidget url="https://calendly.com/mike-ab3vn/30min" prefill={userData} />
               </div>
-              {/* if there is a button in form, it will close the modal */}
               <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
             </form>
           </div>
         </div>
-      </dialog>
+      </dialog> */}
     </div>
   )
 }
