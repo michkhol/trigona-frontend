@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useRef } from "react"
+import { useRef, use } from "react"
 import Testimonials from "@/app/_components/testimonials"
 import CaseStudiesMC from "@/app/_components/case-studies-mc"
 import wb from "@/public/images/wb-big.webp"
@@ -18,12 +18,12 @@ import principal3 from "@/public/images/principal3.webp"
 import { Registrant } from "@/lib/utils"
 import { InlineWidget } from "react-calendly"
 
-export default function Solutions2({form}: {form: Registrant}) {
+type Props = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default function Solutions2({ userData }: { userData: { name: string, email: string}}) {
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const userData = { 
-    name: form.firstName + " " + form.lastName, 
-    email: form.email
-  };
 
   function scheduleButton() {
     return (
@@ -31,7 +31,7 @@ export default function Solutions2({form}: {form: Registrant}) {
       onClick={()=>dialogRef.current!.showModal()}>Claim your FREE Consultation Call</button>
     )
   }
-  console.log("Registrant: " + JSON.stringify(form))
+  console.log("Registrant: " + JSON.stringify(userData))
   return (
     <div>
       <div className="flex justify-center bg-base-200 pb-20">
