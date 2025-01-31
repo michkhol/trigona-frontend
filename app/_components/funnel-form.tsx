@@ -37,7 +37,7 @@ export function FunnelForm( {handler}: { handler : OnRegister}) {
           { loading ?
           <button className="btn bg-red-800 w-full text-white text-2xl font-normal mt-4">
             <span className="loading loading-spinner"></span></button>
-          : <button className="btn w-full h-[80px] gradient-anim-btn text-white text-2xl font-normal mt-4">GET INFORMATION AND FREE VIDEO</button>
+          : <button className="btn w-full gradient-anim-btn text-white text-2xl font-normal mt-4">GET INFORMATION AND FREE VIDEO</button>
          }
         </div>
       </form>
