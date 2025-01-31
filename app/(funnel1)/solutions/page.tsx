@@ -9,7 +9,7 @@ export default function Solutions() {
   const formRef = useRef<Registrant>(undefined);
   const [ access, setAccess ] = useState(false)
 
-  async function handleFunnel(form: Registrant): Promise<void> { 
+  async function grantAccess(form: Registrant): Promise<void> { 
     formRef.current = form;
     setAccess(true);
     // console.log("formRef: " + JSON.stringify(formRef.current))
@@ -17,6 +17,6 @@ export default function Solutions() {
   }
   
   return (
-    access ?  <Solutions2 form={formRef.current!} /> : <Solutions1 handler={handleFunnel}/>
+    access ?  <Solutions2 form={formRef.current!} /> : <Solutions1 handler={grantAccess}/>
   )
 }

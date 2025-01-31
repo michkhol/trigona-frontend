@@ -13,6 +13,10 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
   return (
     // Need to override font from theme
     <html className="scroll-pt-20 lg:scroll-pt-60 overflow-x-hidden" lang="en" data-theme="wireframe">
+      {/* <head>
+      <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+      <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+      </head> */}
       <body className={`text-base-content ${raleway.className} p-0`}> 
         {children}
       </body>
