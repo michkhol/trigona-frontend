@@ -36,7 +36,7 @@ export function MagnetForm( {handler}: { handler : OnRegister}) {
             <input type="email" placeholder="Email" {...register("email")} required={true} className="input input-bordered max-w-xl border-red-800" />
         </div>
         <div className="form-control max-w-xl mx-auto my-4">
-            <input type="tel" placeholder="Phone: 555-123-4567" {...register("phone", { required: true, validate: v => v.match(/\d/g)?.length === 10 })} 
+            <input type="tel" placeholder="Phone: 555-123-4567" {...register("phone", { required: true, validate: v => (v || "").match(/\d/g)?.length === 10 })} 
             className="input input-bordered max-w-xl border-red-800" />
             {errors.phone && <span className="text-red-500 text-sm mt-1">Enter a valid phone number</span>}
         </div>
