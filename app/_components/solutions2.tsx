@@ -35,15 +35,15 @@ export default function Solutions2({form}: {form: Registrant}) {
   return (
     <div>
       <div className="flex justify-center bg-base-200 pb-20">
-        <div className="lg:max-w-[1200px] mt-6 px-10">
+        <div className="lg:max-w-[1200px] mt-6 pl-2">
           <p className="text-3xl text-red-800">ARE YOU LEADING A TRANSFORMATION IN YOUR ORGANIZATION?</p>
-          <p className="mt-6 text-5xl font-bold">We Ensure Your Program&apos;s Success with Proven Change Management Solutions</p>
+          <p className="mt-6 lg:text-5xl text-3xl font-bold">We Ensure Your Program&apos;s Success with Proven Change Management Solutions</p>
           <div className="mt-10">
-            <h1 className="text-4xl font-bold"><span className="text-red-800">STEP 1 OF 2:</span> Watch the Video</h1>
+            <h1 className="lg:text-4xl text-2xl font-bold"><span className="text-red-800">STEP 1 OF 2:</span> Watch the Video</h1>
           </div>
           <div className="flex lg:flex-row flex-col gap-16 mt-6">
             <div>
-            <iframe width="800" height="450" src="https://www.youtube.com/embed/I9H8irEMnf4?rel=0" title="YouTube video player" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+            <iframe className="lg:w-[800px] lg:h-[450px] w-[400px] h-[225px]" src="https://www.youtube.com/embed/I9H8irEMnf4?rel=0" title="YouTube video player" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function Solutions2({form}: {form: Registrant}) {
         <div className="flex lg:flex-row flex-col gap-6 lg:max-w-[1000px] mt-6 px-10">
           <Image src={principal3} alt="principal3" height={400}/>
           <div>
-            <h1 className="text-4xl font-bold"><span className="text-red-800">STEP 2 OF 2:&nbsp;</span>Schedule a Free Consultation with Me and My Team</h1>
+            <h1 className="lg:text-4xl text-2xl font-bold"><span className="text-red-800">STEP 2 OF 2:&nbsp;</span>Schedule a Free Consultation with Me and My Team</h1>
             {scheduleButton()}
             <p className="text-2xl mt-2">...and learn how our field-tested, data-driven framework <span className="font-bold">ensures your project&apos;s success in the fastest, easiest, and safest way possible.</span>
             </p>

@@ -24,11 +24,11 @@ export default function Solutions1({handler}: { handler : OnRegister}) {
   return (
     <div>
       <div className="flex justify-center bg-base-200 pb-20">
-        <div className="lg:max-w-[1200px] mt-6 px-10">
+        <div className="lg:max-w-[1200px] mt-6 lg:pl-0 pl-2">
           <p className="text-3xl text-red-800">ARE YOU LEADING A TRANSFORMATION IN YOUR ORGANIZATION?</p>
-          <p className="mt-6 text-5xl font-bold">We Ensure Your Program&apos;s Success with Proven Change Management Solutions</p>
+          <p className="mt-6 lg:text-5xl text-3xl font-bold">We Ensure Your Program&apos;s Success with Proven Change Management Solutions</p>
           <div className="mt-10 px-6">
-              <ol className="list-disc list-image-[url(/images/circle-check-big.png)] leading-10 text-2xl">
+              <ol className="lg:pl-0 pl-4 list-disc list-image-[url(/images/circle-check-big.png)] leading-10 text-2xl">
                 <li><span className="font-bold">&nbsp;Two decades of experience</span> with the top global consulting firms</li>
                 <li><span className="font-bold">&nbsp;Field-tested framework</span> with measurable, ROI-focused transformation</li>
                 <li>&nbsp;Either <span className="font-bold">we train your team</span> or take the lead ourselves</li>
@@ -36,7 +36,7 @@ export default function Solutions1({handler}: { handler : OnRegister}) {
           </div>
           <div className="flex lg:flex-row flex-col gap-16 mt-6">
             <div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/6NZx4YtVKzI?rel=0" title="YouTube video player" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+            <iframe className="lg:w-[560px] lg:h-[315px] w-[400px] h-[225px]" src="https://www.youtube.com/embed/6NZx4YtVKzI?rel=0" title="YouTube video player" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>
             <div>
               <FunnelForm handler={handler}/>
