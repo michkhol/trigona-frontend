@@ -15,6 +15,7 @@ import deloitte from "@/public/images/deloitte-big.webp"
 import kyndryl from "@/public/images/kyndryl-big.webp"
 import navy from "@/public/images/navy-big.webp"
 import principal3 from "@/public/images/principal3.webp"
+import ClientLogos from "./clientlogos"
 
 
 export default function Solutions2({id}: {id: string}) {
@@ -61,18 +62,7 @@ export default function Solutions2({id}: {id: string}) {
       </div>
       <div className="mt-6 lg:px-10 py-6 px-4 bg-base-200">
         <p className="text-center text-4xl text-red-800">TRUSTED BY</p>
-        <div className="grid lg:grid-cols-5 lg:grid-rows-2 grid-cols-2 grid-rows-5 items-center justify-center gap-6 mt-6">
-         <Image src={va} alt="Picture" width={200}/>
-         <Image src={kpmg} alt="Picture" width={200}/>
-         <Image src={mariott} alt="Picture" width={200}/>
-         <Image src={nha} alt="Picture" width={200}/>
-         <Image src={wendys} alt="Picture" width={200}/>
-         <Image src={btg} alt="Picture" width={200}/>
-         <Image src={deloitte} alt="Picture" width={200}/>
-         <Image src={kyndryl} alt="Picture" width={200}/>
-         <Image src={wb} alt="Picture" width={200}/>
-         <Image src={navy} alt="Picture" width={200}/>
-        </div>
+        <ClientLogos />
       </div>
       <div className="py-6">
         <Testimonials />

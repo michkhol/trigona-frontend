@@ -17,6 +17,7 @@ import tom from "@/public/images/navy-tom-harker.webp"
 
 import { FunnelForm } from "@/app/_components/funnel-form"
 import type { Registrant } from "@/lib/utils"
+import ClientLogos from "./clientlogos"
 
 type OnRegister = (form: Registrant) => Promise<void>;
 
@@ -46,18 +47,7 @@ export default function Solutions1({handler}: { handler : OnRegister}) {
       </div>
       <div className="mt-6 lg:px-10 py-6 px-4">
         <p className="text-center text-4xl text-red-800">TRUSTED BY</p>
-        <div className="grid lg:grid-cols-5 lg:grid-rows-2 grid-cols-2 grid-rows-5 items-center justify-center gap-6 mt-6">
-         <Image src={va} alt="Picture" width={200}/>
-         <Image src={kpmg} alt="Picture" width={200}/>
-         <Image src={mariott} alt="Picture" width={200}/>
-         <Image src={nha} alt="Picture" width={200}/>
-         <Image src={wendys} alt="Picture" width={200}/>
-         <Image src={btg} alt="Picture" width={200}/>
-         <Image src={deloitte} alt="Picture" width={200}/>
-         <Image src={kyndryl} alt="Picture" width={200}/>
-         <Image src={wb} alt="Picture" width={200}/>
-         <Image src={navy} alt="Picture" width={200}/>
-        </div>
+        <ClientLogos />
       </div>
       <div className="bg-base-200 py-6">
       <div className="grid grid-cols-1 grid-rows-3 lg:grid-cols-3 lg:grid-rows-1 gap-4 text-center text-xl mx-4 my-6">

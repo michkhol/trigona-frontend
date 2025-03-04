@@ -1,6 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tailwindcss-animated";
+
+@plugin "daisyui" {
+  themes: "light", "dark", "winter", "wireframe", "black";
+};
+
+
+@theme {
+  --animate-infinite-scroll: infinite-scroll 35s linear infinite;
+  @keyframes infinite-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
 
 
 :root {
@@ -63,5 +79,10 @@ html {
     0%{background-position: right; color: white}
     50%{color: black}
     100%{background-position: left; color: white}
+  }
+
+  #terms > p {
+    margin-top: 1.5em;
+
   }
 

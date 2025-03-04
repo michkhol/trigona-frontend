@@ -6,7 +6,7 @@ import { SanityImageSource } from "@sanity/asset-utils";
 import { SanityImageAsset } from "@/sanity/sanity.types";
 import { SanityImageObjectStub } from "@sanity/asset-utils";
 import { SimplePage } from "@/sanity/sanity.types";
-import principal from "@/public/images/principal.png"
+import principal from "@/public/images/principal-bw.png"
 import Link from "next/link";
 
 const BlockImageComponent = ({value, isInline}: { value: SanityImageSource, isInline: boolean}) => {
@@ -51,29 +51,35 @@ export default function About() {
   // console.log(data)
 
   return (
-      <div id="about" className="bg-red-800 text-white">
+      <div id="about" className="bg-base-200">
         {/*}
         <div className="px-6"><PortableText value={data.body} components={components}/></div>
         */}
         <div className="my-16 px-4 flex flex-col lg:flex-row gap-4">
-          <div className="flex-none w-96">
-            <div className="flex flex-col">
-            <div>
-              <Image className="" src={principal} alt="Managing Director" height={800}/>
-            </div>
-            <div className="-ml-16 text-center text mt-4">
-              <Link href="https://www.linkedin.com/in/olga-denisova-pmp-01ab847/" className="hover:underline">Olga Denisova<br />
-              <span className="italic">Founder and Managing Principal</span></Link>
-            </div>
-            </div>
-          </div>
           <div className="text-xl">
-          <h2  className="text-center text-8xl mt-6 mb-10">About <span className="font-bold italic">Us</span></h2>
-          Trigona Consulting L.L.C. is a woman owned boutique consulting firm, that provides transformation delivery solutions for commercial and government clients during business, organizational and digital transformations. With field-tested methodologies and leading practices, we ensure that organizations maximize their project&apos;s potential.
-With an extensive experience gained at Big-4 consulting firms and applied across multiple global organizations, we provide our clients with holistic and comprehensive transformation implementation support. 
-We make change happen.
+          <h2  className="text-8xl mt-6 mb-10">Hi - <span className="italic">I'm Olga</span></h2>
+<p className="" >Founder of Trigona Consulting. </p>
+
+<p className="mt-6">I have spent nearly two decades guiding Fortune 500 companies, governmental agencies, and PE-backed mid-size firms through complex changes. If there is one thing I've learned, it is that a successful transformation isn't just about best-in-class technology or streamlined processes—it's about people. </p>
+
+<p className="mt-6">At Trigona, we've mastered the art and science of human-centered transformation. Since 2016, we've partnered with top global consulting firms and industry leaders to turn resistance into enthusiasm and plans into results. </p>
+
+<p className="mt-6">Whether you're rolling out a new system, integrating an acquisition, or reimagining your operating model, we know precisely how to turn daunting transformations into lasting success stories - that is where 70% of organizations stumble. </p>
+
+<p className="mt-6">We make change happen by putting your people first. </p>
+
+<p className="mt-6">Ready to make change feel less like a mandate and more like an opportunity? </p>
           </div>
-       </div>            
+          <div className="flex-none w-[400px]">
+            <div className="flex flex-col">
+              <Image className="" src={principal} alt="Managing Director"/>
+              <div className="-ml-16 text-center text mt-4">
+                <Link href="https://www.linkedin.com/in/olga-denisova-pmp-01ab847/" className="hover:underline">Olga Denisova<br />
+                <span className="italic">Founder and Managing Principal</span></Link>
+              </div>
+            </div>
+          </div>
+        </div>            
       </div>
   );
 }

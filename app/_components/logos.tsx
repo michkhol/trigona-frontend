@@ -9,9 +9,10 @@ import natHeritage from "@/public/images/National Heritage Academies.png"
 import wendys from "@/public/images/wendys.png"
 import warnerBros from "@/public/images/Warner Bros. Discovery web.png"
 import kpmg from "@/public/images/kpmg-logo-png-transparent.png"
+import heritage from "@/public/images/heritage_logo.png"
+import eqt from "@/public/images/eqt-logo.png"
 
-
-const images = [deptOfNavy, deptOfVA, deloitte, kyndryl, mariott, warnerBros, wendys, btg, natHeritage, kpmg];
+const images = [deptOfNavy, deptOfVA, deloitte, kyndryl, mariott, warnerBros, wendys, btg, natHeritage, kpmg, eqt, heritage];
 
 
 export default function Logos() {
