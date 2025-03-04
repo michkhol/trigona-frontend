@@ -57,14 +57,14 @@ export default function About() {
         */}
         <div className="my-16 px-4 flex flex-col lg:flex-row gap-4">
           <div className="text-xl">
-          <h2  className="text-8xl mt-6 mb-10">Hi - <span className="italic">I'm Olga</span></h2>
+          <h2  className="text-8xl mt-6 mb-10">Hi - <span className="italic">I&apos;m Olga</span></h2>
 <p className="" >Founder of Trigona Consulting. </p>
 
-<p className="mt-6">I have spent nearly two decades guiding Fortune 500 companies, governmental agencies, and PE-backed mid-size firms through complex changes. If there is one thing I've learned, it is that a successful transformation isn't just about best-in-class technology or streamlined processes—it's about people. </p>
+<p className="mt-6">I have spent nearly two decades guiding Fortune 500 companies, governmental agencies, and PE-backed mid-size firms through complex changes. If there is one thing I&apos;ve learned, it is that a successful transformation isn&apos;t just about best-in-class technology or streamlined processes—it&apos;s about people. </p>
 
-<p className="mt-6">At Trigona, we've mastered the art and science of human-centered transformation. Since 2016, we've partnered with top global consulting firms and industry leaders to turn resistance into enthusiasm and plans into results. </p>
+<p className="mt-6">At Trigona, we&apos;ve mastered the art and science of human-centered transformation. Since 2016, we&apos;ve partnered with top global consulting firms and industry leaders to turn resistance into enthusiasm and plans into results. </p>
 
-<p className="mt-6">Whether you're rolling out a new system, integrating an acquisition, or reimagining your operating model, we know precisely how to turn daunting transformations into lasting success stories - that is where 70% of organizations stumble. </p>
+<p className="mt-6">Whether you&apos;re rolling out a new system, integrating an acquisition, or reimagining your operating model, we know precisely how to turn daunting transformations into lasting success stories - that is where 70% of organizations stumble. </p>
 
 <p className="mt-6">We make change happen by putting your people first. </p>
 
