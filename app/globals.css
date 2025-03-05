@@ -1,6 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tailwindcss-animated";
+
+@plugin "daisyui" {
+  themes: "light", "dark", "winter", "wireframe", "black";
+};
+
+
+@theme {
+  --animate-infinite-scroll: infinite-scroll 35s linear infinite;
+  @keyframes infinite-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
 
 
 :root {
@@ -48,8 +64,25 @@ html {
     -0.05em 0 white,
     0 -0.05em white,
     -0.05em -0.05em white,
-    -0.05em 0.05em white,
+    -0.05em 0.05em white, 
     0.05em -0.05em white,
     0.05em 0.05em white;
+  }
+
+  .gradient-anim-btn {
+    background: linear-gradient(-45deg, theme('colors.red.800') 47%, white 52%, theme('colors.red.800') 100%);
+    background-size: 1000% auto;
+    animation: gradient-move 5s ease-in-out infinite;
+  }
+
+  @keyframes gradient-move {
+    0%{background-position: right; color: white}
+    50%{color: black}
+    100%{background-position: left; color: white}
+  }
+
+  #terms > p {
+    margin-top: 1.5em;
+
   }
 

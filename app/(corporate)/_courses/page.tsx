@@ -1,11 +1,11 @@
 import { cookies } from "next/headers";
-import { MagnetForm } from "../_components/magnet-form";
-import Material from "../_components/material";
+import { MagnetForm } from "../../_components/magnet-form";
+import Material from "../../_components/material";
 import type { Registrant } from "@/lib/utils";
 import Image from "next/image";
 import robot from "@/public/images/robot.webp";
 import computer from "@/public/images/computer.webp"
-import Logos from "../_components/logos";
+import Logos from "../../_components/logos";
 
 
 export default async function Courses() {

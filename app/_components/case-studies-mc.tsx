@@ -50,10 +50,7 @@ export default function CaseStudiesMC() {
   }, [])
 
   return (
-      <div className="bg-gray-100">
-        <div className="mt-10">
-          <h1 className="ml-10 text-6xl lg:text-8xl">Case <span className="text-red-800 font-bold italic">Studies</span></h1>
-        </div>
+      <div className="">
         <Carousel
           swipeable={true}
           draggable={true}
@@ -66,7 +63,7 @@ export default function CaseStudiesMC() {
           keyBoardControl={true}
           customTransition="all .5"
           transitionDuration={500}
-          containerClass="mb-6 pb-8"
+          containerClass="pb-8"
           removeArrowOnDeviceType={["tablet", "mobile"]}
           renderDotsOutside={false}
           deviceType={deviceType}
@@ -79,7 +76,7 @@ export default function CaseStudiesMC() {
             <h2 className="mt-4 font-bold">Challenge</h2>
             <p className="text-sm">Global hospitality client was replacing outdated HR and Financial systems with Oracle solutions. Field locations had a high turnover rate of hourly employees, and HR Business partner&apos;s efforts were disjointed and sporadical. An experienced change management support was required to provide a structured approach accounting for the global distribution of the facilities and complex organizational structure. Without a sustainable change management approach, the project was at risk of delays, poor system adoption, and reduced productivity.</p>
             <h2 className="mt-4 font-bold">Approach</h2>
-            <p className="text-sm">rigona Consulting crafted a tailored change management strategy to address these complexities. Our work included in-depth stakeholder analysis and persona-based change journeys to ensure alignment across teams with the development of an enterprise-wide deployment approach tailored to the client&apos;s unique operational constraints. With a tiered change management toolkit, we enabled standardized yet flexible implementation of the &quot;train-the-trainer&quot; program for HR Business Partners, digital learning modules for hourly staff, and the establishment of a change champion network across key locations.</p>
+            <p className="text-sm">Trigona Consulting crafted a tailored change management strategy to address these complexities. Our work included in-depth stakeholder analysis and persona-based change journeys to ensure alignment across teams with the development of an enterprise-wide deployment approach tailored to the client&apos;s unique operational constraints. With a tiered change management toolkit, we enabled standardized yet flexible implementation of the &quot;train-the-trainer&quot; program for HR Business Partners, digital learning modules for hourly staff, and the establishment of a change champion network across key locations.</p>
             <h2 className="mt-6 font-bold text-white bg-red-800">&nbsp;Result</h2>
             <p className="text-sm">The project achieved an impressive <span className="font-bold">87% readiness goal and 84% user buy-in</span>, ensuring a seamless Oracle rollout within 3 months post-go-live. Beyond immediate success, the organization gained a strong in-house change management function, empowering them to lead future transformations independently and effectively.</p>
           </div>
@@ -107,7 +104,7 @@ export default function CaseStudiesMC() {
             <h1 className="text-2xl font-bold">Standardizing Change Management for a Global SaaS Company&apos;s CTO Office</h1>
             <Image className="mx-auto mt-4" src={it2} alt="saas"  />
             <h2 className="mt-4 font-bold">Challenge</h2>
-            <p className="text-sm">Following a major spin-off, the CTO office of a global technology company was undertaking over 60 technological transformations (Workday, SAP ERP, etc.) post M&A that impacted over 80000 employees. The complexity of the transformation required an established enterprise OCM functionality within the Chief Transformation Office to ensure standardized and repeatable OCM methodology implementation for proper employee buy-in and onboarding into the new systems.</p>
+            <p className="text-sm">Following a major spin-off, the CTO office of a global technology company was undertaking over 60 technological transformations (Workday, SAP ERP, etc.) post M&amp;A that impacted over 80000 employees. The complexity of the transformation required an established enterprise OCM functionality within the Chief Transformation Office to ensure standardized and repeatable OCM methodology implementation for proper employee buy-in and onboarding into the new systems.</p>
             <h2 className="mt-4 font-bold">Approach</h2>
             <p className="text-sm">Trigona Consulting implemented a uniform change management framework across the CTO&apos;s portfolio, creating standardized tools, templates, and processes adaptable to projects of varying sizes and complexities. We established a central repository of change resources and trained key personnel in their use. To ensure consistency, we introduced a governance structure to oversee change management practices across all projects, enhancing efficiency and alignment.</p>
             <h2 className="mt-6 font-bold text-white bg-red-800">&nbsp;Result</h2>
@@ -129,7 +126,7 @@ export default function CaseStudiesMC() {
             <h2 className="mt-4 font-bold">Challenge</h2>
             <p className="text-sm">A global hospitality leader faced the complex task of integrating 6 Sales and 5 Revenue Management organizations after a major acquisition. The project required a comprehensive approach to achieve cultural alignment, talent retention, and cost efficiencies through operating model standardization, ensuring a seamless transition and structural cohesion.</p>
             <h2 className="mt-4 font-bold">Approach</h2>
-            <p className="text-sm">Trigona Consulting led a strategic post-M&amp;A integration, focusing on cultural alignment, organizational, and operational restructuring. We facilitated executive leadership sessions to align stakeholders on priorities and developed a cross-company integration roadmap. With the design and execution of  synergy realization strategy, and tailored salesforce integration approach, we ensured that all workstreams moved in tight alignment toward a unified organizational structure while maintaining a regional market presence</p>
+            <p className="text-sm">Trigona Consulting led a strategic post-M&amp;A integration, focusing on cultural alignment, organizational, and operational restructuring. We facilitated executive leadership sessions to align stakeholders on priorities and developed a cross-company integration roadmap. With the design and execution of  synergy realization strategy, and tailored salesforce integration approach, we ensured that all workstreams moved in tight alignment toward a unified organizational structure while maintaining a regional market presence.</p>
             <h2 className="mt-6 font-bold text-white bg-red-800">&nbsp;Result</h2>
             <p className="text-sm">The integration delivered impressive results, achieving <span className="font-bold">$24 million in first-year operating cost savings</span> while maintaining operational continuity and retaining <span  className="font-bold">92% of top talent</span>. Trigona&apos;s approach fostered a cohesive organizational culture and integrated operating model, positioning the client for sustained success post-integration.</p>
           </div>

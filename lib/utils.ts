@@ -24,8 +24,8 @@ export interface Registrant {
   firstName: string,
   lastName: string,
   email: string,
-  phone: string,
-  sms: boolean
+  phone?: string,
+  sms?: boolean
 }
 
 export async function newContact(fi: Registrant): Promise<void> {
@@ -58,7 +58,7 @@ export async function magnetNotify(r: Registrant) {
       last_name: r.lastName,
       email: r.email,
       phone: r.phone,
-      sms: r.sms.toString()
+      sms: r.sms ? r.sms.toString() : "false"
     },
     From: "support@trigonaconsulting.com",
     To: "info@trigonaconsulting.com"
@@ -73,5 +73,16 @@ export interface Participant {
   phone: string,
   yearsInIndustry?: number,
 }
+
+export async function toBase64(obj: Registrant): Promise<string> {
+  const str = JSON.stringify(obj);
+  return Buffer.from(str).toString("base64");
+} 
+
+export async function fromBase64(b: string): Promise<Registrant> {
+  const str = Buffer.from(b, "base64").toString();
+  return JSON.parse(str) as Registrant
+}
+
 
 
