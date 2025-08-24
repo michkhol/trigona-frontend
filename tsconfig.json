@@ -8,6 +8,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "noImplicitReturns": true, // Explicitly enforce return statements
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",

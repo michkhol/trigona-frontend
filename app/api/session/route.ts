@@ -5,7 +5,7 @@ import * as uuid from "uuid";
 export const dynamic = 'force-dynamic'; 
 
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
     const session = await req.formData().then(data => {
       // Generate next order id, using random numbers for now.
@@ -20,6 +20,7 @@ export async function POST(req: NextRequest) {
       const items = data.getAll("productId").map(e => { 
         return { price: e as string, quantity: 1 } 
       });
+
       return stripe.checkout.sessions.create({
         client_reference_id: orderId,
         ui_mode: "embedded",
@@ -43,21 +44,27 @@ export async function POST(req: NextRequest) {
     if (err instanceof Error) {
       return NextResponse.json({ error: err.message }, { status: 500 });
     }
+    else {
+      return NextResponse.json({ error: "Unknown error"}, { status: 500 });
+    }
   }
 }
 
-export async function GET(req: NextRequest) {
+export async function GET(req: NextRequest): Promise<NextResponse> {
   try {
     const { searchParams } = new URL(req.url);
     const session = await stripe.checkout.sessions.retrieve(searchParams.get("session_id")!);
     
-    NextResponse.json({
+    return NextResponse.json({
       status: session.status,
       customer_email: session.customer_details!.email
     });
   } catch (err) {
     if (err instanceof Error) {
       return NextResponse.json({ error: err.message }, { status: 500 });
+    }
+    else {
+      return NextResponse.json({ error: "Unknown error"}, { status: 500 });
     }
   }
 }

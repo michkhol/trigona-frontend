@@ -12,7 +12,7 @@ export async function GET(request: Request) {
   return Response.json({name});
 }
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
     // Create Checkout Sessions from body params.
     const session = await stripe.checkout.sessions.create({
@@ -36,6 +36,10 @@ export async function POST(req: NextRequest) {
     if (err instanceof Error) {
       return NextResponse.json({ error: err.message }, { status: 500 });
     }
+    else {
+      return NextResponse.json({ error: "Unknown error"}, { status: 500 });
+    }
+
   }
 }
 
