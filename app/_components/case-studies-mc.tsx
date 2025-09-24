@@ -7,6 +7,7 @@ import "react-multi-carousel/lib/styles.css";
 import restaurant from "@/public/images/restaurant.jpg"
 import hotel from "@/public/images/hotel.jpg"
 import warship from "@/public/images/warship.jpg"
+import wasteman from "@/public/images/wasteman.png"
 import it1 from "@/public/images/it.jpg"
 import it2 from "@/public/images/it2.jpg"
 import school from "@/public/images/school.jpg"
@@ -70,47 +71,78 @@ export default function CaseStudiesMC() {
           dotListClass="custom-dot-list-style"
           itemClass=""
         >
-          <div className="mx-2 p-4 h-full border border-red-800">
-            <h1 className="text-2xl font-bold">Driving Sustainable Change for a Mid-Market Hospitality Company</h1>
+          <div className="mx-2 p-4 h-full border border-red-800 text-sm">
+            <h1 className="text-2xl font-bold">Global Restaurant Group: Oracle HCM/FMS Global Rollout</h1>
             <Image className="mx-auto mt-4" src={restaurant} alt="restaurant"  />
-            <h2 className="mt-4 font-bold">Challenge</h2>
-            <p className="text-sm">Global hospitality client was replacing outdated HR and Financial systems with Oracle solutions. Field locations had a high turnover rate of hourly employees, and HR Business partner&apos;s efforts were disjointed and sporadical. An experienced change management support was required to provide a structured approach accounting for the global distribution of the facilities and complex organizational structure. Without a sustainable change management approach, the project was at risk of delays, poor system adoption, and reduced productivity.</p>
+            <h2 className="mt-4 font-bold">Client Profile</h2>
+            <p>A multinational restaurant group operating 7000+ properties worldwide launched a global Oracle HCM/FMS rollout. The program impacted every layer of the organization — both owned and franchised. </p>
+            <h2 className="mt-4 font-bold">Business Challenge</h2>
+            <p >The executive team was concerned about potential operational disruption. Any mistake in payroll, scheduling, or labor compliance could create ripple effects across restaurants, directly impacting customer service and revenue. The frontline workers, many with limited digital skills and little time off the floor, faced a steep learning curve. At the same time, HR Business Partners bore the responsibility of supporting every user group, but their experience with enterprise HRIS solutions varied greatly across markets. The leadership team needed a deployment plan that would protect the guest experience, boost confidence among the frontline staff, and improve HR&apos;s ability to support adoption.</p>
             <h2 className="mt-4 font-bold">Approach</h2>
-            <p className="text-sm">Trigona Consulting crafted a tailored change management strategy to address these complexities. Our work included in-depth stakeholder analysis and persona-based change journeys to ensure alignment across teams with the development of an enterprise-wide deployment approach tailored to the client&apos;s unique operational constraints. With a tiered change management toolkit, we enabled standardized yet flexible implementation of the &quot;train-the-trainer&quot; program for HR Business Partners, digital learning modules for hourly staff, and the establishment of a change champion network across key locations.</p>
+            <p>Trigona Consulting partnered closely with both executive sponsors and functional business leads to ensure tight alignment between change management and the redesign teams, ensuring a lean and agile approach to rapid value creation. This collaboration allowed us to pinpoint the specific stakeholder impacts of each design decision and co-create the transformation narrative. Together, we identified the biggest levers to win the workforce over — including a transparent rationale for segmentation, fairness in territory assignments, and clarity in compensation changes.</p>
+            <br />
+            <p>We launched a cascading communication campaign with over 30 sequential, role-specific messages aligned with program milestones. Leadership visibility increased through video messaging, roadshows, townhalls, and direct manager engagement, reinforcing sponsorship and accountability. Feedback loops empowered frontline sales teams and helped close information gaps identified during the transition. This transparent and iterative approach reduced anxiety, built trust, and accelerated adoption.</p>
             <h2 className="mt-6 font-bold text-white bg-red-800">&nbsp;Result</h2>
-            <p className="text-sm">The project achieved an impressive <span className="font-bold">87% readiness goal and 84% user buy-in</span>, ensuring a seamless Oracle rollout within 3 months post-go-live. Beyond immediate success, the organization gained a strong in-house change management function, empowering them to lead future transformations independently and effectively.</p>
+            <ul className="list-disc list-outside pl-4 mt-4">
+            <li>Successfully rolled out the redesigned sales model <strong>within 90 days</strong> of project launch.</li>
+            <li>Achieved <strong>rapid adoption</strong> across geographically dispersed sales teams, with <strong>no operational disruption</strong>.</li>
+            <li>Over <strong>30 sequential, role-specific communications</strong>, achieved workforce engagement and process clarity.</li>
+            <li>Maintained workforce confidence and <strong>avoided salesforce attrition</strong> during a sensitive post-acquisition period.</li>
+            </ul>
           </div>
-          <div className="mx-2 p-4 h-full border border-red-800">
-            <h1 className="text-2xl font-bold">Revolutionizing Operations for a Global Technology Leader</h1>
-            <Image className="mx-auto mt-4" src={it1} alt="it"  />
-            <h2 className="mt-4 font-bold">Challenge</h2>
-            <p className="text-sm">Global SaaS company was re-establishing organizational structure across multiple global markets post-spin-off. The goal was to establish a shared service solution structure for the Chief Information Officer with optimized processes and reduced operational costs impacting 15k resources worldwide. The organization faced challenges with readiness, leadership alignment, and the risk of operational disruptions during the transition.</p>
+          <div className="mx-2 p-4 h-full border border-red-800 text-sm">
+            <h1 className="text-2xl font-bold">PE-Backed Environmental Services Company: Commercial Transformation</h1>
+            <Image className="mx-auto mt-4" src={wasteman} alt="it"  />
+            <h2 className="mt-4 font-bold">Client Profile</h2>
+            <p>A private equity-backed environmental services company specializing in hazardous and toxic waste disposal for large industrial clients. Following its acquisition, the company was tasked with rapidly redesigning its commercial operating model to align with the PE sponsor&apos;s aggressive value-creation plan.</p>
+            <h2 className="mt-4 font-bold">Business Challenge</h2>
+            <p>The transformation required a sales organization redesign, new customer segmentation, territory realignment, and compensation restructuring — all to be completed within a tight post-acquisition timeline. Executives faced pressure to achieve aggressive EBITDA targets and fulfill the sponsor&apos;s growth strategy. Leadership worried that poorly managed transitions could damage client relationships, disrupt revenue, and trigger salesforce turnover, especially as employees questioned the fairness of new territories and compensation plans.</p>
             <h2 className="mt-4 font-bold">Approach</h2>
-            <p className="text-sm">In collaboration with client leadership and functional teams, Trigona Consulting redesigned the CIO&apos;s shared service structure, optimizing the operating model and ensuring leadership alignment. Through our tailored change management approach, we enhanced organizational readiness and minimized operational disruptions. Our reusable transformation framework, equipped the organization with tools for managing future changes independently.</p>
+            <p>Trigona Consulting partnered closely with both executive sponsors and functional business leads to ensure tight alignment between change management and the redesign teams, ensuring a lean and agile approach to rapid value creation. This collaboration allowed us to pinpoint the specific stakeholder impacts of each design decision and co-create the transformation narrative. Together, we identified the biggest levers to win the workforce over — including a transparent rationale for segmentation, fairness in territory assignments, and clarity in compensation changes.</p>
+            <br />
+            <p>We launched a cascading communication campaign with over 30 sequential, role-specific messages aligned with program milestones. Leadership visibility increased through video messaging, roadshows, townhalls, and direct manager engagement, reinforcing sponsorship and accountability. Feedback loops empowered frontline sales teams and helped close information gaps identified during the transition. This transparent and iterative approach reduced anxiety, built trust, and accelerated adoption.</p>
             <h2 className="mt-6 font-bold text-white bg-red-800">&nbsp;Result</h2>
-            <p className="text-sm">Our efforts led to the resulting operating model&apos;s improved effectiveness, <span className="font-bold">improving process standardization by 43% </span>and achieving a <span className="font-bold">25% first-year operating costs reduction</span>. This project met immediate restructuring goals and fostered a culture of adaptability, positioning the client for long-term success in a dynamic market environment.</p>
+            <ul className="list-disc list-outside pl-4 mt-4">
+            <li>Successfully rolled out the redesigned sales model <strong>within 90 days</strong> of project launch.</li>
+            <li>Achieved <strong>rapid adoption</strong> across geographically dispersed sales teams, with <strong>no operational disruption</strong>.</li>
+            <li>Over <strong>30 sequential, role-specific communications</strong>, achieved workforce engagement and process clarity.</li>
+            <li>Maintained workforce confidence and <strong>avoided salesforce attrition</strong> during a sensitive post-acquisition period.</li>
+            </ul>
           </div>
-          <div className="mx-2 p-4 h-full border border-red-800">
-            <h1 className="text-2xl font-bold">Transforming Financial Management for a Department of Defense Organization</h1>
+          <div className="mx-2 p-4 h-full border border-red-800 text-sm">
+            <h1 className="text-2xl font-bold">Department of Defense - Enterprise Change Management Office (ECMO)</h1>
             <Image className="mx-auto mt-4" src={warship} alt="mil"  />
-            <h2 className="mt-4 font-bold">Challenge</h2>
-            <p className="text-sm">A major Department of Defense organization needed to streamline its financial and logistical systems while achieving significant cost reductions. The project consolidated nine general ledgers with massive expense reduction goals and integrated 200 financial and logistics systems. The complexity of the organization&apos;s dual reporting structure, siloed processes, and conservative change resistant workforce required a strategic approach to change management.</p>
+            <h2 className="mt-4 font-bold">Client Profile</h2>
+            <p>The U. S. Department of Defense launched one of the largest financial management transformations in government history. The program involved consolidating over <strong>200 systems</strong> and nine general ledgers, impacting more than <strong>300,000 employees</strong> across multiple agencies</p>
+            <h2 className="mt-4 font-bold">Business Challenge</h2>
+            <p>The human-capital challenges were as significant as the technical ones. The workforce was highly conservative and deeply skeptical of change, having witnessed many initiatives start and then fade away with the arrival of new political appointees. Many employees had learned to &quot;outwait&quot; leadership changes. Additionally, a &quot;frozen middle&quot; of managers withheld information and failed to pass on messages, creating bottlenecks and delaying downstream adoption. Senior leaders feared the transformation could stall, wasting billions of dollars and damaging credibility with Congress and oversight bodies.</p>
             <h2 className="mt-4 font-bold">Approach</h2>
-            <p className="text-sm">Trigona Consulting established and led the Enterprise Change Management Office (ECMO)  and to oversee change efforts across six focus areas and approximately 80 projects. Our strategy ensured consistent, integrated communications, leadership engagement, and training efforts tailored to the organization&apos;s structure and operating model. To ensure alignment and consistency, we developed an enterprise-wide organizational change management framework, collaborated with the PMO to integrate change activities into project plans, and created executive dashboards with KPIs to monitor readiness and adoption.</p>
+            <p>Trigona Consulting worked directly with the secretariat and the command senior leadership to establish an Enterprise Change Management Office (ECMO), integrating OCM into the program&apos;s governance framework. We developed standardized playbooks and readiness dashboards to maintain a consistent approach across more than 80 simultaneous projects. Change champions were identified in each major command, creating alternative pathways to reach employees where middle managers resisted. Quick-win adoption proof points were included in the reporting schedule, allowing leadership to demonstrate progress to skeptical stakeholders and political sponsors.</p>
             <h2 className="mt-6 font-bold text-white bg-red-800">&nbsp;Result</h2>
-            <p className="text-sm">The project successfully achieved <span className="font-bold">$180 million in expense reductions</span> while consolidating systems and enhancing operational efficiency. Trigona&apos;s approach ensured alignment with Financial Management Transformation goals, resulting in a smooth transition that positioned the client for long-term success.</p>
+            <ul className="list-disc list-outside pl-4 mt-4">
+            <li>Achieved <strong>$180M in expense reductions</strong> through adoption-driven process alignment.</li>
+            <li>Enabled <strong>consistent readiness reporting </strong>and KPI tracking for Congress and oversight bodies.</li>
+            <li><strong>Overcame bottlenecks</strong> caused by the frozen middle by empowering champions to cascade information and facilitate adoption.</li>
+            </ul>
           </div>  
-          <div className="mx-2 p-4 h-full border border-red-800">
+          <div className="mx-2 p-4 h-full border border-red-800 text-sm">
             <h1 className="text-2xl font-bold">Standardizing Change Management for a Global SaaS Company&apos;s CTO Office</h1>
             <Image className="mx-auto mt-4" src={it2} alt="saas"  />
-            <h2 className="mt-4 font-bold">Challenge</h2>
-            <p className="text-sm">Following a major spin-off, the CTO office of a global technology company was undertaking over 60 technological transformations (Workday, SAP ERP, etc.) post M&amp;A that impacted over 80000 employees. The complexity of the transformation required an established enterprise OCM functionality within the Chief Transformation Office to ensure standardized and repeatable OCM methodology implementation for proper employee buy-in and onboarding into the new systems.</p>
+            <h2 className="mt-4 font-bold">Client Profile</h2>
+            <p>A global SaaS leader undergoing a major post-spinoff transformation. The CTO Office was responsible for managing over <strong>60 concurrent technology initiatives</strong> (Workday, SAP ERP, and others) impacting more than <strong>80,000 employees worldwide</strong>.</p>
+            <h2 className="mt-4 font-bold">Business Challenge</h2>
+            <p>The Chief Technology Officer faced mounting concerns about the <strong>sheer number of concurrent activities</strong> and the absence of a standardized OCM framework. Change management and PMO teams were repeatedly recreating deliverables from scratch, wasting time and resources while slowing momentum. From a workforce perspective, employees were bombarded with <strong>conflicting messages from multiple initiatives</strong>, leading to <strong>change fatigue, disengagement, and skepticism</strong>. Without a portfolio-level view and consistent communication cascade, leadership lacked the visibility and governance needed to ensure adoption at scale.</p>
             <h2 className="mt-4 font-bold">Approach</h2>
-            <p className="text-sm">Trigona Consulting implemented a uniform change management framework across the CTO&apos;s portfolio, creating standardized tools, templates, and processes adaptable to projects of varying sizes and complexities. We established a central repository of change resources and trained key personnel in their use. To ensure consistency, we introduced a governance structure to oversee change management practices across all projects, enhancing efficiency and alignment.</p>
+            <p>Trigona Consulting partnered with the CTO Office to design and embed a <strong>standardized enterprise OCM </strong><b>framework</b> into the transformation governance model. We worked closely with functional teams and leadership to redesign the shared service structure for change management, clarifying roles and responsibilities across PMO, OCM, and business teams. At the same time, we developed portfolio-level standards, templates, and toolkits that execution teams could apply consistently across initiatives, reducing duplication and ensuring alignment. A new communication cascade model eliminated conflicting messages, providing employees with clear and coordinated updates. By linking OCM directly to portfolio-level governance, leaders gained visibility into adoption progress and the ability to prioritize resources across 60+ initiatives.</p>
             <h2 className="mt-6 font-bold text-white bg-red-800">&nbsp;Result</h2>
-            <p className="text-sm">The standardization effort <span className="font-bold">brought consistency and visibility to change management processes</span>, enabling the CTO office to prioritize resources, mitigate risks, and drive adoption more effectively. Trigona&apos;s work laid a strong foundation for the organization to execute technology initiatives with increased agility and success, positioning the SaaS leader to thrive in a dynamic market.</p>
+            <ul className="list-disc list-outside pl-4 mt-4">
+            <li>Brought <strong>consistency and visibility</strong> to change management across 60+ initiatives.</li>
+            <li>Enabled the CTO Office to <strong>prioritize resources</strong> and mitigate risk with a portfolio-level view.</li>
+            <li>Reduced rework and duplication of effort, <strong>lowering workload for execution teams</strong> through reusable templates and toolkits. </li>
+            <li>Minimized change fatigue by introducing a <strong>standard communication cascade</strong>, ensuring employees received clear, aligned messaging.</li>
+            </ul>
           </div>
-          <div className="mx-2 p-4 h-full border border-red-800">
+          {/* <div className="mx-2 p-4 h-full border border-red-800">
             <h1 className="text-2xl font-bold">Enhancing Change Adoption for a National Education Client</h1>
             <Image className="mx-auto mt-4" src={school} alt="school"  />
             <h2 className="mt-4 font-bold">Challenge</h2>
@@ -130,6 +162,16 @@ export default function CaseStudiesMC() {
             <h2 className="mt-6 font-bold text-white bg-red-800">&nbsp;Result</h2>
             <p className="text-sm">The integration delivered impressive results, achieving <span className="font-bold">$24 million in first-year operating cost savings</span> while maintaining operational continuity and retaining <span  className="font-bold">92% of top talent</span>. Trigona&apos;s approach fostered a cohesive organizational culture and integrated operating model, positioning the client for sustained success post-integration.</p>
           </div>
+          <div className="mx-2 p-4 h-full border border-red-800">
+            <h1 className="text-2xl font-bold">Revolutionizing Operations for a Global Technology Leader</h1>
+            <Image className="mx-auto mt-4" src={it1} alt="it"  />
+            <h2 className="mt-4 font-bold">Challenge</h2>
+            <p className="text-sm">Global SaaS company was re-establishing organizational structure across multiple global markets post-spin-off. The goal was to establish a shared service solution structure for the Chief Information Officer with optimized processes and reduced operational costs impacting 15k resources worldwide. The organization faced challenges with readiness, leadership alignment, and the risk of operational disruptions during the transition.</p>
+            <h2 className="mt-4 font-bold">Approach</h2>
+            <p className="text-sm">In collaboration with client leadership and functional teams, Trigona Consulting redesigned the CIO&apos;s shared service structure, optimizing the operating model and ensuring leadership alignment. Through our tailored change management approach, we enhanced organizational readiness and minimized operational disruptions. Our reusable transformation framework, equipped the organization with tools for managing future changes independently.</p>
+            <h2 className="mt-6 font-bold text-white bg-red-800">&nbsp;Result</h2>
+            <p className="text-sm">Our efforts led to the resulting operating model&apos;s improved effectiveness, <span className="font-bold">improving process standardization by 43% </span>and achieving a <span className="font-bold">25% first-year operating costs reduction</span>. This project met immediate restructuring goals and fostered a culture of adaptability, positioning the client for long-term success in a dynamic market environment.</p>
+          </div> */}
         </Carousel>
       </div>
   );
