@@ -56,12 +56,12 @@ export default function Home() {
           <h1 className="ml-4 text-center text-6xl lg:text-8xl">Testimonials<span className="text-red-800 font-bold italic"></span></h1>
       </div>
       <Testimonials />
-      {/* <div className="bg-base-200">
+      <div className="bg-base-200">
         <div className="mt-10">
           <h1 className="ml-10 text-6xl lg:text-8xl">Case <span className="text-red-800 font-bold italic">Studies</span></h1>
         </div>
         <CaseStudiesMC />
-      </div> */}
+      </div>
       <About />
       <Contact />
     </div>  
