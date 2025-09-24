@@ -58,7 +58,7 @@ export default function Home() {
       <Testimonials />
       <div className="bg-base-200">
         <div className="mt-10">
-          <h1 className="ml-10 text-6xl lg:text-8xl">Case <span className="text-red-800 font-bold italic">Studies</span></h1>
+          <h1 className="ml-10 text-6xl lg:text-8xl">Client <span className="text-red-800 font-bold italic">Impact</span></h1>
         </div>
         <CaseStudiesMC />
       </div>
